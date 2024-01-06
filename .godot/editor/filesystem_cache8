@@ -1,0 +1,147 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1704503230
+icon.svg::CompressedTexture2D::6152517924363794899::1702745327::1702745342::1::::<><>::
+::res://Characters/::1704498239
+player.gd::GDScript::-1::1704498239::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::3426224828159047518::1704313377::0::1::::<><>::res://Characters/player.gd<>uid://c8d4j5q3snfxk::::res://resources/Sprout Lands - Sprites - premium pack/Characters/Basic Charakter Spritesheet.png
+::res://Characters/Animals/::1704500947
+chicken.gd::GDScript::-1::1704497315::0::1::::<>CharacterBody2D<>::
+chicken.tscn::PackedScene::7709360595283605531::1704500947::0::1::::<><>::uid://cvpg8trbmikny::::res://resources/Sprout Lands - Sprites - premium pack/Animals/Chicken/chicken default.png<>res://Characters/Animals/chicken.gd
+::res://git/::1704501986
+::res://git/addons/::1704501986
+::res://git/addons/godot-git-plugin/::1704501987
+git_plugin.gdextension::GDExtension::-1::1704501986::0::1::::<><>::
+plugin.cfg::TextFile::-1::1704501987::0::1::::<><>::
+THIRDPARTY.md::TextFile::-1::1704501987::0::1::::<><>::
+::res://git/addons/godot-git-plugin/linux/::1704501986
+::res://git/addons/godot-git-plugin/macos/::1704501987
+::res://git/addons/godot-git-plugin/win64/::1704503225
+::res://Levels/::1704500947
+gameLevel.tscn::PackedScene::9043592476174690821::1704500947::0::1::::<><>::uid://bo2xomhy5504q::::res://Characters/player.tscn<>uid://8i601qo61b40::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Grass.png<>uid://njerubsgu08f::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/water frames/Water.png<>uid://dxy60jaf6pbfu::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Mailbox Animation Frames.png<>uid://bev1kbmvwoee2::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Tilled_Dirt.png<>uid://dbiuaq16pgt7o::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Bush_Tiles.png<>uid://ce33kdhnisie8::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures/Chikcen_Houses.png<>uid://b1u4nrekrbf3::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Stone_Ground_Tiles.png<>uid://luj4umfwhqp3::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Grass_Hill_Tiles_v2.png<>uid://qqr5le0n6rfx::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures/Barn structures.png<>uid://c0w0aoqpdkwks::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Fences.png<>uid://o73eaq36x5et::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Soil_Ground_Tiles.png<>uid://c658uff2jy5ed::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Grass_Hill_Tiles_Slopes v.2.png<>uid://cklgpu0mj55hx::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/water frames/Water_1.png<>uid://cnjm2ccfknmvh::::res://resources/Sprout Lands - Sprites - premium pack/Objects/Trees, stumps and bushes.png<>uid://cqamf1pxgnc3j::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Grass_Tile_Layers.png<>uid://dh3qbpkoi4jnv::::res://Characters/Animals/chicken.tscn<>uid://diuuboif2lwnd::::res://objects/chest.tscn<>uid://cfsa66xi3ffcp::::res://objects/bed.tscn<>uid://dn0c4qqm8fxd8::::res://objects/treeBasic.tscn
+::res://objects/::1704500947
+bed.tscn::PackedScene::5161001408915950991::1704313378::0::1::::<><>::uid://bfpru6dnec8cn::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Basic_Furniture.png
+chest.tscn::PackedScene::7763277228863045693::1704500947::0::1::::<><>::uid://d0hy8tyuy55n2::::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Chest.png
+treeBasic.tscn::PackedScene::8123500549914013851::1704500947::0::1::::<><>::uid://cnjm2ccfknmvh::::res://resources/Sprout Lands - Sprites - premium pack/Objects/Trees, stumps and bushes.png
+::res://resources/::1703012826
+::res://resources/Sprout Lands - Sprites - premium pack/::1703012827
+read_me.txt::TextFile::-1::1703012826::0::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Animals/::1703012826
+::res://resources/Sprout Lands - Sprites - premium pack/Animals/Chicken/::1703013852
+chicken blue.png::CompressedTexture2D::3800127498131928826::1703012826::1703013852::1::::<><>::
+chicken brown.png::CompressedTexture2D::1551331533407556209::1703012826::1703013852::1::::<><>::
+chicken default.png::CompressedTexture2D::6278197007518364890::1703012826::1703013852::1::::<><>::
+chicken green.png::CompressedTexture2D::4648108794100663256::1703012826::1703013852::1::::<><>::
+chicken red.png::CompressedTexture2D::5363942051157042984::1703012826::1703013852::1::::<><>::
+Free Chicken Sprites.png::CompressedTexture2D::9074885779095780114::1703012826::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Animals/Chicken_Baby/::1703013852
+Chicken_Baby.png::CompressedTexture2D::5365546209161759137::1703012826::1703013852::1::::<><>::
+Chicken_Baby_Blue.png::CompressedTexture2D::370415240267150580::1703012826::1703013852::1::::<><>::
+Chicken_Baby_Brown.png::CompressedTexture2D::4173013754798941750::1703012826::1703013852::1::::<><>::
+Chicken_Baby_Green.png::CompressedTexture2D::3776352553057666218::1703012826::1703013852::1::::<><>::
+Chicken_Baby_Red.png::CompressedTexture2D::8257747583462218962::1703012826::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Animals/Chicken_Egg/::1703013852
+Egg_Spritesheet.png::CompressedTexture2D::2946360441930259301::1703012826::1703013852::1::::<><>::
+Egg_Spritesheet_blue.png::CompressedTexture2D::7484779933171938141::1703012826::1703013852::1::::<><>::
+Egg_Spritesheet_Brown.png::CompressedTexture2D::7202350162630979382::1703012826::1703013852::1::::<><>::
+Egg_Spritesheet_Green.png::CompressedTexture2D::7326528684135511159::1703012826::1703013852::1::::<><>::
+Egg_Spritesheet_red.png::CompressedTexture2D::2878158330149286303::1703012826::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Animals/Cow/::1703013852
+Brown cow animations.png::CompressedTexture2D::5673003870613878616::1703012826::1703013852::1::::<><>::
+Free Cow Sprites.png::CompressedTexture2D::1310882918012669687::1703012826::1703013852::1::::<><>::
+Green cow animation sprites.png::CompressedTexture2D::2370435864604943022::1703012826::1703013852::1::::<><>::
+Light cow animations.png::CompressedTexture2D::215147219134190191::1703012826::1703013852::1::::<><>::
+Pink cow animation sprites.png::CompressedTexture2D::7926465360031948040::1703012826::1703013852::1::::<><>::
+Purple cow animation sprites.png::CompressedTexture2D::5602207288121728465::1703012826::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Animals/Cow_Baby/::1703013852
+baby brown cow animations sprites.png::CompressedTexture2D::3939619839837411863::1703012826::1703013852::1::::<><>::
+baby green cow animations sprites.png::CompressedTexture2D::2909270878564478460::1703012826::1703013852::1::::<><>::
+baby light cow animations sprites.png::CompressedTexture2D::91333513367357013::1703012826::1703013852::1::::<><>::
+baby pink cow animations sprites.png::CompressedTexture2D::4839689919395269270::1703012826::1703013852::1::::<><>::
+baby purple cow animations sprites.png::CompressedTexture2D::3256321601958494389::1703012826::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Characters/::1703013852
+Basic Charakter Actions.png::CompressedTexture2D::2659074826597801704::1703012826::1703013852::1::::<><>::
+Basic Charakter Spritesheet.png::CompressedTexture2D::7097044807352960052::1703012826::1703013852::1::::<><>::
+Premium Charakter Spritesheet.png::CompressedTexture2D::6476307190245465290::1703012827::1703013852::1::::<><>::
+Tools.png::CompressedTexture2D::8939950037762541461::1703012827::1703013852::1::::<><>::
+water from wateringcan frames.png::CompressedTexture2D::1014331083434129985::1703012827::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Objects/::1703013852
+Boats.png::CompressedTexture2D::6910570085942027653::1703012827::1703013852::1::::<><>::
+Farming Plants.png::CompressedTexture2D::779024063404214044::1703012827::1703013852::1::::<><>::
+Mushrooms, Flowers, Stones.png::CompressedTexture2D::2172944491266176033::1703012827::1703013852::1::::<><>::
+Piknik basket.png::CompressedTexture2D::5181590734087922077::1703012827::1703013852::1::::<><>::
+Piknik blanket.png::CompressedTexture2D::492560533836805008::1703012827::1703013852::1::::<><>::
+signs.png::CompressedTexture2D::5165058330367957082::1703012827::1703013852::1::::<><>::
+Trees, stumps and bushes.png::CompressedTexture2D::5704652663193165993::1703012827::1703013852::1::::<><>::
+Water Objects.png::CompressedTexture2D::9115449949249331038::1703012827::1703013852::1::::<><>::
+Water well.png::CompressedTexture2D::2519536076001095732::1703012827::1703013852::1::::<><>::
+work station.png::CompressedTexture2D::6265752240504324138::1703012827::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/::1703013852
+All items.png::CompressedTexture2D::4406623804798541095::1703012827::1703013852::1::::<><>::
+Egg items.png::CompressedTexture2D::8940778777828003804::1703012827::1703013852::1::::<><>::
+Farming Plants items.png::CompressedTexture2D::5210388961161564077::1703012827::1703013852::1::::<><>::
+fruit and berries items.png::CompressedTexture2D::8732884404399947595::1703012827::1703013852::1::::<><>::
+item shadow.png::CompressedTexture2D::1784249789565227080::1703012827::1703013852::1::::<><>::
+Milk and grass item Simple.png::CompressedTexture2D::3291544135917414225::1703012827::1703013852::1::::<><>::
+Milk.png::CompressedTexture2D::3597032657191381674::1703012827::1703013852::1::::<><>::
+tools and meterials.png::CompressedTexture2D::5348241675217323389::1703012827::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Objects/Tree animations/::1703013852
+tree_appel_sprites.png::CompressedTexture2D::2677050579900451282::1703012827::1703013852::1::::<><>::
+tree_orange_sprites.png::CompressedTexture2D::569685143433022211::1703012827::1703013852::1::::<><>::
+tree_peach_sprites.png::CompressedTexture2D::5036095107691689288::1703012827::1703013852::1::::<><>::
+tree_pear_sprites.png::CompressedTexture2D::2306171692308721904::1703012827::1703013852::1::::<><>::
+tree_sprites.png::CompressedTexture2D::3374997248865217777::1703012827::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Objects/Tree animations/Fruit animations without tree/::1703013852
+no_tree_appel_sprites.png::CompressedTexture2D::3494066113323234692::1703012827::1703013852::1::::<><>::
+no_tree_orange_sprites.png::CompressedTexture2D::7846742562302084480::1703012827::1703013852::1::::<><>::
+no_tree_peach_sprites.png::CompressedTexture2D::2306274714093558312::1703012827::1703013852::1::::<><>::
+no_tree_pear_sprites.png::CompressedTexture2D::913466070490691533::1703012827::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Sprout Lands color pallet/::1703013852
+Sprout Lands defautlt palette snip.PNG::CompressedTexture2D::1594243169510303052::1703012827::1703013852::1::::<><>::
+Sprout Lands defautlt palette.png::CompressedTexture2D::4280454942776588891::1703012827::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/::1703012827
+::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/::1703013852
+Basic_Furniture.png::CompressedTexture2D::2769400106403677829::1703012827::1703013852::1::::<><>::
+Chest.png::CompressedTexture2D::8929950961294741437::1703012827::1703013852::1::::<><>::
+door animation sprites.png::CompressedTexture2D::4782582118182772228::1703012827::1703013852::1::::<><>::
+Fence gates animation sprites .png::CompressedTexture2D::7224341420315117186::1703012827::1703013852::1::::<><>::
+Fences.png::CompressedTexture2D::6574497454475220254::1703012827::1703013852::1::::<><>::
+Mailbox Animation Frames.png::CompressedTexture2D::8825077865454211146::1703012827::1703013852::1::::<><>::
+Paths.png::CompressedTexture2D::4944818498140203826::1703012827::1703013852::1::::<><>::
+STONE PATH.png::CompressedTexture2D::2584718508901072039::1703012827::1703013852::1::::<><>::
+Wood Bridge.png::CompressedTexture2D::2404820227967574820::1703012827::1703013852::1::::<><>::
+Wooden House.png::CompressedTexture2D::95202316018884161::1703012827::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures/::1703013852
+Barn structures.png::CompressedTexture2D::1157137890058216813::1703012827::1703013852::1::::<><>::
+Chikcen_Houses.png::CompressedTexture2D::5113117421774264761::1703012827::1703013852::1::::<><>::
+Water tray.png::CompressedTexture2D::2691949343904695225::1703012827::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/::1703013852
+Bitmask references 1.png::CompressedTexture2D::4136203279684949053::1703012827::1703013852::1::::<><>::
+Bitmask references 2.png::CompressedTexture2D::8168651137573615669::1703012827::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/::1703013852
+Bush_Tiles.png::CompressedTexture2D::7247181138572462234::1703012827::1703013852::1::::<><>::
+Darker_Grass_Hills_Tiles_v2.png::CompressedTexture2D::3447036972707617793::1703012827::1703013852::1::::<><>::
+Darker_Grass_Hill_Tiles_Slopes_v2.png::CompressedTexture2D::1672826612111189839::1703012827::1703013852::1::::<><>::
+Darker_Grass_Tiles_v2.png::CompressedTexture2D::9127248749906506367::1703012828::1703013852::1::::<><>::
+Darker_Grass_Tile_Layers2.png::CompressedTexture2D::4376923642027529941::1703012828::1703013852::1::::<><>::
+Darker_Grass_Tile_Layers.png::CompressedTexture2D::7029391756703300814::1703012827::1703013852::1::::<><>::
+Darker_Soil_Ground_Tiles.png::CompressedTexture2D::190161564073078269::1703012828::1703013852::1::::<><>::
+Grass_Hill_Tiles_Slopes v.2.png::CompressedTexture2D::7012666501006924915::1703012828::1703013852::1::::<><>::
+Grass_Hill_Tiles_v2.png::CompressedTexture2D::813964145319218450::1703012828::1703013852::1::::<><>::
+Grass_tiles_v2.png::CompressedTexture2D::956278705478682302::1703012828::1703013852::1::::<><>::
+Grass_Tile_layers2.png::CompressedTexture2D::8424060110496267800::1703012828::1703013852::1::::<><>::
+Grass_Tile_Layers.png::CompressedTexture2D::5896601788310159281::1703012828::1703013852::1::::<><>::
+Soil_Ground_Tiles.png::CompressedTexture2D::1050411144066874555::1703012828::1703013852::1::::<><>::
+Stone_Ground_Tiles.png::CompressedTexture2D::125129502383159346::1703012828::1703013852::1::::<><>::
+TILE LAYER EXAMPLE.png::CompressedTexture2D::3765272357610658110::1703012828::1703013852::1::::<><>::
+TILES PREVIEW v.2.png::CompressedTexture2D::8590595381572453810::1703012828::1703013852::1::::<><>::
+TILES PREVIEW.png::CompressedTexture2D::5557663698675243012::1703012828::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/::1703013852
+Grass.png::CompressedTexture2D::2334675124713450487::1703012828::1703013852::1::::<><>::
+Hills.png::CompressedTexture2D::4841431978072901241::1703012828::1703013852::1::::<><>::
+Tilled_Dirt.png::CompressedTexture2D::2712124562876564387::1703012828::1703013852::1::::<><>::
+::res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/water frames/::1703013852
+Water.png::CompressedTexture2D::931308646386887115::1703012828::1703013852::1::::<><>::
+Water_1.png::CompressedTexture2D::5497830137571935165::1703012828::1703013852::1::::<><>::
+Water_2.png::CompressedTexture2D::5095706564233126095::1703012828::1703013852::1::::<><>::
+Water_3.png::CompressedTexture2D::7639880547042308419::1703012828::1703013852::1::::<><>::
+Water_4.png::CompressedTexture2D::4957472869814617000::1703012828::1703013852::1::::<><>::

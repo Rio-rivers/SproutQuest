@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn0c4qqm8fxd8"]
+
+[ext_resource type="Texture2D" uid="uid://cnjm2ccfknmvh" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Trees, stumps and bushes.png" id="1_0itst"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6asyn"]
+size = Vector2(8, 6)
+
+[node name="Chest" type="Sprite2D"]
+position = Vector2(342, 226)
+texture = ExtResource("1_0itst")
+region_enabled = true
+region_rect = Rect2(16, 0, 32, 32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_6asyn")
