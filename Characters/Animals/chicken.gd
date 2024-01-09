@@ -40,6 +40,7 @@ func _physics_process(_delta):
 			if collision:
 				if collision.get_collider() is TileMap:
 					newDirection()
+				
 
 
 	

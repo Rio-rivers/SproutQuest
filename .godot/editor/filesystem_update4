@@ -1,6 +1,7 @@
-res://Levels/gameLevel.tscn
+res://Characters/Animals/chicken.tscn
 res://Characters/player.gd
+res://Characters/Animals/chicken.gd
+res://Levels/gameLevel.tscn
 res://objects/chest.tscn
 res://objects/treeBasic.tscn
-res://Characters/Animals/chicken.tscn
-res://Characters/Animals/chicken.gd
+res://Characters/player.tscn

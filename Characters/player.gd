@@ -46,8 +46,8 @@ func _physics_process(_delta):
 			var pushDirection = collision.get_normal()
 			if collision:
 				if collision.get_collider().is_in_group("animals"):
-					print(pushDirection)
-					collision.get_collider().velocity = pushDirection * pushStrength
+					collision.get_collider().newDirection()
+					
 	
 #based on the input, update the animations of the character
 func updateAnimations(moveInput : Vector2):
