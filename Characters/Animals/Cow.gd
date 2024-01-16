@@ -1,6 +1,4 @@
 extends CharacterBody2D
-
-
 #get sprite status
 @onready var sprite = $Sprite2D
 
@@ -12,35 +10,34 @@ extends CharacterBody2D
 @onready var timer = $Timer
 
 #Speed
-@export var moveSpeed: float = 15
+@export var moveSpeed: float = 10
 #Timer for changing of state
 @export var stateTimer : float = randf_range(4, 10)
 
 #enum for different states of animal
-enum chickenState {IDLE, EATING,HAPPY, WALK,ASLEEP}
+enum cowState {IDLE, EATING,HAPPY, WALK,ASLEEP, SITTING}
 
 var direction : Vector2 = Vector2.ZERO
 
 #holds the animals current state
-var currentState : chickenState = chickenState.IDLE
+var currentState : cowState = cowState.IDLE
+
 
 
 func _ready():
-	add_to_group("chickens")
+	add_to_group("cows")
 	add_to_group("animals")
 	changeState()
 
 func _physics_process(_delta):
-	if(currentState == chickenState.WALK):
+	if(currentState == cowState.WALK):
 		velocity = direction * moveSpeed
 		move_and_slide()
 		#for each collision check the collision type and if a part of the map change direction
 		for i in range(get_slide_collision_count()):
 			var collision = get_slide_collision(i)
 			if collision:
-				if collision.get_collider() is TileMap :
-					newDirection()
-				elif collision.is_in_group("cows"):
+				if collision.get_collider() is TileMap:
 					newDirection()
 				
 				
@@ -51,9 +48,9 @@ func moveFromPlayer(playerPosition: Vector2):
 	# Ensure the direction vector is not zero
 	if direction == Vector2.ZERO:
 		newDirection()
-
+	
 	state.travel("walking")
-	currentState = chickenState.WALK
+	currentState = cowState.WALK
 
 	if direction.x < 0:
 		sprite.flip_h = true
@@ -73,29 +70,34 @@ func newDirection():
 
 func changeState():
 	#allows the animal a random choice in actions
-	var choice = randi_range(0, 2)
+	var choice = randi_range(0, 3)
 	
 	#change to idle
-	if(currentState == chickenState.WALK):
-		
+	if(currentState == cowState.WALK):
+
 		state.travel("idle")
-		currentState = chickenState.IDLE
+		currentState = cowState.IDLE
 		timer.start(stateTimer)
-	elif(currentState == chickenState.ASLEEP):
+	elif(currentState == cowState.ASLEEP or currentState == cowState.SITTING):
 		state.travel("idle")
-		currentState = chickenState.IDLE
+		currentState = cowState.IDLE
 		timer.start(stateTimer)
 	else:
 		if (choice == 0):
 			state.travel("walking")
-			currentState = chickenState.WALK
+			currentState = cowState.WALK
 			newDirection()
 		elif (choice == 1):
 			state.travel("eating")
-			currentState = chickenState.EATING
+			currentState = cowState.EATING
 		elif (choice == 2):
+			
 			state.travel("asleep")
-			currentState = chickenState.ASLEEP
+			currentState = cowState.ASLEEP
+		elif (choice == 3):
+			
+			state.travel("sitting")
+			currentState = cowState.SITTING
 		timer.start(stateTimer)
 		
 
