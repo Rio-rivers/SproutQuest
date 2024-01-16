@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://d131v8xynbt2l"]
+[gd_scene load_steps=38 format=3 uid="uid://d131v8xynbt2l"]
 
 [ext_resource type="PackedScene" uid="uid://bo2xomhy5504q" path="res://Characters/player.tscn" id="1_vjyw8"]
 [ext_resource type="Texture2D" uid="uid://8i601qo61b40" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Grass.png" id="2_tsb1t"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://diuuboif2lwnd" path="res://objects/chest.tscn" id="15_bh0aa"]
 [ext_resource type="PackedScene" uid="uid://cfsa66xi3ffcp" path="res://objects/bed.tscn" id="15_jkrj8"]
 [ext_resource type="PackedScene" uid="uid://dn0c4qqm8fxd8" path="res://objects/treeBasic.tscn" id="19_lgeam"]
+[ext_resource type="PackedScene" uid="uid://cq1b2b0s7tlto" path="res://Characters/Animals/Cow.tscn" id="21_y0hxe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyrjr"]
 texture = ExtResource("2_tsb1t")
@@ -2759,16 +2760,25 @@ position = Vector2(343, 226)
 position = Vector2(294, 196)
 
 [node name="chicken" parent="." instance=ExtResource("14_tuuns")]
-position = Vector2(183, 161)
+position = Vector2(228, 253)
 
 [node name="chicken2" parent="." instance=ExtResource("14_tuuns")]
-position = Vector2(228, 257)
+position = Vector2(175, 249)
 
 [node name="treeBasic" parent="." instance=ExtResource("19_lgeam")]
 position = Vector2(191, 202)
 
 [node name="chicken3" parent="." instance=ExtResource("14_tuuns")]
-position = Vector2(419, 107)
+position = Vector2(268, 219)
 
 [node name="chicken4" parent="." instance=ExtResource("14_tuuns")]
-position = Vector2(425, 167)
+position = Vector2(143, 261)
+
+[node name="cow" parent="." instance=ExtResource("21_y0hxe")]
+position = Vector2(270, 249)
+
+[node name="cow2" parent="." instance=ExtResource("21_y0hxe")]
+position = Vector2(243, 274)
+
+[node name="cow3" parent="." instance=ExtResource("21_y0hxe")]
+position = Vector2(241, 221)

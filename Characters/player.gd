@@ -13,7 +13,7 @@ extends CharacterBody2D
 
 #controls the pushing of animals out the way
 
-var pushStrength = 1000
+var pushStrength = 3000
 
 func _ready():
 	add_to_group("players")
@@ -43,11 +43,15 @@ func _physics_process(_delta):
 	
 	for i in range(get_slide_collision_count()):
 			var collision = get_slide_collision(i)
-			var pushDirection = collision.get_normal()
+			#var pushDirection = collision.get_normal()
 			if collision:
 				if collision.get_collider().is_in_group("animals"):
-					print(pushDirection)
-					collision.get_collider().velocity = pushDirection * pushStrength
+					print("hi")
+					#move_and_collide(inputDirection)
+					collision.get_collider().moveFromPlayer(inputDirection.normalized())
+					
+	
+
 	
 #based on the input, update the animations of the character
 func updateAnimations(moveInput : Vector2):
