@@ -1,26 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://m08rw38ol2ep"]
+[gd_scene load_steps=7 format=3 uid="uid://m08rw38ol2ep"]
 
 [ext_resource type="Script" path="res://objects/usableItems/itemResource.gd" id="1_feuol"]
 [ext_resource type="Resource" uid="uid://dj4tjfqijj16e" path="res://objects/harvestable/choppable.tres" id="2_ffnf3"]
+[ext_resource type="PackedScene" uid="uid://si8eiwyh114w" path="res://objects/pickupItems/lootLog.tscn" id="3_0s7mm"]
+[ext_resource type="PackedScene" uid="uid://ddwibr7fhpys6" path="res://objects/pickupItems/lootBranch.tscn" id="3_hssao"]
 [ext_resource type="Texture2D" uid="uid://cnjm2ccfknmvh" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Trees, stumps and bushes.png" id="11_f8m4t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wwsss"]
-size = Vector2(12, 6.5)
+size = Vector2(17, 8.25)
 
 [node name="treeItem" type="StaticBody2D"]
 position = Vector2(446, 198)
 script = ExtResource("1_feuol")
 health = 5
-resourceType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_ffnf3")])
+harvestableType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_ffnf3")])
+lootTypes = Array[PackedScene]([ExtResource("3_hssao"), ExtResource("3_0s7mm")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(10, 1.25)
-scale = Vector2(1.1875, 1.1875)
+position = Vector2(17.5, 0.78125)
+scale = Vector2(1.65625, 1.65625)
 texture = ExtResource("11_f8m4t")
 offset = Vector2(0, -15)
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10, -3.25)
+position = Vector2(17.5, -4.875)
 shape = SubResource("RectangleShape2D_wwsss")

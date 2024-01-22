@@ -4,34 +4,50 @@ extends StaticBody2D
 
 class_name itemSource
 
-#number of resources it will hold
-
 
 @export var health : int
 
 #create variable to be able to set the type of resource
-@export var resourceType: Array[HarvestType]
+@export var harvestableType: Array[HarvestType]
+@export var lootTypes: Array[PackedScene]
 
-var numOfResources = randi_range(1,8)
-var currentResources : int
+@onready var gameLevel = get_parent()
+
+var numOfResources : int
 
 
-var currentHealth : int :
-	set(healthValue):
-		if healthValue <= 0:
-			queue_free()
+
 			
 func _ready():
-	currentHealth = health
-	currentResources = numOfResources
+	pass
 
 # CHANGE SO THAT CURRENT RESOURCES WILL GIVE OUT ALL RESOURCES/ SOME RESOURCES BEFORE IT DIES
 func harvestResource(damage : int):
-	print("before ", currentResources)
+	
+	numOfResources = randomResourceCount()
+	
+	for item in range(numOfResources):
+		spawnLoot(0)
+		
 	health -= damage
-	currentResources -= randi_range(0,currentResources)
 	if health <= 0:
-			print("health 0" )
-			queue_free()
-	print("after ", currentResources)
-	print(health )
+		for item in range(numOfResources):
+			spawnLoot(1)
+		queue_free()
+	
+	
+func randomResourceCount() -> int:
+	var roll = randf()
+	if roll < 0.7:
+			return 1
+	elif roll < 0.9: 
+		return 2
+	else:
+		return 3
+func spawnLoot(lootIndex: int):
+
+	var lootItem: Loot = lootTypes[lootIndex].instantiate() as Loot
+	gameLevel.add_child(lootItem)
+	lootItem.position = position
+	
+	lootItem.bounce()

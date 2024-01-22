@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cuayh56wuoini"]
+
+[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_cdw7u"]
+[ext_resource type="Texture2D" uid="uid://c71vbgy2d8xe7" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/wood1.png" id="2_spyce"]
+
+[resource]
+script = ExtResource("1_cdw7u")
+displayName = "Log"
+texture = ExtResource("2_spyce")

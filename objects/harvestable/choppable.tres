@@ -3,5 +3,6 @@
 [ext_resource type="Script" path="res://objects/harvestable/resourceType.gd" id="1_beguy"]
 
 [resource]
+resource_name = "Choppable"
 script = ExtResource("1_beguy")
 harvestableTypeName = "Choppable"
