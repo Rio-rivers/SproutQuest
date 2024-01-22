@@ -6,29 +6,12 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ox8we"]
 size = Vector2(8, 4)
 
-[sub_resource type="Animation" id="Animation_wt8dj"]
-resource_name = "idle"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [2, 3]
-}
-
 [sub_resource type="Animation" id="Animation_3h04i"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Body:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -38,22 +21,6 @@ tracks/0/keys = {
 "values": [2]
 }
 
-[sub_resource type="Animation" id="Animation_smicc"]
-resource_name = "walk"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.3, 0.4, 0.5, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [16, 17, 18, 19, 20, 21, 23]
-}
-
 [sub_resource type="Animation" id="Animation_2m84s"]
 resource_name = "asleep"
 length = 0.6
@@ -61,7 +28,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Body:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -78,7 +45,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Body:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -86,6 +53,39 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [88, 89, 90, 91, 90, 91, 92, 93]
+}
+
+[sub_resource type="Animation" id="Animation_wt8dj"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_smicc"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 0.4, 0.5, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19, 20, 21, 23]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rnfxr"]
@@ -136,11 +136,14 @@ transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-322, -55)
 
 [node name="chicken" type="CharacterBody2D"]
+y_sort_enabled = true
+floor_snap_length = 0.0
 platform_floor_layers = 4294967294
 script = ExtResource("1_lanf5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Body" type="Sprite2D" parent="."]
 texture = ExtResource("1_h3d1j")
+offset = Vector2(0, -5)
 hframes = 8
 vframes = 27
 frame = 2
@@ -148,7 +151,7 @@ frame = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 process_priority = 1
 process_physics_priority = 1
-position = Vector2(-1, 4)
+position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_ox8we")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

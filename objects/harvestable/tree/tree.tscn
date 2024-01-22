@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://m08rw38ol2ep"]
+
+[ext_resource type="Script" path="res://objects/usableItems/itemResource.gd" id="1_feuol"]
+[ext_resource type="Resource" uid="uid://dj4tjfqijj16e" path="res://objects/harvestable/choppable.tres" id="2_ffnf3"]
+[ext_resource type="Texture2D" uid="uid://cnjm2ccfknmvh" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Trees, stumps and bushes.png" id="11_f8m4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwsss"]
+size = Vector2(12, 6.5)
+
+[node name="treeItem" type="StaticBody2D"]
+position = Vector2(446, 198)
+script = ExtResource("1_feuol")
+health = 5
+resourceType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_ffnf3")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, 1.25)
+scale = Vector2(1.1875, 1.1875)
+texture = ExtResource("11_f8m4t")
+offset = Vector2(0, -15)
+region_enabled = true
+region_rect = Rect2(16, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, -3.25)
+shape = SubResource("RectangleShape2D_wwsss")
