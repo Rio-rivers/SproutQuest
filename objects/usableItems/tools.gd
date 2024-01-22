@@ -15,6 +15,7 @@ func objectInteraction(body):
 		# for each type that the tool is apart of
 		for type in toolType:
 			#if the resource object is apart of the same type as the tool do something
-			if body.resourceType.has(type):
+			if body.harvestableType.has(type):
+
 				body.harvestResource(toolDamage)
 			

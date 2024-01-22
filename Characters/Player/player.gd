@@ -2,6 +2,8 @@
 
 extends CharacterBody2D
 
+class_name Player
+
 #starting position of the character
 @export var startPosition: Vector2= Vector2(0,1)
 #Speed

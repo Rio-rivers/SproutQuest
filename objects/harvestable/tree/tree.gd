@@ -1,1 +1,1 @@
-extends "res://objects/itemResource.gd"
+extends "res://objects/usableItems/itemResource.gd"

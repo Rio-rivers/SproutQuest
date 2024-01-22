@@ -1,9 +1,10 @@
-[gd_scene load_steps=48 format=3 uid="uid://c2vsb1yucffc7"]
+[gd_scene load_steps=49 format=3 uid="uid://c2vsb1yucffc7"]
 
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_bcnvt"]
 [ext_resource type="Texture2D" uid="uid://cyjf3lg86h06a" path="res://resources/Sprout Lands - Sprites - premium pack/Characters/Premium Charakter Spritesheet.png" id="2_up2kb"]
 [ext_resource type="Script" path="res://objects/usableItems/equipped.gd" id="3_qxyte"]
 [ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://objects/usableItems/axe.tres" id="4_x4bmr"]
+[ext_resource type="Script" path="res://Characters/Player/Inventory/Inventory.gd" id="5_t8pqu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smrcq"]
 size = Vector2(6, 5)
@@ -684,7 +685,7 @@ graph_offset = Vector2(-284, -67)
 radius = 2.0
 height = 6.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["players"]]
 process_priority = 1
 process_physics_priority = 1
 y_sort_enabled = true
@@ -732,5 +733,8 @@ monitoring = false
 [node name="toolCollision" type="CollisionShape2D" parent="EquippedTool/Area2D"]
 position = Vector2(-4, 0)
 shape = SubResource("CapsuleShape2D_k3srj")
+
+[node name="Inventory" type="Node" parent="."]
+script = ExtResource("5_t8pqu")
 
 [connection signal="body_entered" from="EquippedTool/Area2D" to="EquippedTool" method="_on_area_2d_body_entered"]

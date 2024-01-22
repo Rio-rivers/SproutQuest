@@ -22,6 +22,4 @@ func _on_area_2d_body_entered(body):
 	
 	if currentTool.has_method("objectInteraction"):
 		currentTool.objectInteraction(body)
-	#if body is itemSource:
-		#print("hello")
-		#body.gatherResource()
+
