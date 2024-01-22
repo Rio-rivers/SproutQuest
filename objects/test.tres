@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Equippables" load_steps=3 format=3 uid="uid://dgwn7xcqprqwj"]
+
+[ext_resource type="Texture2D" uid="uid://cawei6fidd68j" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/axe.png" id="1_fmrqo"]
+[ext_resource type="Script" path="res://objects/usableItems/equippables.gd" id="2_0urvm"]
+
+[resource]
+script = ExtResource("2_0urvm")
+itemImage = ExtResource("1_fmrqo")
+itemName = "Axe"

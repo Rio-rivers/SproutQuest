@@ -1,8 +1,10 @@
+#this file controls the chickens, their movements and their interactions
+
 extends CharacterBody2D
 
 
 #get sprite status
-@onready var sprite = $Sprite2D
+@onready var sprite = $Body
 
 #when script starts, node is accessed
 @onready var animationTree = $AnimationTree
@@ -15,6 +17,8 @@ extends CharacterBody2D
 @export var moveSpeed: float = 15
 #Timer for changing of state
 @export var stateTimer : float = randf_range(4, 10)
+
+var randomChoice = randi_range(0, 2)
 
 #enum for different states of animal
 enum chickenState {IDLE, EATING,HAPPY, WALK,ASLEEP}
@@ -40,8 +44,11 @@ func _physics_process(_delta):
 			if collision:
 				if collision.get_collider() is TileMap :
 					newDirection()
-				elif collision.is_in_group("cows"):
-					newDirection()
+				elif collision.get_collider().is_in_group("animals"):
+					if randomChoice == 0:
+						newDirection()
+					else:
+						changeState()
 				
 				
 
@@ -73,11 +80,9 @@ func newDirection():
 
 func changeState():
 	#allows the animal a random choice in actions
-	var choice = randi_range(0, 2)
 	
 	#change to idle
 	if(currentState == chickenState.WALK):
-		
 		state.travel("idle")
 		currentState = chickenState.IDLE
 		timer.start(stateTimer)
@@ -86,14 +91,14 @@ func changeState():
 		currentState = chickenState.IDLE
 		timer.start(stateTimer)
 	else:
-		if (choice == 0):
+		if (randomChoice == 0):
 			state.travel("walking")
 			currentState = chickenState.WALK
 			newDirection()
-		elif (choice == 1):
+		elif (randomChoice == 1):
 			state.travel("eating")
 			currentState = chickenState.EATING
-		elif (choice == 2):
+		elif (randomChoice == 2):
 			state.travel("asleep")
 			currentState = chickenState.ASLEEP
 		timer.start(stateTimer)

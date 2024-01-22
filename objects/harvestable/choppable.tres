@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="HarvestType" load_steps=2 format=3 uid="uid://dj4tjfqijj16e"]
+
+[ext_resource type="Script" path="res://objects/harvestable/resourceType.gd" id="1_beguy"]
+
+[resource]
+script = ExtResource("1_beguy")
+harvestableTypeName = "Choppable"

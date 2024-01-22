@@ -1,6 +1,8 @@
+#this file controls the cows, their movements and their interactions
+
 extends CharacterBody2D
 #get sprite status
-@onready var sprite = $Sprite2D
+@onready var sprite = $Body
 
 #when script starts, node is accessed
 @onready var animationTree = $AnimationTree
@@ -22,6 +24,7 @@ var direction : Vector2 = Vector2.ZERO
 #holds the animals current state
 var currentState : cowState = cowState.IDLE
 
+var randomChoice = randi_range(0, 1)
 
 
 func _ready():
@@ -39,8 +42,13 @@ func _physics_process(_delta):
 			if collision:
 				if collision.get_collider() is TileMap:
 					newDirection()
-				
-				
+				elif collision.get_collider().is_in_group("animals"):
+					if randomChoice == 0:
+						newDirection()
+					else:
+						changeState()
+		
+
 
 func moveFromPlayer(playerPosition: Vector2):
 	direction = (playerPosition)

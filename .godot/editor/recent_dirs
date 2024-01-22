@@ -1,5 +1,8 @@
-res://
+res://objects/harvestable
+res://objects/usableItems
 res://objects
+res://resources
+res://
 res://Characters/Animals
 res://Characters
 res://Levels
