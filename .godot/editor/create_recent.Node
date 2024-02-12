@@ -1,3 +1,5 @@
+StaticBody2D
+CollisionShape2D
 CanvasLayer
 MarginContainer
 TextureRect
@@ -7,9 +9,6 @@ GridContainer
 Control
 Node
 Area2D
-CollisionShape2D
 Sprite2D
 Loot
-StaticBody2D
 AnimatableBody2D
-RigidBody2D

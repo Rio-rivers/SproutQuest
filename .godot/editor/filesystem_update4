@@ -8,6 +8,7 @@ res://Characters/Player/player.tscn
 res://objects/harvestable/tree/tree.tscn
 res://objects/pickupItems/lootLog.tscn
 res://objects/pickupItems/lootBranch.tscn
-res://UI/itemBar.tscn
 res://UI/itemDisplay.tscn
-res://UI/itemDisplay.gd
+res://UI/itemBar.tscn
+res://objects/harvestable/tree/rock1.tscn
+res://objects/pickupItems/lootStone.tscn
