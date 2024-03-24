@@ -41,7 +41,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_ctlq1"]
 resource_name = "eating"
 length = 2.1
-loop_mode = 2
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

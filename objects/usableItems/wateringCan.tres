@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Tool" load_steps=3 format=3 uid="uid://b4emiwybx68r0"]
+
+[ext_resource type="Texture2D" uid="uid://c335lc85pvydc" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/wateringCan.png" id="1_7qvjl"]
+[ext_resource type="Script" path="res://objects/usableItems/tools.gd" id="2_l4vb0"]
+
+[resource]
+script = ExtResource("2_l4vb0")
+toolDamage = 2
+toolType = Array[Resource("res://objects/harvestable/resourceType.gd")]([])
+itemImage = ExtResource("1_7qvjl")
+itemName = "Watering Can"

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8kcwnl7dr43i"]
+
+[ext_resource type="Script" path="res://objects/usableItems/itemResource.gd" id="1_m57co"]
+[ext_resource type="Resource" uid="uid://bo6o0c0ivses0" path="res://objects/harvestable/mineable.tres" id="2_xwyld"]
+[ext_resource type="PackedScene" uid="uid://q0g3nb7q2jj7" path="res://objects/pickupItems/lootStone.tscn" id="3_5u12b"]
+[ext_resource type="Texture2D" uid="uid://57ucwrrdjie8" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Mushrooms, Flowers, Stones.png" id="5_oxjd7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwsss"]
+size = Vector2(10, 4.82031)
+
+[node name="rockSmall" type="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(448, 197)
+script = ExtResource("1_m57co")
+health = 1
+harvestableType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_xwyld")])
+lootTypes = Array[PackedScene]([ExtResource("3_5u12b")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(25.0117, 14.9349)
+scale = Vector2(0.721355, 0.721355)
+texture = ExtResource("5_oxjd7")
+offset = Vector2(0, -5)
+region_enabled = true
+region_rect = Rect2(81, 18, 15, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, 13)
+shape = SubResource("RectangleShape2D_wwsss")

@@ -80,7 +80,8 @@ func newDirection():
 
 func changeState():
 	#allows the animal a random choice in actions
-	
+	randomChoice = randi_range(0, 2)
+	stateTimer = randf_range(4, 10)
 	#change to idle
 	if(currentState == chickenState.WALK):
 		state.travel("idle")
@@ -101,6 +102,7 @@ func changeState():
 		elif (randomChoice == 2):
 			state.travel("asleep")
 			currentState = chickenState.ASLEEP
+		
 		timer.start(stateTimer)
 		
 

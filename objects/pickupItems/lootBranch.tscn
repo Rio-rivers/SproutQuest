@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://6bxpfrdb6goi" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/tools and materials.png" id="2_kwc70"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46xsy"]
-radius = 3.54157
+radius = 2.82832
 height = 14.1416
 
 [node name="lootBranch" type="Area2D"]
