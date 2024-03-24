@@ -1,5 +1,6 @@
-[gd_scene load_steps=49 format=3 uid="uid://d131v8xynbt2l"]
+[gd_scene load_steps=51 format=3 uid="uid://d131v8xynbt2l"]
 
+[ext_resource type="Script" path="res://Levels/gameLevel.gd" id="1_ugdau"]
 [ext_resource type="Texture2D" uid="uid://8i601qo61b40" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Grass.png" id="2_tsb1t"]
 [ext_resource type="Texture2D" uid="uid://njerubsgu08f" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/water frames/Water.png" id="3_75gtl"]
 [ext_resource type="Texture2D" uid="uid://dxy60jaf6pbfu" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Mailbox Animation Frames.png" id="3_bvp2n"]
@@ -27,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://blb3pih2u0bki" path="res://UI/itemBar.tscn" id="23_5cfc2"]
 [ext_resource type="PackedScene" uid="uid://c2vsb1yucffc7" path="res://Characters/Player/player.tscn" id="23_ak72a"]
 [ext_resource type="Texture2D" uid="uid://bb5qnkclpfanc" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Water well.png" id="24_v2k2c"]
+[ext_resource type="PackedScene" uid="uid://c8kcwnl7dr43i" path="res://objects/harvestable/tree/rock1.tscn" id="28_c04ai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyrjr"]
 texture = ExtResource("2_tsb1t")
@@ -3117,9 +3119,10 @@ size = Vector2(27, 11)
 
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_ugdau")
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("23_ak72a")]
-position = Vector2(306, 96)
+position = Vector2(297, 211)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="player"]
 position = Vector2(0, -2)
@@ -3150,7 +3153,11 @@ layer_5/tile_data = PackedInt32Array(-589832, 196624, 3, -589831, 262160, 3, -58
 metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(306, 94)
+position = Vector2(297, 209)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="itemBar" parent="CanvasLayer" instance=ExtResource("23_5cfc2")]
 
 [node name="Chest" parent="." instance=ExtResource("15_bh0aa")]
 position = Vector2(-396, 89)
@@ -3215,10 +3222,6 @@ position = Vector2(-103, 212)
 [node name="treeItem11" parent="." instance=ExtResource("23_0ik4y")]
 position = Vector2(-120, 351)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="itemBar" parent="CanvasLayer" instance=ExtResource("23_5cfc2")]
-
 [node name="well" type="StaticBody2D" parent="."]
 y_sort_enabled = true
 
@@ -3230,3 +3233,12 @@ offset = Vector2(0, -10)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="well"]
 position = Vector2(-4, 188)
 shape = SubResource("RectangleShape2D_5y7bi")
+
+[node name="rockSmall" parent="." instance=ExtResource("28_c04ai")]
+position = Vector2(322, 284)
+
+[node name="rockSmall2" parent="." instance=ExtResource("28_c04ai")]
+position = Vector2(224, 256)
+
+[node name="rockSmall3" parent="." instance=ExtResource("28_c04ai")]
+position = Vector2(339, 182)

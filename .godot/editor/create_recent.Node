@@ -1,3 +1,6 @@
+TextureButton
+GridContainer
+Control
 StaticBody2D
 CollisionShape2D
 CanvasLayer
@@ -5,8 +8,6 @@ MarginContainer
 TextureRect
 Label
 HBoxContainer
-GridContainer
-Control
 Node
 Area2D
 Sprite2D

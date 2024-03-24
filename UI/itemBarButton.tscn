@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi76uwuu53jxt"]
+
+[ext_resource type="Texture2D" uid="uid://cawei6fidd68j" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/axe.png" id="1_rwow3"]
+[ext_resource type="Script" path="res://UI/selectableItem.gd" id="2_w45r1"]
+
+[node name="itemBarButton" type="TextureButton"]
+texture_normal = ExtResource("1_rwow3")
+script = ExtResource("2_w45r1")

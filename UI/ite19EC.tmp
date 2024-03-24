@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://blb3pih2u0bki"]
+
+[ext_resource type="Script" path="res://UI/itemBar.gd" id="1_d6l4j"]
+[ext_resource type="PackedScene" uid="uid://dv3vls8nk4wpq" path="res://UI/itemDisplay.tscn" id="2_84t7g"]
+[ext_resource type="PackedScene" uid="uid://bi76uwuu53jxt" path="res://UI/itemBarButton.tscn" id="3_g2ew0"]
+[ext_resource type="Texture2D" uid="uid://fr4ivwjrrpi0" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/pickaxe.png" id="4_vb156"]
+[ext_resource type="Texture2D" uid="uid://di8t5h347u4hv" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/hoe.png" id="5_uqc02"]
+
+[node name="itemBar" type="MarginContainer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -101.0
+offset_right = 50.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_d6l4j")
+itemBarTemplate = ExtResource("2_84t7g")
+
+[node name="Grid" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 8
+
+[node name="itemBarButton" parent="Grid" instance=ExtResource("3_g2ew0")]
+layout_mode = 2
+
+[node name="itemBarButton2" parent="Grid" instance=ExtResource("3_g2ew0")]
+layout_mode = 2
+texture_normal = ExtResource("4_vb156")
+
+[node name="itemBarButton3" parent="Grid" instance=ExtResource("3_g2ew0")]
+layout_mode = 2
+texture_normal = ExtResource("5_uqc02")
