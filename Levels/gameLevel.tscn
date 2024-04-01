@@ -1,6 +1,6 @@
-[gd_scene load_steps=51 format=3 uid="uid://d131v8xynbt2l"]
+[gd_scene load_steps=56 format=3 uid="uid://d131v8xynbt2l"]
 
-[ext_resource type="Script" path="res://Levels/gameLevel.gd" id="1_ugdau"]
+[ext_resource type="Script" path="res://Levels/gameLevel.gd" id="1_ri8ge"]
 [ext_resource type="Texture2D" uid="uid://8i601qo61b40" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Grass.png" id="2_tsb1t"]
 [ext_resource type="Texture2D" uid="uid://njerubsgu08f" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/water frames/Water.png" id="3_75gtl"]
 [ext_resource type="Texture2D" uid="uid://dxy60jaf6pbfu" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Mailbox Animation Frames.png" id="3_bvp2n"]
@@ -23,11 +23,16 @@
 [ext_resource type="PackedScene" uid="uid://dh3qbpkoi4jnv" path="res://Characters/Animals/chicken.tscn" id="14_tuuns"]
 [ext_resource type="PackedScene" uid="uid://diuuboif2lwnd" path="res://objects/inanimate/chest.tscn" id="15_bh0aa"]
 [ext_resource type="PackedScene" uid="uid://cfsa66xi3ffcp" path="res://objects/inanimate/bed.tscn" id="15_jkrj8"]
+[ext_resource type="Script" path="res://UI/GUI.gd" id="21_qh2v2"]
 [ext_resource type="PackedScene" uid="uid://cq1b2b0s7tlto" path="res://Characters/Animals/Cow.tscn" id="21_y0hxe"]
 [ext_resource type="PackedScene" uid="uid://m08rw38ol2ep" path="res://objects/harvestable/tree/tree.tscn" id="23_0ik4y"]
 [ext_resource type="PackedScene" uid="uid://blb3pih2u0bki" path="res://UI/itemBar.tscn" id="23_5cfc2"]
 [ext_resource type="PackedScene" uid="uid://c2vsb1yucffc7" path="res://Characters/Player/player.tscn" id="23_ak72a"]
+[ext_resource type="PackedScene" uid="uid://csl4hi62kxkky" path="res://Characters/Player/Inventory/inventory_gui.tscn" id="23_dcfjn"]
+[ext_resource type="Script" path="res://Characters/Player/Inventory/inventory_gui.gd" id="24_n1e8x"]
 [ext_resource type="Texture2D" uid="uid://bb5qnkclpfanc" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Water well.png" id="24_v2k2c"]
+[ext_resource type="PackedScene" uid="uid://cyj6201c0c5co" path="res://Characters/Player/Inventory/menu_gui.tscn" id="26_xmx72"]
+[ext_resource type="Script" path="res://Characters/Player/Inventory/menu_gui.gd" id="27_l73u8"]
 [ext_resource type="PackedScene" uid="uid://c8kcwnl7dr43i" path="res://objects/harvestable/tree/rock1.tscn" id="28_c04ai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyrjr"]
@@ -3119,7 +3124,7 @@ size = Vector2(27, 11)
 
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_ugdau")
+script = ExtResource("1_ri8ge")
 
 [node name="player" parent="." groups=["player"] instance=ExtResource("23_ak72a")]
 position = Vector2(297, 211)
@@ -3156,8 +3161,27 @@ metadata/_edit_lock_ = true
 position = Vector2(297, 209)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+script = ExtResource("21_qh2v2")
 
 [node name="itemBar" parent="CanvasLayer" instance=ExtResource("23_5cfc2")]
+
+[node name="InventoryGui" parent="CanvasLayer" instance=ExtResource("23_dcfjn")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -43.0
+offset_right = 101.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("24_n1e8x")
+
+[node name="MenuGui" parent="CanvasLayer" instance=ExtResource("26_xmx72")]
+script = ExtResource("27_l73u8")
 
 [node name="Chest" parent="." instance=ExtResource("15_bh0aa")]
 position = Vector2(-396, 89)
@@ -3242,3 +3266,6 @@ position = Vector2(224, 256)
 
 [node name="rockSmall3" parent="." instance=ExtResource("28_c04ai")]
 position = Vector2(339, 182)
+
+[connection signal="closed" from="CanvasLayer/MenuGui" to="." method="_on_menu_gui_closed"]
+[connection signal="opened" from="CanvasLayer/MenuGui" to="." method="_on_menu_gui_opened"]
