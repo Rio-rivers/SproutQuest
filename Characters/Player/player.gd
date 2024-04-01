@@ -91,16 +91,16 @@ func updateAnimations(moveInput : Vector2):
 #used to control when animations switch state
 func  states():
 	#checks for left click
-	if Input.is_action_just_pressed("useTool"):
+	if Input.is_action_just_pressed("useTool") and equippedTool != "None":#
 		usingTool = true
 		
 		if equippedTool == "None":
 			print("no tool")
 		elif equippedTool == "Axe":
-			print("EQUIPPED IS AXE")
+			print("Using AXE")
 			state.travel("swingAxe")
 		elif equippedTool == "Hoe":
-			print("EQUIPPED IS Hoe")
+			print("Using Hoe")
 			state.travel("swingHoe")
 		elif equippedTool == "Pickaxe":
 			print("EQUIPPED IS Pickaxe")
@@ -117,3 +117,4 @@ func  states():
 #used to update equipped item
 func _on_equipped_tool_equipped_item(item):
 	equippedTool = item
+	print("Equipped tool: ", item)

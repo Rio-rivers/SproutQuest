@@ -11,15 +11,18 @@ signal equippedItem(item)
 
 @onready var toolHitBox: Area2D = $Area2D
 
-func _process(delta):
-	pass
 
 var toolName: String = "None"
 
 func setTool(tool):
-	currentTool = tool
-	print(currentTool)
-	equippedItem.emit(currentTool.itemName)
+	if tool == null:
+		currentTool = null
+		toolName = "None"
+	else:
+		currentTool = tool
+		toolName = currentTool.itemName
+	print("SET TOOL: ", toolName)
+	equippedItem.emit(toolName)
 	
 
 func getTool() -> String:

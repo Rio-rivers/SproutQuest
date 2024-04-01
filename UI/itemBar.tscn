@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://blb3pih2u0bki"]
 
 [ext_resource type="Script" path="res://UI/itemBar.gd" id="1_d6l4j"]
-[ext_resource type="PackedScene" uid="uid://dv3vls8nk4wpq" path="res://UI/itemDisplay.tscn" id="2_84t7g"]
+[ext_resource type="PackedScene" uid="uid://dv3vls8nk4wpq" path="res://UI/itemDisplay.tscn" id="2_wumg5"]
 [ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://objects/usableItems/axe.tres" id="4_ca5kg"]
 [ext_resource type="Texture2D" uid="uid://fr4ivwjrrpi0" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/pickaxe.png" id="4_vb156"]
 [ext_resource type="Texture2D" uid="uid://di8t5h347u4hv" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/hoe.png" id="5_uqc02"]
@@ -28,7 +28,7 @@ theme_override_constants/margin_top = 90
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 10
 script = ExtResource("1_d6l4j")
-itemBarTemplate = ExtResource("2_84t7g")
+itemBarTemplate = ExtResource("2_wumg5")
 
 [node name="Grid" type="GridContainer" parent="."]
 layout_mode = 2
@@ -36,23 +36,33 @@ columns = 8
 
 [node name="itemBarButton" parent="Grid" instance=ExtResource("7_8waxm")]
 layout_mode = 2
+mouse_default_cursor_shape = 2
+button_mask = 0
 stretch_mode = 5
 item = ExtResource("4_ca5kg")
 
 [node name="itemBarButton2" parent="Grid" instance=ExtResource("7_8waxm")]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("4_vb156")
 stretch_mode = 5
 item = ExtResource("6_ixf8s")
 
 [node name="itemBarButton3" parent="Grid" instance=ExtResource("7_8waxm")]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_uqc02")
 stretch_mode = 5
 item = ExtResource("8_vr2g3")
 
 [node name="itemBarButton4" parent="Grid" instance=ExtResource("7_8waxm")]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 texture_normal = ExtResource("5_vnw0a")
 stretch_mode = 5
 item = ExtResource("10_d6jf3")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
