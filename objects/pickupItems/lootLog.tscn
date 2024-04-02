@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://si8eiwyh114w"]
 
 [ext_resource type="Script" path="res://objects/pickupItems/loot.gd" id="1_aivnq"]
-[ext_resource type="Resource" uid="uid://cuayh56wuoini" path="res://Characters/Player/Inventory/itemLog.tres" id="2_je1ae"]
+[ext_resource type="Resource" uid="uid://cuayh56wuoini" path="res://UI/items/itemLog.tres" id="2_0ghkr"]
 [ext_resource type="Texture2D" uid="uid://6bxpfrdb6goi" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/tools and materials.png" id="3_t54bt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0fkjm"]
@@ -10,7 +10,7 @@ height = 12.742
 
 [node name="lootLog" type="Area2D"]
 script = ExtResource("1_aivnq")
-item = ExtResource("2_je1ae")
+item = ExtResource("2_0ghkr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_t54bt")

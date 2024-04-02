@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://dwt0o1yxherr4"]
+
+[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_ga2jy"]
+[ext_resource type="Texture2D" uid="uid://cjrxhn2fmurmd" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/tomato.png" id="2_kdbgo"]
+
+[resource]
+script = ExtResource("1_ga2jy")
+displayName = "Tomato"
+texture = ExtResource("2_kdbgo")

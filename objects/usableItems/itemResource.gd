@@ -32,7 +32,7 @@ func harvestResource(damage : int):
 	health -= damage
 	if health <= 0:
 		for item in range(numOfResources):
-			spawnLoot(1)
+			spawnLoot((lootTypes.size()-1))
 		queue_free()
 	
 	
@@ -45,7 +45,6 @@ func randomResourceCount() -> int:
 	else:
 		return 3
 func spawnLoot(lootIndex: int):
-
 	var lootItem: Loot = lootTypes[lootIndex].instantiate() as Loot
 	gameLevel.add_child(lootItem)
 	lootItem.position = position

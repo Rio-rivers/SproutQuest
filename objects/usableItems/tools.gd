@@ -12,6 +12,7 @@ class_name Tool
 func objectInteraction(body):
 	#used in 'itemResource' to see if an object is harvestable
 	if body is itemSource:
+		print("TEST2")
 		# for each type that the tool is apart of
 		for type in toolType:
 			#if the resource object is apart of the same type as the tool do something

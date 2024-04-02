@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_o5pmn")
-harvestableTypeName = ""
+harvestableTypeName = "Mineable"

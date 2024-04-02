@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://csl4hi62kxkky"]
+[gd_scene load_steps=4 format=3 uid="uid://csl4hi62kxkky"]
 
+[ext_resource type="Script" path="res://UI/inventory/inventory_gui.gd" id="1_7dwbg"]
 [ext_resource type="Texture2D" uid="uid://3ys7le0hp47a" path="res://resources/UI/InventoryRect.png" id="1_t8r3t"]
-[ext_resource type="PackedScene" uid="uid://dvo4f6tcucttx" path="res://Characters/Player/Inventory/itemSlotGui.tscn" id="2_y6ghq"]
+[ext_resource type="PackedScene" uid="uid://dvo4f6tcucttx" path="res://UI/inventory/itemSlotGui.tscn" id="2_y6ghq"]
 
 [node name="InventoryGui" type="Control"]
 custom_minimum_size = Vector2(202, 86)
@@ -9,6 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 202.0
 offset_bottom = 86.0
+script = ExtResource("1_7dwbg")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
