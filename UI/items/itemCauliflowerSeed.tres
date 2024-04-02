@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://c8fk7nf8tx1gn"]
+
+[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_p2q06"]
+[ext_resource type="Texture2D" uid="uid://nvny3pt5ce2f" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/cauliflowerSeed.png" id="2_f5gyc"]
+
+[resource]
+script = ExtResource("1_p2q06")
+displayName = "Cauliflower Seed"
+texture = ExtResource("2_f5gyc")

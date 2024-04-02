@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryTwo" load_steps=5 format=3 uid="uid://dhsskgro1cbc2"]
+
+[ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://UI/items/axe.tres" id="1_3tmvo"]
+[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryTwo.gd" id="1_jg2dd"]
+[ext_resource type="Resource" uid="uid://dowolwq8hkkxe" path="res://UI/items/itemMilk.tres" id="2_gcfha"]
+[ext_resource type="Resource" uid="uid://bbnx4uagns3u5" path="res://UI/items/pickaxe.tres" id="3_rm3rg"]
+
+[resource]
+script = ExtResource("1_jg2dd")
+items = [ExtResource("1_3tmvo"), null, ExtResource("3_rm3rg"), ExtResource("2_gcfha"), null, null, null, null]

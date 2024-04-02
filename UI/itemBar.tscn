@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://UI/itemBar.gd" id="1_d6l4j"]
 [ext_resource type="PackedScene" uid="uid://dv3vls8nk4wpq" path="res://UI/itemDisplay.tscn" id="2_wumg5"]
-[ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://objects/usableItems/axe.tres" id="4_ca5kg"]
+[ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://UI/items/axe.tres" id="4_ca5kg"]
 [ext_resource type="Texture2D" uid="uid://fr4ivwjrrpi0" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/pickaxe.png" id="4_vb156"]
 [ext_resource type="Texture2D" uid="uid://di8t5h347u4hv" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/hoe.png" id="5_uqc02"]
 [ext_resource type="Texture2D" uid="uid://c335lc85pvydc" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/wateringCan.png" id="5_vnw0a"]
-[ext_resource type="Resource" uid="uid://bbnx4uagns3u5" path="res://objects/usableItems/pickaxe.tres" id="6_ixf8s"]
+[ext_resource type="Resource" uid="uid://bbnx4uagns3u5" path="res://UI/items/pickaxe.tres" id="6_ixf8s"]
 [ext_resource type="PackedScene" uid="uid://bi76uwuu53jxt" path="res://UI/itemBarButton.tscn" id="7_8waxm"]
-[ext_resource type="Resource" uid="uid://c77b5nlchubf7" path="res://objects/usableItems/hoe.tres" id="8_vr2g3"]
-[ext_resource type="Resource" uid="uid://b4emiwybx68r0" path="res://objects/usableItems/wateringCan.tres" id="10_d6jf3"]
+[ext_resource type="Resource" uid="uid://c77b5nlchubf7" path="res://UI/items/hoe.tres" id="8_vr2g3"]
+[ext_resource type="Resource" uid="uid://b4emiwybx68r0" path="res://UI/items/wateringCan.tres" id="10_d6jf3"]
 
 [node name="itemBar" type="MarginContainer"]
 anchors_preset = 7

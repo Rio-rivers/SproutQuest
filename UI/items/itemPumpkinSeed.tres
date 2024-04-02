@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://b80wpkwoq288"]
+
+[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_o0cfm"]
+[ext_resource type="Texture2D" uid="uid://dwvfkprjdwpbo" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/pumpkinSeed.png" id="2_x2owu"]
+
+[resource]
+script = ExtResource("1_o0cfm")
+displayName = "Pumpkin Seed"
+texture = ExtResource("2_x2owu")

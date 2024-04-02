@@ -1,9 +1,17 @@
-[gd_scene load_steps=57 format=3 uid="uid://c2vsb1yucffc7"]
+[gd_scene load_steps=92 format=3 uid="uid://c2vsb1yucffc7"]
 
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_bcnvt"]
+[ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://UI/items/axe.tres" id="2_7dr7r"]
 [ext_resource type="Texture2D" uid="uid://cyjf3lg86h06a" path="res://resources/Sprout Lands - Sprites - premium pack/Characters/Premium Charakter Spritesheet.png" id="2_up2kb"]
+[ext_resource type="Resource" uid="uid://bbnx4uagns3u5" path="res://UI/items/pickaxe.tres" id="3_5ixm8"]
 [ext_resource type="Script" path="res://objects/usableItems/equipped.gd" id="3_qxyte"]
+[ext_resource type="Resource" uid="uid://dowolwq8hkkxe" path="res://UI/items/itemMilk.tres" id="4_qxi21"]
+[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryTwo.gd" id="5_8m1di"]
 [ext_resource type="Script" path="res://Characters/Player/Inventory/Inventory.gd" id="5_t8pqu"]
+
+[sub_resource type="Resource" id="Resource_khsly"]
+script = ExtResource("5_8m1di")
+items = [null, ExtResource("2_7dr7r"), null, ExtResource("3_5ixm8"), null, ExtResource("4_qxi21"), null, null]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smrcq"]
 size = Vector2(6, 5)
@@ -70,6 +78,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -4)]
+}
 
 [sub_resource type="Animation" id="Animation_2huvf"]
 resource_name = "idleDown"
@@ -86,6 +106,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_4e3d0"]
@@ -104,6 +136,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [16, 17, 18, 19, 20, 21]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_etu1s"]
 resource_name = "idleRight"
@@ -121,6 +165,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [24, 25, 26, 27, 28, 29]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_up6ki"]
 resource_name = "idleUp"
@@ -137,6 +193,342 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [8, 9, 10, 11, 12, 13, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mhljm"]
+resource_name = "pourWateringCanDown"
+length = 1.8
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [192, 193, 194, 195, 196, 197, 198, 199]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EquippedTool/Area2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(3, 16), Vector2(0, 15), Vector2(-1, 13)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EquippedTool/Area2D:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xqinh"]
+resource_name = "pourWateringCanDownEmpty"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [224, 225, 226, 224]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -3)]
+}
+
+[sub_resource type="Animation" id="Animation_dlnsp"]
+resource_name = "pourWateringCanLeft"
+length = 1.6
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [208, 209, 210, 211, 212, 213, 214, 215]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EquippedTool/Area2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-3, 10), Vector2(0, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EquippedTool/Area2D:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_2iixl"]
+resource_name = "pourWateringCanLeftEmpty"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [240, 241, 242, 240]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -3)]
+}
+
+[sub_resource type="Animation" id="Animation_y0av1"]
+resource_name = "pourWateringCanRight"
+length = 1.6
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [216, 217, 218, 219, 220, 221, 222, 223]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EquippedTool/Area2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(13, 11), Vector2(10, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, -5), Vector2(0, -4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EquippedTool/Area2D:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_6ennb"]
+resource_name = "pourWateringCanRightEmpty"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [248, 249, 250, 248]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -4)]
+}
+
+[sub_resource type="Animation" id="Animation_s48aa"]
+resource_name = "pourWateringCanUp"
+length = 1.6
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [200, 201, 202, 203, 204, 205, 206, 207]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EquippedTool/Area2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(7, 4), Vector2(9, 5), Vector2(9, 7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EquippedTool/Area2D:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_4q8xd"]
+resource_name = "pourWateringCanUpEmpty"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [232, 233, 234, 232]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -3)]
 }
 
 [sub_resource type="Animation" id="Animation_tno15"]
@@ -179,6 +571,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -1)]
+}
 
 [sub_resource type="Animation" id="Animation_6xp27"]
 resource_name = "swingAxeLeft"
@@ -206,7 +610,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(-2, 2), Vector2(16, 4), Vector2(17, 5), Vector2(-2, 12)]
+"values": [Vector2(-2, 2), Vector2(16, 4), Vector2(17, 5), Vector2(-2, 10)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -219,6 +623,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_nqeqc"]
@@ -247,7 +663,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(9, 2), Vector2(-10, 4), Vector2(-11, 4), Vector2(10, 12)]
+"values": [Vector2(9, 2), Vector2(-10, 4), Vector2(-11, 4), Vector2(11, 10)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -260,6 +676,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_sfx4a"]
@@ -288,7 +716,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.8, 1.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(18, 3), Vector2(15, 15), Vector2(6, 7), Vector2(5, 7)]
+"values": [Vector2(18, 3), Vector2(15, 15), Vector2(6, 5), Vector2(7, 5)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -301,6 +729,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
 }
 
 [sub_resource type="Animation" id="Animation_qsop5"]
@@ -366,6 +806,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Body:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, -1), Vector2(0, 2)]
+}
 
 [sub_resource type="Animation" id="Animation_76kao"]
 resource_name = "swingHoeLeft"
@@ -393,7 +845,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.8, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(-9, -2), Vector2(8, -9), Vector2(10, -8), Vector2(-3, 12), Vector2(-2, 12)]
+"values": [Vector2(-9, -2), Vector2(8, -9), Vector2(10, -8), Vector2(-3, 12), Vector2(0, 12)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -406,6 +858,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -1)]
 }
 
 [sub_resource type="Animation" id="Animation_brjpj"]
@@ -434,7 +898,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.8, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(15, -2), Vector2(-2, -10), Vector2(-4, -8), Vector2(11, 12), Vector2(10, 12)]
+"values": [Vector2(15, -2), Vector2(-2, -10), Vector2(-4, -8), Vector2(12, 10), Vector2(10, 10)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -447,6 +911,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -1)]
 }
 
 [sub_resource type="Animation" id="Animation_rhbfs"]
@@ -472,10 +948,10 @@ tracks/1/path = NodePath("EquippedTool/Area2D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Vector2(6, 7), Vector2(6, -7), Vector2(6, -8), Vector2(6, 7), Vector2(5, 7)]
+"values": [Vector2(7, 4), Vector2(6, -8), Vector2(6, 4), Vector2(7, 5)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -485,6 +961,230 @@ tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.8, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Body:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+
+[sub_resource type="Animation" id="Animation_duqgh"]
+resource_name = "swingPickaxeDown"
+length = 1.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [160, 161, 162, 163, 164, 166, 167]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EquippedTool/Area2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.015728, 0.2, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(3, 16), Vector2(1, 13), Vector2(1, 0), Vector2(3, 16), Vector2(3, 14)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, -6), Vector2(0, -3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EquippedTool/Area2D:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_c0jv0"]
+resource_name = "swingPickaxeLeft"
+length = 1.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [176, 177, 178, 179, 180, 181, 182]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -6)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EquippedTool/Area2D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EquippedTool/Area2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3, 10), Vector2(0, 10)]
+}
+
+[sub_resource type="Animation" id="Animation_d4fd4"]
+resource_name = "swingPickaxeRight"
+length = 1.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [184, 185, 186, 187, 188, 189, 190]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EquippedTool/Area2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(15, 4), Vector2(-3, -1), Vector2(13, 10), Vector2(10, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, -6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EquippedTool/Area2D:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_2orkd"]
+resource_name = "swingPickaxeUp"
+length = 1.4
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [168, 169, 170, 171, 172, 173, 174]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EquippedTool/Area2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(6, 7), Vector2(7, -2), Vector2(7, 5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Body:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, -6), Vector2(0, -3)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EquippedTool/Area2D:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.4),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -506,6 +1206,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [32, 33, 34, 35, 36, 37, 38, 39]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_gkuro"]
 resource_name = "walkLeft"
@@ -522,6 +1234,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [56, 57, 58, 59, 60, 61, 62, 63]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_6p3jo"]
@@ -540,6 +1264,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [48, 49, 50, 51, 52, 53, 54, 55]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_t12tr"]
 resource_name = "walkUp"
@@ -557,6 +1293,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [40, 41, 42, 43, 44, 45, 46, 47]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Body:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vxo6r"]
 _data = {
@@ -565,6 +1313,14 @@ _data = {
 "idleLeft": SubResource("Animation_4e3d0"),
 "idleRight": SubResource("Animation_etu1s"),
 "idleUp": SubResource("Animation_up6ki"),
+"pourWateringCanDown": SubResource("Animation_mhljm"),
+"pourWateringCanDownEmpty": SubResource("Animation_xqinh"),
+"pourWateringCanLeft": SubResource("Animation_dlnsp"),
+"pourWateringCanLeftEmpty": SubResource("Animation_2iixl"),
+"pourWateringCanRight": SubResource("Animation_y0av1"),
+"pourWateringCanRightEmpty": SubResource("Animation_6ennb"),
+"pourWateringCanUp": SubResource("Animation_s48aa"),
+"pourWateringCanUpEmpty": SubResource("Animation_4q8xd"),
 "swingAxeDown": SubResource("Animation_tno15"),
 "swingAxeLeft": SubResource("Animation_6xp27"),
 "swingAxeRight": SubResource("Animation_nqeqc"),
@@ -573,6 +1329,10 @@ _data = {
 "swingHoeLeft": SubResource("Animation_76kao"),
 "swingHoeRight": SubResource("Animation_brjpj"),
 "swingHoeUp": SubResource("Animation_rhbfs"),
+"swingPickaxeDown": SubResource("Animation_duqgh"),
+"swingPickaxeLeft": SubResource("Animation_c0jv0"),
+"swingPickaxeRight": SubResource("Animation_d4fd4"),
+"swingPickaxeUp": SubResource("Animation_2orkd"),
 "walkDown": SubResource("Animation_kyg27"),
 "walkLeft": SubResource("Animation_gkuro"),
 "walkRight": SubResource("Animation_6p3jo"),
@@ -602,6 +1362,29 @@ blend_point_3/node = SubResource("AnimationNodeAnimation_yvmis")
 blend_point_3/pos = Vector2(1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_agpw5"]
+animation = &"pourWateringCanDown"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ub757"]
+animation = &"pourWateringCanUp"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i8117"]
+animation = &"pourWateringCanRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hsks0"]
+animation = &"pourWateringCanLeft"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_3y1ii"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_agpw5")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_ub757")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_i8117")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_hsks0")
+blend_point_3/pos = Vector2(-1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e4xne"]
@@ -648,6 +1431,29 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_eh2mi")
 blend_point_2/pos = Vector2(0, 1)
 blend_point_3/node = SubResource("AnimationNodeAnimation_uc5rc")
 blend_point_3/pos = Vector2(0, -1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iy5bu"]
+animation = &"swingPickaxeDown"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yjppu"]
+animation = &"swingPickaxeUp"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_04uqp"]
+animation = &"swingPickaxeLeft"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_m77oh"]
+animation = &"swingPickaxeRight"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_5vy5w"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_iy5bu")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_yjppu")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_04uqp")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_m77oh")
+blend_point_3/pos = Vector2(1, 0)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ofnxl"]
@@ -702,18 +1508,42 @@ switch_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y3tjl"]
 switch_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uiptj"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dinnu"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dsi3m"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pu5uf"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0s6tu"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6gvrn"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8cgvf"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_llqem"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_lba0c"]
 states/End/position = Vector2(902, 100)
 states/idle/node = SubResource("AnimationNodeBlendSpace2D_o8ygt")
 states/idle/position = Vector2(371, 100)
+states/pourWateringCan/node = SubResource("AnimationNodeBlendSpace2D_3y1ii")
+states/pourWateringCan/position = Vector2(569, -78)
 states/swingAxe/node = SubResource("AnimationNodeBlendSpace2D_b87la")
-states/swingAxe/position = Vector2(439, -20)
+states/swingAxe/position = Vector2(273, -78)
 states/swingHoe/node = SubResource("AnimationNodeBlendSpace2D_3s4ak")
-states/swingHoe/position = Vector2(444, 266)
+states/swingHoe/position = Vector2(634, 253)
+states/swingPickaxe/node = SubResource("AnimationNodeBlendSpace2D_5vy5w")
+states/swingPickaxe/position = Vector2(312, 253)
 states/walking/node = SubResource("AnimationNodeBlendSpace2D_ftncq")
 states/walking/position = Vector2(510, 100)
-transitions = ["idle", "walking", SubResource("AnimationNodeStateMachineTransition_dv5pq"), "walking", "idle", SubResource("AnimationNodeStateMachineTransition_uqvbd"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_b5buw"), "swingAxe", "walking", SubResource("AnimationNodeStateMachineTransition_0gcl3"), "walking", "swingAxe", SubResource("AnimationNodeStateMachineTransition_hnpfr"), "idle", "swingAxe", SubResource("AnimationNodeStateMachineTransition_4fkid"), "swingAxe", "idle", SubResource("AnimationNodeStateMachineTransition_tq2p4"), "idle", "swingHoe", SubResource("AnimationNodeStateMachineTransition_xsi84"), "walking", "swingHoe", SubResource("AnimationNodeStateMachineTransition_rdkup"), "swingHoe", "idle", SubResource("AnimationNodeStateMachineTransition_x72mv"), "swingHoe", "walking", SubResource("AnimationNodeStateMachineTransition_y3tjl")]
-graph_offset = Vector2(-264, -85)
+transitions = ["idle", "walking", SubResource("AnimationNodeStateMachineTransition_dv5pq"), "walking", "idle", SubResource("AnimationNodeStateMachineTransition_uqvbd"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_b5buw"), "swingAxe", "walking", SubResource("AnimationNodeStateMachineTransition_0gcl3"), "walking", "swingAxe", SubResource("AnimationNodeStateMachineTransition_hnpfr"), "idle", "swingAxe", SubResource("AnimationNodeStateMachineTransition_4fkid"), "swingAxe", "idle", SubResource("AnimationNodeStateMachineTransition_tq2p4"), "idle", "swingHoe", SubResource("AnimationNodeStateMachineTransition_xsi84"), "walking", "swingHoe", SubResource("AnimationNodeStateMachineTransition_rdkup"), "swingHoe", "idle", SubResource("AnimationNodeStateMachineTransition_x72mv"), "swingHoe", "walking", SubResource("AnimationNodeStateMachineTransition_y3tjl"), "idle", "swingPickaxe", SubResource("AnimationNodeStateMachineTransition_uiptj"), "swingPickaxe", "idle", SubResource("AnimationNodeStateMachineTransition_dinnu"), "walking", "swingPickaxe", SubResource("AnimationNodeStateMachineTransition_dsi3m"), "swingPickaxe", "walking", SubResource("AnimationNodeStateMachineTransition_pu5uf"), "pourWateringCan", "walking", SubResource("AnimationNodeStateMachineTransition_0s6tu"), "pourWateringCan", "idle", SubResource("AnimationNodeStateMachineTransition_6gvrn"), "idle", "pourWateringCan", SubResource("AnimationNodeStateMachineTransition_8cgvf"), "walking", "pourWateringCan", SubResource("AnimationNodeStateMachineTransition_llqem")]
+graph_offset = Vector2(-351, -123)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k3srj"]
 radius = 2.0
@@ -726,9 +1556,11 @@ y_sort_enabled = true
 floor_snap_length = 0.0
 platform_floor_layers = 4294967294
 script = ExtResource("1_bcnvt")
+inventory = SubResource("Resource_khsly")
 
 [node name="Body" type="Sprite2D" parent="."]
 y_sort_enabled = true
+position = Vector2(0, -4)
 texture = ExtResource("2_up2kb")
 offset = Vector2(0, -7)
 hframes = 8
@@ -751,8 +1583,10 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_lba0c")
 anim_player = NodePath("../AnimationPlayer")
 parameters/idle/blend_position = Vector2(0.225397, -0.0977077)
+parameters/pourWateringCan/blend_position = Vector2(0, 0)
 parameters/swingAxe/blend_position = Vector2(-0.24086, 0.597884)
 parameters/swingHoe/blend_position = Vector2(0, 0.00529099)
+parameters/swingPickaxe/blend_position = Vector2(0, 0)
 parameters/walking/blend_position = Vector2(-0.377778, 0.293123)
 
 [node name="EquippedTool" type="Node2D" parent="."]
@@ -765,7 +1599,7 @@ position = Vector2(6, 7)
 monitoring = false
 
 [node name="toolCollision" type="CollisionShape2D" parent="EquippedTool/Area2D"]
-position = Vector2(-4, 0)
+position = Vector2(-5, 1.5)
 shape = SubResource("CapsuleShape2D_k3srj")
 
 [node name="Inventory" type="Node" parent="."]

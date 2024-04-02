@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://d131v8xynbt2l"]
+[gd_scene load_steps=52 format=3 uid="uid://d131v8xynbt2l"]
 
 [ext_resource type="Script" path="res://Levels/gameLevel.gd" id="1_ri8ge"]
 [ext_resource type="Texture2D" uid="uid://8i601qo61b40" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Grass.png" id="2_tsb1t"]
@@ -21,19 +21,15 @@
 [ext_resource type="Texture2D" uid="uid://da6r327efy21s" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Fence gates animation sprites .png" id="12_2sjwu"]
 [ext_resource type="Texture2D" uid="uid://e36reqmt466j" path="res://resources/UI/Book.png" id="12_h5cf3"]
 [ext_resource type="PackedScene" uid="uid://dh3qbpkoi4jnv" path="res://Characters/Animals/chicken.tscn" id="14_tuuns"]
-[ext_resource type="PackedScene" uid="uid://diuuboif2lwnd" path="res://objects/inanimate/chest.tscn" id="15_bh0aa"]
-[ext_resource type="PackedScene" uid="uid://cfsa66xi3ffcp" path="res://objects/inanimate/bed.tscn" id="15_jkrj8"]
 [ext_resource type="Script" path="res://UI/GUI.gd" id="21_qh2v2"]
 [ext_resource type="PackedScene" uid="uid://cq1b2b0s7tlto" path="res://Characters/Animals/Cow.tscn" id="21_y0hxe"]
-[ext_resource type="PackedScene" uid="uid://m08rw38ol2ep" path="res://objects/harvestable/tree/tree.tscn" id="23_0ik4y"]
+[ext_resource type="PackedScene" uid="uid://m08rw38ol2ep" path="res://objects/harvestable/resources/tree.tscn" id="23_0ik4y"]
 [ext_resource type="PackedScene" uid="uid://blb3pih2u0bki" path="res://UI/itemBar.tscn" id="23_5cfc2"]
 [ext_resource type="PackedScene" uid="uid://c2vsb1yucffc7" path="res://Characters/Player/player.tscn" id="23_ak72a"]
-[ext_resource type="PackedScene" uid="uid://csl4hi62kxkky" path="res://Characters/Player/Inventory/inventory_gui.tscn" id="23_dcfjn"]
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventory_gui.gd" id="24_n1e8x"]
+[ext_resource type="PackedScene" uid="uid://csl4hi62kxkky" path="res://UI/inventory/inventory_gui.tscn" id="23_dcfjn"]
 [ext_resource type="Texture2D" uid="uid://bb5qnkclpfanc" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Water well.png" id="24_v2k2c"]
-[ext_resource type="PackedScene" uid="uid://cyj6201c0c5co" path="res://Characters/Player/Inventory/menu_gui.tscn" id="26_xmx72"]
-[ext_resource type="Script" path="res://Characters/Player/Inventory/menu_gui.gd" id="27_l73u8"]
-[ext_resource type="PackedScene" uid="uid://c8kcwnl7dr43i" path="res://objects/harvestable/tree/rock1.tscn" id="28_c04ai"]
+[ext_resource type="PackedScene" uid="uid://cyj6201c0c5co" path="res://UI/menu/menu_gui.tscn" id="26_xmx72"]
+[ext_resource type="PackedScene" uid="uid://c8kcwnl7dr43i" path="res://objects/harvestable/resources/rock1.tscn" id="28_c04ai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cyrjr"]
 texture = ExtResource("2_tsb1t")
@@ -3164,6 +3160,12 @@ position = Vector2(297, 209)
 process_mode = 3
 script = ExtResource("21_qh2v2")
 
+[node name="MenuGui" parent="CanvasLayer" instance=ExtResource("26_xmx72")]
+offset_left = -23.947
+offset_top = 8.75368
+offset_right = 178.053
+offset_bottom = 94.7537
+
 [node name="itemBar" parent="CanvasLayer" instance=ExtResource("23_5cfc2")]
 
 [node name="InventoryGui" parent="CanvasLayer" instance=ExtResource("23_dcfjn")]
@@ -3178,73 +3180,21 @@ offset_right = 101.0
 offset_bottom = 43.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("24_n1e8x")
-
-[node name="MenuGui" parent="CanvasLayer" instance=ExtResource("26_xmx72")]
-script = ExtResource("27_l73u8")
-
-[node name="Chest" parent="." instance=ExtResource("15_bh0aa")]
-position = Vector2(-396, 89)
-
-[node name="bed" parent="." instance=ExtResource("15_jkrj8")]
-position = Vector2(-358, 138)
 
 [node name="chicken" parent="." instance=ExtResource("14_tuuns")]
-position = Vector2(749, 259)
-
-[node name="chicken2" parent="." instance=ExtResource("14_tuuns")]
-position = Vector2(712, 197)
-
-[node name="chicken3" parent="." instance=ExtResource("14_tuuns")]
-position = Vector2(772, 164)
-
-[node name="chicken4" parent="." instance=ExtResource("14_tuuns")]
-position = Vector2(753, 124)
+position = Vector2(474, 206)
 
 [node name="cow" parent="." instance=ExtResource("21_y0hxe")]
-position = Vector2(474, 74)
-
-[node name="cow2" parent="." instance=ExtResource("21_y0hxe")]
-position = Vector2(586, 349)
-
-[node name="cow3" parent="." instance=ExtResource("21_y0hxe")]
-position = Vector2(533, 206)
-
-[node name="cow4" parent="." instance=ExtResource("21_y0hxe")]
-position = Vector2(665, 286)
+position = Vector2(478, 248)
 
 [node name="treeItem" parent="." instance=ExtResource("23_0ik4y")]
-position = Vector2(28, 147)
-
-[node name="treeItem5" parent="." instance=ExtResource("23_0ik4y")]
-position = Vector2(5, 273)
-
-[node name="treeItem3" parent="." instance=ExtResource("23_0ik4y")]
-position = Vector2(80, 88)
-
-[node name="treeItem4" parent="." instance=ExtResource("23_0ik4y")]
-position = Vector2(59, 332)
-
-[node name="treeItem6" parent="." instance=ExtResource("23_0ik4y")]
-position = Vector2(676, 43)
-
-[node name="treeItem7" parent="." instance=ExtResource("23_0ik4y")]
-position = Vector2(146, 55)
+position = Vector2(228, 217)
 
 [node name="treeItem2" parent="." instance=ExtResource("23_0ik4y")]
-position = Vector2(135, 147)
+position = Vector2(170, 242)
 
-[node name="treeItem8" parent="." instance=ExtResource("23_0ik4y")]
-position = Vector2(26, 420)
-
-[node name="treeItem9" parent="." instance=ExtResource("23_0ik4y")]
-position = Vector2(-63, 92)
-
-[node name="treeItem10" parent="." instance=ExtResource("23_0ik4y")]
-position = Vector2(-103, 212)
-
-[node name="treeItem11" parent="." instance=ExtResource("23_0ik4y")]
-position = Vector2(-120, 351)
+[node name="treeItem3" parent="." instance=ExtResource("23_0ik4y")]
+position = Vector2(179, 186)
 
 [node name="well" type="StaticBody2D" parent="."]
 y_sort_enabled = true
@@ -3266,6 +3216,3 @@ position = Vector2(224, 256)
 
 [node name="rockSmall3" parent="." instance=ExtResource("28_c04ai")]
 position = Vector2(339, 182)
-
-[connection signal="closed" from="CanvasLayer/MenuGui" to="." method="_on_menu_gui_closed"]
-[connection signal="opened" from="CanvasLayer/MenuGui" to="." method="_on_menu_gui_opened"]

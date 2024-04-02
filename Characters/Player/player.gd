@@ -9,6 +9,8 @@ class_name Player
 #Speed
 @export var moveSpeed: float = 80
 
+@export var inventory:InventoryTwo
+
 #when script starts, node is accessed
 @onready var animationTree = $AnimationTree
 
@@ -26,7 +28,7 @@ var pushStrength = 3000
 var usingTool = false
 
 # array of animation states. used to stop movement whilst tool/usable item animation is running
-var restrictedStates = ["swingHoe","swingAxe","swingPickaxe","tiltWateringCan"]
+var restrictedStates = ["swingHoe","swingAxe","swingPickaxe","pourWateringCan"]
 
 func _ready():
 	add_to_group("players")
@@ -85,6 +87,8 @@ func updateAnimations(moveInput : Vector2):
 			animationTree.set("parameters/walking/blend_position",moveInput)
 			animationTree.set("parameters/swingAxe/blend_position",moveInput)
 			animationTree.set("parameters/swingHoe/blend_position",moveInput)
+			animationTree.set("parameters/swingPickaxe/blend_position",moveInput)
+			animationTree.set("parameters/pourWateringCan/blend_position",moveInput)
 		
 	
 
@@ -106,7 +110,7 @@ func  states():
 			print("EQUIPPED IS Pickaxe")
 			state.travel("swingPickaxe")
 		elif equippedTool == "Watering Can":
-			state.travel("water")
+			state.travel("pourWateringCan")
 			
 	elif(velocity!=Vector2.ZERO):
 		state.travel("walking")
