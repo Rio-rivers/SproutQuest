@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://cx4gon66eyg43"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cx4gon66eyg43"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_rxsy1"]
 [ext_resource type="Texture2D" uid="uid://fpf2efn8pekq" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/cabbageSeed.png" id="2_oeakp"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_ybvno"]
 
 [resource]
-script = ExtResource("1_rxsy1")
-displayName = "Cabbage Seed"
-texture = ExtResource("2_oeakp")
+script = ExtResource("2_ybvno")
+itemImage = ExtResource("2_oeakp")
+itemName = "Cabbage Seed"

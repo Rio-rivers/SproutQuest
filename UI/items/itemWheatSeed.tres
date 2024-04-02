@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://b2yaihq12ibgs"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b2yaihq12ibgs"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_b2cwb"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_skgv0"]
 [ext_resource type="Texture2D" uid="uid://c8nnewsjwv2lb" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/wheatSeed.png" id="2_ycjwh"]
 
 [resource]
-script = ExtResource("1_b2cwb")
-displayName = "Wheat Seed"
-texture = ExtResource("2_ycjwh")
+script = ExtResource("2_skgv0")
+itemImage = ExtResource("2_ycjwh")
+itemName = "Wheat Seed"

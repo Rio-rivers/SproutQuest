@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://be06tgveju88d"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://be06tgveju88d"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_0r3uy"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_2lvlx"]
 [ext_resource type="Texture2D" uid="uid://bi1frljnchmc5" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/pumpkin.png" id="2_elbrc"]
 
 [resource]
-script = ExtResource("1_0r3uy")
-displayName = "Pumpkin"
-texture = ExtResource("2_elbrc")
+script = ExtResource("2_2lvlx")
+itemImage = ExtResource("2_elbrc")
+itemName = "Pumpkin"

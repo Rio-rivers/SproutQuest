@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://m8mqdj0x1ove"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://m8mqdj0x1ove"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_wauep"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_6neek"]
 [ext_resource type="Texture2D" uid="uid://4u5fxybmmokc" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/egg1.png" id="2_npgqj"]
 
 [resource]
-script = ExtResource("1_wauep")
-displayName = "Egg"
-texture = ExtResource("2_npgqj")
+script = ExtResource("2_6neek")
+itemImage = ExtResource("2_npgqj")
+itemName = "Egg"

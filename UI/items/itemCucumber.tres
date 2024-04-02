@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://bsysd80j03r0e"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bsysd80j03r0e"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_vi5k0"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_gowvu"]
 [ext_resource type="Texture2D" uid="uid://b5tm0fixdfvxb" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/cucumber.png" id="2_hvxdr"]
 
 [resource]
-script = ExtResource("1_vi5k0")
-displayName = "Cucumber"
-texture = ExtResource("2_hvxdr")
+script = ExtResource("2_gowvu")
+itemImage = ExtResource("2_hvxdr")
+itemName = "Cucumber"

@@ -1,6 +1,7 @@
+Panel
+CenterContainer
 Sprite2D
 GridContainer
-Panel
 NinePatchRect
 Control
 TextureRect
@@ -11,4 +12,3 @@ CollisionShape2D
 CanvasLayer
 MarginContainer
 Label
-HBoxContainer

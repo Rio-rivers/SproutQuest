@@ -67,8 +67,8 @@ func buttonPressed(buttonNumber):
 	
 		
 
-func _on_itemDisplay_changed(item:InventoryItem, numOfItem: int) ->void:
-	print("display name: "+ item.displayName + " count: "+ str(numOfItem))
+func _on_itemDisplay_changed(item:Item, numOfItem: int) ->void:
+	print("display name: "+ item.itemName + " count: "+ str(numOfItem))
 	
 	# checks item already exists within itemBar else: create
 	var currentItemDisplay: ItemDisplay

@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://c836pil53pc30"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c836pil53pc30"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_mrahh"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_pcw3f"]
 [ext_resource type="Texture2D" uid="uid://ba3d0mk2ro665" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/cauliflower.png" id="2_pocpw"]
 
 [resource]
-script = ExtResource("1_mrahh")
-displayName = "Cauliflower"
-texture = ExtResource("2_pocpw")
+script = ExtResource("2_pcw3f")
+itemImage = ExtResource("2_pocpw")
+itemName = "Cauliflower"

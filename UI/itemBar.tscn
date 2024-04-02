@@ -29,6 +29,7 @@ theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 10
 script = ExtResource("1_d6l4j")
 itemBarTemplate = ExtResource("2_wumg5")
+scrollTimer = null
 
 [node name="Grid" type="GridContainer" parent="."]
 layout_mode = 2

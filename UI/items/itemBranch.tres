@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cqgd8ymtks4yn"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cqgd8ymtks4yn"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_ybw0e"]
 [ext_resource type="Texture2D" uid="uid://dhrguuo7th5vy" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/branch.png" id="2_188nu"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_f4hei"]
 
 [resource]
-script = ExtResource("1_ybw0e")
-displayName = "Branch"
-texture = ExtResource("2_188nu")
+script = ExtResource("2_f4hei")
+itemImage = ExtResource("2_188nu")
+itemName = "Branch"
