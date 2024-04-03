@@ -1,110 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://cyj6201c0c5co"]
+[gd_scene load_steps=3 format=3 uid="uid://cyj6201c0c5co"]
 
 [ext_resource type="Texture2D" uid="uid://3ys7le0hp47a" path="res://resources/UI/InventoryRect.png" id="1_i6n7e"]
 [ext_resource type="Script" path="res://UI/menu/menu_gui.gd" id="1_ykhx2"]
-[ext_resource type="PackedScene" uid="uid://dvo4f6tcucttx" path="res://UI/inventory/itemSlotGui.tscn" id="2_0qrhh"]
 
-[node name="MenuGui" type="Control"]
-custom_minimum_size = Vector2(202, 86)
+[node name="menuGUI" type="Control"]
+custom_minimum_size = Vector2(139, 161)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 202.0
-offset_bottom = 86.0
+offset_right = 139.0
+offset_bottom = 161.0
 script = ExtResource("1_ykhx2")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 202.0
-offset_bottom = 86.0
+offset_right = 138.0
+offset_bottom = 161.0
 texture = ExtResource("1_i6n7e")
 patch_margin_left = 6
 patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+[node name="MenuBar" type="MenuBar" parent="NinePatchRect"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 133.0
+offset_bottom = 157.0
+
+[node name="MenuButton" type="MenuButton" parent="NinePatchRect/MenuBar"]
+custom_minimum_size = Vector2(129, 31)
+layout_mode = 1
+anchors_preset = 14
 anchor_top = 0.5
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -94.0
-offset_top = -34.0
-offset_right = 94.0
-offset_bottom = 34.0
+offset_top = -15.5
+offset_bottom = 15.5
 grow_horizontal = 2
 grow_vertical = 2
-columns = 8
-
-[node name="Panel" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel3" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel4" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel5" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel6" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel7" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel8" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel9" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel10" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel11" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel12" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel13" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel14" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel15" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel16" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel17" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel18" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel19" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel20" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel21" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel22" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel23" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
-
-[node name="Panel24" parent="NinePatchRect/GridContainer" instance=ExtResource("2_0qrhh")]
-layout_mode = 2
+text = "Button"

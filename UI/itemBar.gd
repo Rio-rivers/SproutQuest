@@ -6,9 +6,10 @@ extends MarginContainer
 @onready var timer = $Timer
 #find player
 @onready var player: Player = get_tree().get_first_node_in_group("players")
+#@onready var playerInventory: InventoryTwo = preload("res://Characters/Player/Inventory/playerInventory.tres")
 var itemsInItemBar: Array[ItemDisplay]
 var equip : Equip
-var playerInventory: Inventory
+#var playerInventory: InventoryTwo
 var selectedSlot = 0
 var canScroll = true
 
@@ -16,8 +17,9 @@ var canScroll = true
 func _ready():
 	if player:
 		#finds the class name of player's inventory node
-		playerInventory = player.find_child("Inventory") as Inventory
-		playerInventory.connect("itemCountUpdate",_on_itemDisplay_changed)
+		#playerInventory = player.find_child("Inventory") as Inventory
+		
+		#playerInventory.connect("itemCountUpdate",_on_itemDisplay_changed)
 		equip = player.find_child("EquippedTool")
 		
 		#checks the itembar for usable items

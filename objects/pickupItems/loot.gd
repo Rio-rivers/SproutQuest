@@ -28,8 +28,12 @@ func bounce():
 	moveVelocity = moveDirection * moveSpeed
 	moving = true
 	
-func _on_area_2d_body_entered(body: Node2D):
-	var inventory = body.find_child("Inventory")
-	if inventory:
-			inventory.addItemsToInventory(item,1)
-			queue_free()
+func _on_area_2d_body_entered(body: CharacterBody2D):
+	body.collectItem(item,1)
+	queue_free()
+	
+#func _on_area_2d_body_entered(body: Node2D):
+	#var inventory = body.find_child("Inventory")
+	#if inventory:
+			#inventory.addItemsToInventory(item,1)
+			#queue_free()
