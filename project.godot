@@ -21,6 +21,7 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/scale=4.0
+mouse_cursor/custom_image="res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Mouse sprites/Arrow Mouse icon 4.png"
 
 [editor]
 

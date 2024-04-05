@@ -3,6 +3,8 @@ extends MarginContainer
 @export var itemBarTemplate : PackedScene
 @export var scrollTimer : float = 0.2
 @onready var displayGrid: GridContainer = $Grid
+@onready var slots:Array = $Grid.get_children()
+@onready var selectedIcon = $Sprite2D
 @onready var timer = $Timer
 #find player
 @onready var player: Player = get_tree().get_first_node_in_group("players")
@@ -42,6 +44,7 @@ func _unhandled_input(event):
 			canScroll = false
 			timer.start(scrollTimer)
 			selectedSlot = selectedSlot - 1 if selectedSlot > 1 else 8
+			
 			buttonPressed(selectedSlot)
 		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
 			canScroll = false
@@ -49,7 +52,9 @@ func _unhandled_input(event):
 			selectedSlot = selectedSlot + 1 if selectedSlot < 8 else 1
 			buttonPressed(selectedSlot)
 			
-
+func moveSelectedIcon(slotIndex):
+	selectedIcon.global_position = slots[slotIndex].global_position
+	
 func buttonPressed(buttonNumber):
 	var children = $Grid.get_children()
 	print("item bar button pressed: ", buttonNumber)

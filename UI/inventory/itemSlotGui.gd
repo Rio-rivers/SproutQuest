@@ -1,49 +1,34 @@
 #this file deals with each slot visually
-extends Panel
+extends Button
 
 class_name Slots
 
 @onready var backgroundImage: Sprite2D = $background
-@onready var itemImage: Sprite2D = $CenterContainer/Panel/item
-@onready var itemLabel: Label = $CenterContainer/Panel/Label
-var storedItem: Item = null
-var itemCount = 0
+@onready var itemContainer: CenterContainer = $CenterContainer
 
-func getStoredItem()-> Item:
+var itemInSlot: ItemInSlot 
+var storedItem: ItemInSlot = null
+
+
+func getStoredItem()-> ItemInSlot:
 	return storedItem
 	
-func is_empty() -> bool:
+func isEmpty() -> bool:
 	return storedItem == null
 	
-func clearSlot() -> void:
+func clearSlot(item:ItemInSlot) -> void:
+	if storedItem:
+		itemContainer.remove_child(item)
 	storedItem = null
-	itemCount = 0
-	itemImage.visible = false
 	backgroundImage.frame = 0
-	itemLabel.visible = false
 	
-func updateSlot(item: Item,numOfItem:int):
+func insertSlot(item:ItemInSlot):
 
 	if item:
+		itemInSlot = item
 		storedItem = item
-		itemCount = numOfItem
-		itemImage.visible= true
-		itemImage.texture= item.itemImage
 		backgroundImage.frame = 1
-		itemLabel.text = str(numOfItem)
-		itemLabel.visible = true
-		print("UPDATE SLOT: ", item.itemName, itemCount)
-	else:
-		itemImage.visible = false
+		itemContainer.add_child(item)
+	else: 
 		backgroundImage.frame = 0
 		
-func addToSlot(item: Item,_numOfItem:int):
-	print("ADD SLOT")
-	if item:
-		storedItem = item
-		itemImage.visible= true
-		itemImage.texture= item.itemImage
-		backgroundImage.frame = 1
-	else:
-		itemImage.visible = false
-		backgroundImage.frame = 0

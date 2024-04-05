@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://UI/inventory/itemSlotGui.gd" id="1_jno6j"]
 [ext_resource type="Texture2D" uid="uid://dirqt4em12p3s" path="res://resources/UI/inventorySlot.png" id="1_q3h0k"]
 
-[node name="Slot" type="Panel"]
+[node name="Slot" type="Button"]
 self_modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(20, 20)
 offset_right = 20.0
@@ -19,20 +19,3 @@ vframes = 2
 layout_mode = 0
 offset_right = 20.0
 offset_bottom = 20.0
-
-[node name="Panel" type="Panel" parent="CenterContainer"]
-layout_mode = 2
-
-[node name="item" type="Sprite2D" parent="CenterContainer/Panel"]
-
-[node name="Label" type="Label" parent="CenterContainer/Panel"]
-custom_minimum_size = Vector2(7, 9)
-layout_mode = 0
-offset_left = 1.0
-offset_top = 3.0
-offset_right = 8.0
-offset_bottom = 12.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 5
-text = "9"
-horizontal_alignment = 2

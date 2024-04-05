@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://bj4ryjibv5mb1"]
+
+[ext_resource type="Texture2D" uid="uid://3ys7le0hp47a" path="res://resources/UI/InventoryRect.png" id="1_tdi2t"]
+[ext_resource type="Script" path="res://UI/hotbar/hotbar.gd" id="2_omc87"]
+[ext_resource type="PackedScene" uid="uid://b4pw8vhofk64s" path="res://UI/hotbar/hotbarSlotGui.tscn" id="2_r6x1j"]
+[ext_resource type="Texture2D" uid="uid://bqmcrmx07wg37" path="res://resources/UI/hotbar_selector.png" id="4_463ql"]
+
+[node name="Hotbar" type="NinePatchRect"]
+custom_minimum_size = Vector2(200, 32)
+offset_right = 200.0
+offset_bottom = 32.0
+texture = ExtResource("1_tdi2t")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("2_omc87")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 194.0
+offset_bottom = 26.0
+
+[node name="container" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 195.0
+offset_bottom = 22.0
+alignment = 1
+
+[node name="hotbarSlot" parent="Panel/container" instance=ExtResource("2_r6x1j")]
+layout_mode = 2
+
+[node name="hotbarSlot2" parent="Panel/container" instance=ExtResource("2_r6x1j")]
+layout_mode = 2
+
+[node name="hotbarSlot3" parent="Panel/container" instance=ExtResource("2_r6x1j")]
+layout_mode = 2
+
+[node name="hotbarSlot4" parent="Panel/container" instance=ExtResource("2_r6x1j")]
+layout_mode = 2
+
+[node name="hotbarSlot5" parent="Panel/container" instance=ExtResource("2_r6x1j")]
+layout_mode = 2
+
+[node name="hotbarSlot6" parent="Panel/container" instance=ExtResource("2_r6x1j")]
+layout_mode = 2
+
+[node name="hotbarSlot7" parent="Panel/container" instance=ExtResource("2_r6x1j")]
+layout_mode = 2
+
+[node name="hotbarSlot8" parent="Panel/container" instance=ExtResource("2_r6x1j")]
+layout_mode = 2
+
+[node name="Selected" type="Sprite2D" parent="."]
+position = Vector2(6, 6)
+texture = ExtResource("4_463ql")
+centered = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

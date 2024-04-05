@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="InventoryTwo" load_steps=4 format=3 uid="uid://dhsskgro1cbc2"]
+[gd_resource type="Resource" script_class="InventoryTwo" load_steps=5 format=3 uid="uid://dhsskgro1cbc2"]
 
 [ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://UI/items/axe.tres" id="1_f05qq"]
 [ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryTwo.gd" id="1_jg2dd"]
 [ext_resource type="Resource" uid="uid://bca0kp222sc3c" path="res://UI/items/itemCarrot.tres" id="2_witpt"]
+[ext_resource type="Resource" uid="uid://bbnx4uagns3u5" path="res://UI/items/pickaxe.tres" id="3_c3y2d"]
 
 [resource]
 script = ExtResource("1_jg2dd")
 items = {
 ExtResource("1_f05qq"): 1,
-ExtResource("2_witpt"): 5
+ExtResource("2_witpt"): 5,
+ExtResource("3_c3y2d"): 1
 }
