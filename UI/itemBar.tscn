@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://blb3pih2u0bki"]
+[gd_scene load_steps=12 format=3 uid="uid://blb3pih2u0bki"]
 
 [ext_resource type="Script" path="res://UI/itemBar.gd" id="1_d6l4j"]
 [ext_resource type="PackedScene" uid="uid://dv3vls8nk4wpq" path="res://UI/itemDisplay.tscn" id="2_wumg5"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bi76uwuu53jxt" path="res://UI/itemBarButton.tscn" id="7_8waxm"]
 [ext_resource type="Resource" uid="uid://c77b5nlchubf7" path="res://UI/items/hoe.tres" id="8_vr2g3"]
 [ext_resource type="Resource" uid="uid://b4emiwybx68r0" path="res://UI/items/wateringCan.tres" id="10_d6jf3"]
+[ext_resource type="Texture2D" uid="uid://bqmcrmx07wg37" path="res://resources/UI/hotbar_selector.png" id="11_6rxq5"]
 
 [node name="itemBar" type="MarginContainer"]
 anchors_preset = 7
@@ -17,9 +18,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -50.0
-offset_top = -101.0
-offset_right = 50.0
+offset_left = -84.0
+offset_top = -117.0
+offset_right = 85.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -64,5 +65,10 @@ item = ExtResource("10_d6jf3")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(47, 88)
+texture = ExtResource("11_6rxq5")
+centered = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

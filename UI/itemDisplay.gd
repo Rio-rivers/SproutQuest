@@ -8,10 +8,10 @@ class_name ItemDisplay
 
 var equip : Equip
 
-var item : InventoryItem:
+var item : Item:
 	set(newItem):
 		item = newItem
-		textureRect.texture = item.texture
+		textureRect.texture = item.itemImage
 
 func updateItemCount(numOfItem:int):
 	label.text = str(numOfItem)

@@ -77,7 +77,8 @@ func _physics_process(_delta):
 	
 
 
-
+func collectItem(item: Item, count: int):
+	inventory.addItemsToInventory(item, count)
 
 #based on the input, update the animations of the character
 func updateAnimations(moveInput : Vector2):

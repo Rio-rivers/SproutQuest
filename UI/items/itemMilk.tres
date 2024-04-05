@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://dowolwq8hkkxe"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dowolwq8hkkxe"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_ggg63"]
 [ext_resource type="Texture2D" uid="uid://ugeu8rk6iy2h" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/milk1.png" id="2_5jjgi"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_egegk"]
 
 [resource]
-script = ExtResource("1_ggg63")
-displayName = "Milk"
-texture = ExtResource("2_5jjgi")
+script = ExtResource("2_egegk")
+itemImage = ExtResource("2_5jjgi")
+itemName = "Milk"

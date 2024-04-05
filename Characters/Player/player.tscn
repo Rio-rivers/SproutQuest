@@ -1,17 +1,10 @@
-[gd_scene load_steps=92 format=3 uid="uid://c2vsb1yucffc7"]
+[gd_scene load_steps=88 format=3 uid="uid://c2vsb1yucffc7"]
 
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_bcnvt"]
-[ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://UI/items/axe.tres" id="2_7dr7r"]
+[ext_resource type="Resource" uid="uid://dhsskgro1cbc2" path="res://Characters/Player/Inventory/playerInventory.tres" id="2_3iv6d"]
 [ext_resource type="Texture2D" uid="uid://cyjf3lg86h06a" path="res://resources/Sprout Lands - Sprites - premium pack/Characters/Premium Charakter Spritesheet.png" id="2_up2kb"]
-[ext_resource type="Resource" uid="uid://bbnx4uagns3u5" path="res://UI/items/pickaxe.tres" id="3_5ixm8"]
 [ext_resource type="Script" path="res://objects/usableItems/equipped.gd" id="3_qxyte"]
-[ext_resource type="Resource" uid="uid://dowolwq8hkkxe" path="res://UI/items/itemMilk.tres" id="4_qxi21"]
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryTwo.gd" id="5_8m1di"]
 [ext_resource type="Script" path="res://Characters/Player/Inventory/Inventory.gd" id="5_t8pqu"]
-
-[sub_resource type="Resource" id="Resource_khsly"]
-script = ExtResource("5_8m1di")
-items = [null, ExtResource("2_7dr7r"), null, ExtResource("3_5ixm8"), null, ExtResource("4_qxi21"), null, null]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_smrcq"]
 size = Vector2(6, 5)
@@ -1556,7 +1549,7 @@ y_sort_enabled = true
 floor_snap_length = 0.0
 platform_floor_layers = 4294967294
 script = ExtResource("1_bcnvt")
-inventory = SubResource("Resource_khsly")
+inventory = ExtResource("2_3iv6d")
 
 [node name="Body" type="Sprite2D" parent="."]
 y_sort_enabled = true

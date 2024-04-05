@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://b5fqrptgaobp3"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b5fqrptgaobp3"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_g1wdy"]
 [ext_resource type="Texture2D" uid="uid://c08srf3xbeg54" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/cornSeed.png" id="2_0no1y"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_8bayd"]
 
 [resource]
-script = ExtResource("1_g1wdy")
-displayName = "Corn Seed"
-texture = ExtResource("2_0no1y")
+script = ExtResource("2_8bayd")
+itemImage = ExtResource("2_0no1y")
+itemName = "Corn Seed"

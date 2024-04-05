@@ -1,25 +1,34 @@
 #this file deals with each slot visually
-extends Panel
+extends Button
 
+class_name Slots
 
 @onready var backgroundImage: Sprite2D = $background
-@onready var itemImage: Sprite2D = $item
+@onready var itemContainer: CenterContainer = $CenterContainer
 
-func updateSlot(item: Object) -> void:
-	pass
-	# If there is an item, change the look of the slot
-	#if item:
-		#itemImage.visible = true
-		#backgroundImage.frame = 1
-		#if item is Item or item is InventoryItem:
-			#var item_resource = item as Resource 
-			#if item is Item:
-				#itemImage.texture = item_resource.itemImage
-			#else:
-				#itemImage.texture = item_resource.texture	
-		#else:
-			## Handle other cases or throw an error
-			#print("Unsupported item type")
-	#else:
-		#itemImage.visible = false
-		#backgroundImage.frame = 0
+var itemInSlot: ItemInSlot 
+var storedItem: ItemInSlot = null
+
+
+func getStoredItem()-> ItemInSlot:
+	return storedItem
+	
+func isEmpty() -> bool:
+	return storedItem == null
+	
+func clearSlot(item:ItemInSlot) -> void:
+	if storedItem:
+		itemContainer.remove_child(item)
+	storedItem = null
+	backgroundImage.frame = 0
+	
+func insertSlot(item:ItemInSlot):
+
+	if item:
+		itemInSlot = item
+		storedItem = item
+		backgroundImage.frame = 1
+		itemContainer.add_child(item)
+	else: 
+		backgroundImage.frame = 0
+		

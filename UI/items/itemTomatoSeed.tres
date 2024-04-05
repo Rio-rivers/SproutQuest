@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://detvfayp78te"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://detvfayp78te"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_7xebk"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_3m7ag"]
 [ext_resource type="Texture2D" uid="uid://xmf43o1oblnw" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/tomatoSeed.png" id="2_glj3s"]
 
 [resource]
-script = ExtResource("1_7xebk")
-displayName = "Tomato Seed"
-texture = ExtResource("2_glj3s")
+script = ExtResource("2_3m7ag")
+itemImage = ExtResource("2_glj3s")
+itemName = "Tomato Seed"

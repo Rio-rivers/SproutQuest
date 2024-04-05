@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://c8exrvxsc5t8u"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c8exrvxsc5t8u"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_7wy7g"]
 [ext_resource type="Texture2D" uid="uid://btgnmjro68gvn" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/parsnipSeed.png" id="2_45u8w"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_wf62g"]
 
 [resource]
-script = ExtResource("1_7wy7g")
-displayName = "Parsnip Seed"
-texture = ExtResource("2_45u8w")
+script = ExtResource("2_wf62g")
+itemImage = ExtResource("2_45u8w")
+itemName = "Parsnip Seed"

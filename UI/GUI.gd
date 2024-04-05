@@ -3,9 +3,11 @@ extends CanvasLayer
 @onready var inventoryGui = $InventoryGui
 @onready var menuGui = $MenuGui
 
+
 func _ready():
 	inventoryGui.closeInventory()
 	menuGui.closeMenu()
+
 	
 func _input(event):
 	if event.is_action_pressed("inventoryToggle"):
@@ -18,3 +20,5 @@ func _input(event):
 			menuGui.closeMenu()
 		else:
 				menuGui.openMenu()
+				
+

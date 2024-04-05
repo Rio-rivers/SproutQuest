@@ -34,7 +34,6 @@ func getTool() -> String:
 
 func _on_area_2d_body_entered(body):
 	
-	if currentTool.has_method("objectInteraction"):
-		print("TEST")
+	if currentTool and currentTool.has_method("objectInteraction"):
 		currentTool.objectInteraction(body)
 

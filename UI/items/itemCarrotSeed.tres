@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="InventoryItemTwo" load_steps=3 format=3 uid="uid://c24k8mcil0qjx"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c24k8mcil0qjx"]
 
-[ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryItem.gd" id="1_iivcg"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_skjne"]
 [ext_resource type="Texture2D" uid="uid://dxu4p3lsn772u" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/carrotSeed.png" id="2_u7m2g"]
 
 [resource]
-script = ExtResource("1_iivcg")
-displayName = "Carrot Seed"
-texture = ExtResource("2_u7m2g")
+script = ExtResource("2_skjne")
+itemImage = ExtResource("2_u7m2g")
+itemName = "Carrot Seed"
