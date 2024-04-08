@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c8exrvxsc5t8u"]
+[gd_resource type="Resource" script_class="Seeds" load_steps=3 format=3 uid="uid://c8exrvxsc5t8u"]
 
 [ext_resource type="Texture2D" uid="uid://btgnmjro68gvn" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/parsnipSeed.png" id="2_45u8w"]
-[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_wf62g"]
+[ext_resource type="Script" path="res://objects/usableItems/seedItems.gd" id="2_j23kr"]
 
 [resource]
-script = ExtResource("2_wf62g")
+script = ExtResource("2_j23kr")
+uses = 1
+itemType = Array[Resource("res://objects/harvestable/resourceType.gd")]([])
+growableSeason = Array[int]([1, 3])
+plantPath = "res://GameSystem/crops/parsnipPlant.tscn"
 itemImage = ExtResource("2_45u8w")
 itemName = "Parsnip Seed"

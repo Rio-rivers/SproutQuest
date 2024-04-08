@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://cursxb4egufto"]
+
+[ext_resource type="Script" path="res://objects/pickupItems/loot.gd" id="1_dkq7q"]
+[ext_resource type="Resource" uid="uid://be06tgveju88d" path="res://UI/items/itemPumpkin.tres" id="2_ksw2t"]
+[ext_resource type="Texture2D" uid="uid://bi1frljnchmc5" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/pumpkin.png" id="3_yh4h6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46xsy"]
+radius = 7.0
+height = 14.1663
+
+[node name="lootPumpkin" type="Area2D"]
+script = ExtResource("1_dkq7q")
+item = ExtResource("2_ksw2t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_yh4h6")
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_46xsy")

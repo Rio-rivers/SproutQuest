@@ -1,0 +1,85 @@
+[gd_scene load_steps=15 format=3 uid="uid://bxomdiwt831l"]
+
+[ext_resource type="Script" path="res://GameSystem/crops/plantedPlant.gd" id="1_be8mw"]
+[ext_resource type="Resource" uid="uid://crr141wu0j05m" path="res://objects/harvestable/harvestable.tres" id="2_85thj"]
+[ext_resource type="PackedScene" uid="uid://c3hho22jpmp7w" path="res://objects/pickupItems/lootCorn.tscn" id="3_y35nd"]
+[ext_resource type="PackedScene" uid="uid://qmm7ie86pyss" path="res://objects/pickupItems/lootCornSeed.tscn" id="4_eq1jl"]
+[ext_resource type="Texture2D" uid="uid://ldmoa4gr4mk7" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Farming Plants.png" id="5_h4yo5"]
+[ext_resource type="Texture2D" uid="uid://cmo4vfnjbsiv7" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Farming Corn.png" id="6_xerxh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loh46"]
+atlas = ExtResource("5_h4yo5")
+region = Rect2(80, 140, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alijs"]
+atlas = ExtResource("5_h4yo5")
+region = Rect2(0, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wud4"]
+atlas = ExtResource("5_h4yo5")
+region = Rect2(20, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b605f"]
+atlas = ExtResource("5_h4yo5")
+region = Rect2(40, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1dd6"]
+atlas = ExtResource("6_xerxh")
+region = Rect2(60, 0, 20, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57oar"]
+atlas = ExtResource("6_xerxh")
+region = Rect2(80, 0, 20, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcfk0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loh46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alijs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wud4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b605f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1dd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57oar")
+}],
+"loop": false,
+"name": &"plantGrowth",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1tqaj"]
+radius = 5.0
+
+[node name="cornPlant" type="StaticBody2D"]
+script = ExtResource("1_be8mw")
+plantName = "Corn Plant"
+ageUntilHarvest = 9
+growthStages = 6
+health = 1
+harvestableType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_85thj")])
+lootTypes = Array[PackedScene]([ExtResource("3_y35nd"), ExtResource("4_eq1jl")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_pcfk0")
+animation = &"plantGrowth"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1tqaj")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_1tqaj")

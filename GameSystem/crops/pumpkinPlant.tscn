@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://bvsqfbhkx0cc0"]
+
+[ext_resource type="Script" path="res://GameSystem/crops/plantedPlant.gd" id="1_sf3rh"]
+[ext_resource type="Resource" uid="uid://crr141wu0j05m" path="res://objects/harvestable/harvestable.tres" id="2_yiljc"]
+[ext_resource type="PackedScene" uid="uid://cursxb4egufto" path="res://objects/pickupItems/lootPumpkin.tscn" id="3_rukmt"]
+[ext_resource type="PackedScene" uid="uid://dd1r38vb2srrh" path="res://objects/pickupItems/lootPumpkinSeed.tscn" id="4_splno"]
+[ext_resource type="Texture2D" uid="uid://ldmoa4gr4mk7" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Farming Plants.png" id="5_y0b6e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3xqv"]
+atlas = ExtResource("5_y0b6e")
+region = Rect2(80, 140, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dujlf"]
+atlas = ExtResource("5_y0b6e")
+region = Rect2(0, 160, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ib77b"]
+atlas = ExtResource("5_y0b6e")
+region = Rect2(20, 160, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0djj"]
+atlas = ExtResource("5_y0b6e")
+region = Rect2(40, 160, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hsv1"]
+atlas = ExtResource("5_y0b6e")
+region = Rect2(60, 160, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcfk0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3xqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dujlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ib77b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0djj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hsv1")
+}],
+"loop": false,
+"name": &"plantGrowth",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1tqaj"]
+radius = 5.0
+
+[node name="pumpkinPlant" type="StaticBody2D"]
+script = ExtResource("1_sf3rh")
+plantName = "Pumpkin Plant"
+ageUntilHarvest = 17
+growthStages = 5
+health = 1
+harvestableType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_yiljc")])
+lootTypes = Array[PackedScene]([ExtResource("3_rukmt"), ExtResource("4_splno")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_pcfk0")
+animation = &"plantGrowth"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1tqaj")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_1tqaj")

@@ -28,7 +28,7 @@ var pushStrength = 3000
 var usingTool = false
 
 # array of animation states. used to stop movement whilst tool/usable item animation is running
-var restrictedStates = ["swingHoe","swingAxe","swingPickaxe","pourWateringCan"]
+var restrictedStates = ["swingHoe","swingAxe","swingPickaxe","pourWateringCan","plantSeed"]
 
 func _ready():
 	add_to_group("players")
@@ -90,6 +90,7 @@ func updateAnimations(moveInput : Vector2):
 			animationTree.set("parameters/swingHoe/blend_position",moveInput)
 			animationTree.set("parameters/swingPickaxe/blend_position",moveInput)
 			animationTree.set("parameters/pourWateringCan/blend_position",moveInput)
+			animationTree.set("parameters/plantSeed/blend_position",moveInput)
 		
 	
 
@@ -99,19 +100,17 @@ func  states():
 	if Input.is_action_just_pressed("useTool") and equippedTool != "None":#
 		usingTool = true
 		
-		if equippedTool == "None":
-			print("no tool")
-		elif equippedTool == "Axe":
-			print("Using AXE")
+
+		if equippedTool == "Axe":
 			state.travel("swingAxe")
 		elif equippedTool == "Hoe":
-			print("Using Hoe")
 			state.travel("swingHoe")
 		elif equippedTool == "Pickaxe":
-			print("EQUIPPED IS Pickaxe")
 			state.travel("swingPickaxe")
 		elif equippedTool == "Watering Can":
 			state.travel("pourWateringCan")
+		elif equippedTool.ends_with(" Seed"):
+			state.travel("plantSeed")
 			
 	elif(velocity!=Vector2.ZERO):
 		state.travel("walking")

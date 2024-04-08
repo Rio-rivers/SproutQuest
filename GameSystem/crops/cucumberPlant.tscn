@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://bcng15ousb4bi"]
+
+[ext_resource type="Script" path="res://GameSystem/crops/plantedPlant.gd" id="1_6ufke"]
+[ext_resource type="Resource" uid="uid://crr141wu0j05m" path="res://objects/harvestable/harvestable.tres" id="2_2ubja"]
+[ext_resource type="PackedScene" uid="uid://60xo7dfq7b6j" path="res://objects/pickupItems/lootCucumber.tscn" id="3_jslry"]
+[ext_resource type="PackedScene" uid="uid://cgd1om6u028ew" path="res://objects/pickupItems/lootCucumberSeed.tscn" id="4_42oys"]
+[ext_resource type="Texture2D" uid="uid://ldmoa4gr4mk7" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Farming Plants.png" id="5_ek5dm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7vkd"]
+atlas = ExtResource("5_ek5dm")
+region = Rect2(80, 140, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvxah"]
+atlas = ExtResource("5_ek5dm")
+region = Rect2(0, 260, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vtyt"]
+atlas = ExtResource("5_ek5dm")
+region = Rect2(20, 260, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp8rl"]
+atlas = ExtResource("5_ek5dm")
+region = Rect2(40, 260, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k67uv"]
+atlas = ExtResource("5_ek5dm")
+region = Rect2(60, 260, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcfk0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7vkd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvxah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vtyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp8rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k67uv")
+}],
+"loop": false,
+"name": &"plantGrowth",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1tqaj"]
+radius = 5.0
+
+[node name="cucumberPlant" type="StaticBody2D"]
+script = ExtResource("1_6ufke")
+plantName = "Cucumber Plant"
+ageUntilHarvest = 6
+growthStages = 5
+health = 1
+harvestableType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_2ubja")])
+lootTypes = Array[PackedScene]([ExtResource("3_jslry"), ExtResource("4_42oys")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_pcfk0")
+animation = &"plantGrowth"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1tqaj")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_1tqaj")

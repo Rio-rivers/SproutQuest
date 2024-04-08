@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://b2yaihq12ibgs"]
+[gd_resource type="Resource" script_class="Seeds" load_steps=3 format=3 uid="uid://b2yaihq12ibgs"]
 
-[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_skgv0"]
+[ext_resource type="Script" path="res://objects/usableItems/seedItems.gd" id="2_e5eer"]
 [ext_resource type="Texture2D" uid="uid://c8nnewsjwv2lb" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/wheatSeed.png" id="2_ycjwh"]
 
 [resource]
-script = ExtResource("2_skgv0")
+script = ExtResource("2_e5eer")
+uses = 1
+itemType = Array[Resource("res://objects/harvestable/resourceType.gd")]([])
+growableSeason = Array[int]([1])
+plantPath = "res://GameSystem/crops/wheatPlant.tscn"
 itemImage = ExtResource("2_ycjwh")
 itemName = "Wheat Seed"

@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://60xo7dfq7b6j"]
+
+[ext_resource type="Script" path="res://objects/pickupItems/loot.gd" id="1_mx2ha"]
+[ext_resource type="Resource" uid="uid://bsysd80j03r0e" path="res://UI/items/itemCucumber.tres" id="2_c1xok"]
+[ext_resource type="Texture2D" uid="uid://b5tm0fixdfvxb" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/cucumber.png" id="3_45gou"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46xsy"]
+radius = 7.0
+height = 14.1663
+
+[node name="lootCucumber" type="Area2D"]
+script = ExtResource("1_mx2ha")
+item = ExtResource("2_c1xok")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_45gou")
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_46xsy")

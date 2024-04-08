@@ -33,7 +33,14 @@ func getTool() -> String:
 
 
 func _on_area_2d_body_entered(body):
-	
 	if currentTool and currentTool.has_method("objectInteraction"):
 		currentTool.objectInteraction(body)
 
+
+
+func _on_area_2d_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
+	if area is FarmLand or TilledSoil:
+
+		var toolPosition = toolHitBox.global_position
+		if currentTool and currentTool.has_method("objectInteraction"):
+			currentTool.objectInteraction(area,toolPosition)

@@ -1,9 +1,14 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://cx4gon66eyg43"]
+[gd_resource type="Resource" script_class="Seeds" load_steps=4 format=3 uid="uid://cx4gon66eyg43"]
 
+[ext_resource type="Script" path="res://objects/usableItems/seedItems.gd" id="2_k5dr3"]
 [ext_resource type="Texture2D" uid="uid://fpf2efn8pekq" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/cabbageSeed.png" id="2_oeakp"]
-[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_ybvno"]
+[ext_resource type="Resource" uid="uid://b7fifiuk684om" path="res://objects/harvestable/plantable.tres" id="2_r5f6g"]
 
 [resource]
-script = ExtResource("2_ybvno")
+script = ExtResource("2_k5dr3")
+uses = 1
+itemType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_r5f6g")])
+growableSeason = Array[int]([1, 2, 3, 4])
+plantPath = "res://GameSystem/crops/cabbagePlant.tscn"
 itemImage = ExtResource("2_oeakp")
 itemName = "Cabbage Seed"

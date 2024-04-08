@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://cptja7voiylp0"]
+
+[ext_resource type="Script" path="res://GameSystem/crops/plantedPlant.gd" id="1_iskjj"]
+[ext_resource type="Resource" uid="uid://crr141wu0j05m" path="res://objects/harvestable/harvestable.tres" id="2_dcm73"]
+[ext_resource type="PackedScene" uid="uid://d1n0r4nhmylwc" path="res://objects/pickupItems/lootCauliflower.tscn" id="3_2m4cd"]
+[ext_resource type="PackedScene" uid="uid://bnwu85ugedruf" path="res://objects/pickupItems/lootCauliflowerSeed.tscn" id="4_rnech"]
+[ext_resource type="Texture2D" uid="uid://ldmoa4gr4mk7" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Farming Plants.png" id="5_mtmw5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye1gk"]
+atlas = ExtResource("5_mtmw5")
+region = Rect2(80, 140, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdwvy"]
+atlas = ExtResource("5_mtmw5")
+region = Rect2(0, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5oeg"]
+atlas = ExtResource("5_mtmw5")
+region = Rect2(20, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6rp0"]
+atlas = ExtResource("5_mtmw5")
+region = Rect2(40, 60, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h7rc"]
+atlas = ExtResource("5_mtmw5")
+region = Rect2(60, 60, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pcfk0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye1gk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdwvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5oeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6rp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h7rc")
+}],
+"loop": false,
+"name": &"plantGrowth",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1tqaj"]
+radius = 5.0
+
+[node name="cauliflowerPlant" type="StaticBody2D"]
+script = ExtResource("1_iskjj")
+plantName = "Cauliflower Plant"
+ageUntilHarvest = 8
+growthStages = 5
+health = 1
+harvestableType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_dcm73")])
+lootTypes = Array[PackedScene]([ExtResource("3_2m4cd"), ExtResource("4_rnech")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_pcfk0")
+animation = &"plantGrowth"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1tqaj")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_1tqaj")
