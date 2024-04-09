@@ -8,7 +8,7 @@
 script = ExtResource("3_4ghev")
 uses = 1
 itemType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_2pnxa")])
-growableSeason = Array[int]([1])
+growableSeason = Array[int]([1, 2, 3])
 plantPath = "res://GameSystem/crops/cornPlant.tscn"
 itemImage = ExtResource("2_0no1y")
 itemName = "Corn Seed"

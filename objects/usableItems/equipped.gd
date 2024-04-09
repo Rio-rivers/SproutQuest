@@ -43,4 +43,5 @@ func _on_area_2d_area_shape_entered(_area_rid, area, _area_shape_index, _local_s
 
 		var toolPosition = toolHitBox.global_position
 		if currentTool and currentTool.has_method("objectInteraction"):
+			print("CURRENT TOOL: ", currentTool.itemName)
 			currentTool.objectInteraction(area,toolPosition)

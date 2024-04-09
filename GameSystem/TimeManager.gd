@@ -2,7 +2,7 @@ extends Node
 
 
 const GAME_DAY_DURATION = 10 #840.0
-const GAME_SEASON_DURATION = 10#23520.0
+const GAME_SEASON_DURATION = 2#23520.0
 
 enum seasons { SPRING = 1, SUMMER =2, FALL=3, WINTER=4 }
 

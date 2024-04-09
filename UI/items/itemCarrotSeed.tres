@@ -8,7 +8,7 @@
 script = ExtResource("3_ask57")
 uses = 1
 itemType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_ld388")])
-growableSeason = Array[int]([1, 2, 3])
+growableSeason = Array[int]([1, 2, 3, 4])
 plantPath = "res://GameSystem/crops/carrotPlant.tscn"
 itemImage = ExtResource("2_u7m2g")
 itemName = "Carrot Seed"

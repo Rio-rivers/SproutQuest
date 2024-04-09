@@ -1,16 +1,24 @@
-[gd_resource type="Resource" script_class="InventoryTwo" load_steps=6 format=3 uid="uid://dhsskgro1cbc2"]
+[gd_resource type="Resource" script_class="InventoryTwo" load_steps=10 format=3 uid="uid://dhsskgro1cbc2"]
 
 [ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryTwo.gd" id="1_jg2dd"]
-[ext_resource type="Resource" uid="uid://c77b5nlchubf7" path="res://UI/items/hoe.tres" id="4_3ir3p"]
-[ext_resource type="Resource" uid="uid://b4emiwybx68r0" path="res://UI/items/wateringCan.tres" id="5_6l5fg"]
+[ext_resource type="Resource" uid="uid://c8fk7nf8tx1gn" path="res://UI/items/itemCauliflowerSeed.tres" id="5_fvv36"]
+[ext_resource type="Resource" uid="uid://bo4vgbb8ed02m" path="res://UI/items/itemCucumberSeed.tres" id="6_qwcv5"]
 [ext_resource type="Resource" uid="uid://cx4gon66eyg43" path="res://UI/items/itemCabbageSeed.tres" id="6_ruan6"]
 [ext_resource type="Resource" uid="uid://c24k8mcil0qjx" path="res://UI/items/itemCarrotSeed.tres" id="6_yk0i1"]
+[ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://UI/items/axe.tres" id="7_jy208"]
+[ext_resource type="Resource" uid="uid://bbnx4uagns3u5" path="res://UI/items/pickaxe.tres" id="8_nj6fu"]
+[ext_resource type="Resource" uid="uid://b80wpkwoq288" path="res://UI/items/itemPumpkinSeed.tres" id="8_vbqbu"]
+[ext_resource type="Resource" uid="uid://b5fqrptgaobp3" path="res://UI/items/itemCornSeed.tres" id="10_p8plp"]
 
 [resource]
 script = ExtResource("1_jg2dd")
 items = {
-ExtResource("4_3ir3p"): 1,
-ExtResource("5_6l5fg"): 1,
-ExtResource("6_ruan6"): 12,
-ExtResource("6_yk0i1"): 10
+ExtResource("6_ruan6"): 11,
+ExtResource("6_yk0i1"): 10,
+ExtResource("5_fvv36"): 5,
+ExtResource("6_qwcv5"): 5,
+ExtResource("8_vbqbu"): 5,
+ExtResource("10_p8plp"): 5,
+ExtResource("7_jy208"): 1,
+ExtResource("8_nj6fu"): 1
 }

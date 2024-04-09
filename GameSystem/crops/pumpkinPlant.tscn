@@ -53,6 +53,7 @@ animations = [{
 radius = 5.0
 
 [node name="pumpkinPlant" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_sf3rh")
 plantName = "Pumpkin Plant"
 ageUntilHarvest = 17
@@ -69,6 +70,7 @@ animation = &"plantGrowth"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1tqaj")
+disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false

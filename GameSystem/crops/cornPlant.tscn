@@ -61,6 +61,7 @@ animations = [{
 radius = 5.0
 
 [node name="cornPlant" type="StaticBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_be8mw")
 plantName = "Corn Plant"
 ageUntilHarvest = 9
@@ -71,12 +72,14 @@ lootTypes = Array[PackedScene]([ExtResource("3_y35nd"), ExtResource("4_eq1jl")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 y_sort_enabled = true
-position = Vector2(0, -1)
+position = Vector2(0, 28)
 sprite_frames = SubResource("SpriteFrames_pcfk0")
 animation = &"plantGrowth"
+offset = Vector2(0, -30)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1tqaj")
+disabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false

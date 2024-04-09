@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="Seeds" load_steps=3 format=3 uid="uid://bo4vgbb8ed02m"]
+[gd_resource type="Resource" script_class="Seeds" load_steps=4 format=3 uid="uid://bo4vgbb8ed02m"]
 
+[ext_resource type="Texture2D" uid="uid://ca7rrlh4v5e17" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/cucumberSeed.png" id="1_6yrtf"]
 [ext_resource type="Resource" uid="uid://b7fifiuk684om" path="res://objects/harvestable/plantable.tres" id="1_p6ayu"]
 [ext_resource type="Script" path="res://objects/usableItems/seedItems.gd" id="2_4rcwx"]
 
@@ -7,6 +8,7 @@
 script = ExtResource("2_4rcwx")
 uses = 1
 itemType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("1_p6ayu")])
-growableSeason = Array[int]([1])
+growableSeason = Array[int]([2, 3])
 plantPath = "res://GameSystem/crops/cucumberPlant.tscn"
+itemImage = ExtResource("1_6yrtf")
 itemName = "Cucumber Seed"

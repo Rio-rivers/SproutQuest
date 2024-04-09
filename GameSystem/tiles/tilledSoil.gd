@@ -6,8 +6,9 @@ class_name TilledSoil
 
 @onready var backgroundImage: Sprite2D = $background
 @onready var plantContainer: CenterContainer = $CenterContainer
+@onready var playerInventory: InventoryTwo = preload("res://Characters/Player/Inventory/playerInventory.tres")
 
-const TIME_UNTIL_UNTILLED: int = 2
+const TIME_UNTIL_UNTILLED: int = 6
 const MAX_UNWATERED_TIME: int = 3
 
 var plantGrowing: PlantedPlant = null
@@ -53,9 +54,8 @@ func insertPlant(item:Item):
 			var plantInstance = plantScene.instantiate() as PlantedPlant
 			plantContainer.add_child(plantInstance)
 			plantGrowing = plantInstance
-			print("Plant inserted:", seeds.itemName)
-		else:
-			print("Failed to load plant scene for:", seeds.itemName)
+			playerInventory.depleteItemsFromInventory(item,1)
+
 		
 #plantGrowing = item
 		#plantContainer.add_child(item)

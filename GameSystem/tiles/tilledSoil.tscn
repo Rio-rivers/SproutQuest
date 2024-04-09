@@ -10,6 +10,7 @@ radius = 5.0
 height = 18.0
 
 [node name="TilledSoil" type="Area2D"]
+y_sort_enabled = true
 script = ExtResource("1_gk8cb")
 harvestableType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_ry38w"), ExtResource("3_0r4p5")])
 
@@ -18,7 +19,9 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_nj6us")
 
 [node name="background" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
 texture = ExtResource("1_0bfi2")
+offset = Vector2(0, 4)
 vframes = 2
 frame = 1
 
