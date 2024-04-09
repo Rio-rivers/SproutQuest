@@ -1,9 +1,14 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c24k8mcil0qjx"]
+[gd_resource type="Resource" script_class="Seeds" load_steps=4 format=3 uid="uid://c24k8mcil0qjx"]
 
-[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_skjne"]
+[ext_resource type="Resource" uid="uid://b7fifiuk684om" path="res://objects/harvestable/plantable.tres" id="2_ld388"]
 [ext_resource type="Texture2D" uid="uid://dxu4p3lsn772u" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/carrotSeed.png" id="2_u7m2g"]
+[ext_resource type="Script" path="res://objects/usableItems/seedItems.gd" id="3_ask57"]
 
 [resource]
-script = ExtResource("2_skjne")
+script = ExtResource("3_ask57")
+uses = 1
+itemType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_ld388")])
+growableSeason = Array[int]([1, 2, 3, 4])
+plantPath = "res://GameSystem/crops/carrotPlant.tscn"
 itemImage = ExtResource("2_u7m2g")
 itemName = "Carrot Seed"

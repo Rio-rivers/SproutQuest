@@ -18,5 +18,17 @@ func addItemsToInventory(item: Item, numOfItem):
 		items[item] = numOfItem
 		emit_signal("addNewItem",item, items[item])
 	#emit_signal("itemCountUpdate")
+
+func removeItemsFromInventory(item: Item):
+	if item in items:
+		items.erase(item)
+		
+func depleteItemsFromInventory(item:Item, numToRemove:int):
+	if item in items:
+		items[item] -= numToRemove
+		if items[item] <= 0:
+			emit_signal("itemCountUpdate",item, 0)
+		else:
+			emit_signal("itemCountUpdate",item, items[item])
 	
 	

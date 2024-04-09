@@ -13,5 +13,8 @@ func update(item: Item,numOfItem:int):
 	itemCount = numOfItem
 	slotItemImage.texture= item.itemImage
 	slotItemLabel.text = str(numOfItem)
-	slotItemLabel.visible = true
 	slotItemImage.visible= true
+	if item is Tool:
+		slotItemLabel.visible = false
+	else:
+		slotItemLabel.visible = true

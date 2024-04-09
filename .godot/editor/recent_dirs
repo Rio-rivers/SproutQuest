@@ -1,3 +1,11 @@
+res://GameSystem/tiles
+res://resources/Sprout Lands - Sprites - premium pack/Winter
+res://resources/Sprout Lands - Sprites - premium pack/Objects
+res://resources/Sprout Lands - Sprites - premium pack/Autumn
+res://GameSystem/crops
+res://objects/usableItems
+res://GameSystem/effects
+res://GameSystem
 res://UI/hotbar
 res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Mouse sprites
 res://UI/inventory
@@ -6,7 +14,6 @@ res://UI
 res://objects/harvestable
 res://resources/Sprout Lands - Sprites - premium pack/Characters
 res://objects/pickupItems
-res://objects/usableItems
 res://objects
 res://resources
 res://

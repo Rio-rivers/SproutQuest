@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b4pw8vhofk64s"]
 
-[ext_resource type="Script" path="res://UI/hotbar/hotbarSlotGui.gd" id="1_ku0vl"]
+[ext_resource type="Script" path="res://UI/inventory/hotbarSlotGui.gd" id="1_ku0vl"]
 [ext_resource type="Texture2D" uid="uid://dirqt4em12p3s" path="res://resources/UI/inventorySlot.png" id="2_tbgkp"]
 [ext_resource type="PackedScene" uid="uid://2ctc1ogsg85n" path="res://UI/hotbar/ItemInHotbarSlotGui.tscn" id="3_ks2e8"]
 

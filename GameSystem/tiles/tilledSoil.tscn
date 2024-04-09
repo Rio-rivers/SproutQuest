@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://2dtmvbcqfjg0"]
+
+[ext_resource type="Texture2D" uid="uid://cnnw81iacwen7" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/TilledTexture.png" id="1_0bfi2"]
+[ext_resource type="Script" path="res://GameSystem/tiles/tilledSoil.gd" id="1_gk8cb"]
+[ext_resource type="Resource" uid="uid://diolmxwp65oo5" path="res://objects/harvestable/waterable.tres" id="2_ry38w"]
+[ext_resource type="Resource" uid="uid://b7fifiuk684om" path="res://objects/harvestable/plantable.tres" id="3_0r4p5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nj6us"]
+radius = 5.0
+height = 18.0
+
+[node name="TilledSoil" type="Area2D"]
+y_sort_enabled = true
+script = ExtResource("1_gk8cb")
+harvestableType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_ry38w"), ExtResource("3_0r4p5")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_nj6us")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("1_0bfi2")
+offset = Vector2(0, 4)
+vframes = 2
+frame = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 18.0
+offset_bottom = 10.0

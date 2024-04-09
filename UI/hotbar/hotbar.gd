@@ -6,7 +6,7 @@ extends NinePatchRect
 @onready var selectedIcon = $Selected
 @onready var timer = $Timer
 
-@export var scrollTimer : float = 0.2
+@export var scrollTimer : float = 0.1
 
 var equip : Equip
 var selectedSlot: int = 0
@@ -38,6 +38,7 @@ func _unhandled_input(event):
 			var action = "item" + str((buttonNumber+1))
 			if Input.is_action_pressed(action):
 				selectedSlot = buttonNumber
+				moveSelectedIcon(selectedSlot)
 				buttonPressed(selectedSlot)
 				break
 	elif event is InputEventMouseButton and canScroll:

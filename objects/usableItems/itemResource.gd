@@ -16,11 +16,6 @@ class_name itemSource
 var numOfResources : int
 
 
-
-			
-func _ready():
-	pass
-
 # CHANGE SO THAT CURRENT RESOURCES WILL GIVE OUT ALL RESOURCES/ SOME RESOURCES BEFORE IT DIES
 func harvestResource(damage : int):
 	

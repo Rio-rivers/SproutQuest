@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="Tool" load_steps=3 format=3 uid="uid://c77b5nlchubf7"]
+[gd_resource type="Resource" script_class="Tool" load_steps=5 format=3 uid="uid://c77b5nlchubf7"]
 
 [ext_resource type="Texture2D" uid="uid://di8t5h347u4hv" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/hoe.png" id="1_6nifm"]
 [ext_resource type="Script" path="res://objects/usableItems/tools.gd" id="2_tchxt"]
+[ext_resource type="Resource" uid="uid://babgyxk3p6xe0" path="res://objects/harvestable/tillable.tres" id="3_ip32d"]
+[ext_resource type="Resource" uid="uid://crr141wu0j05m" path="res://objects/harvestable/harvestable.tres" id="4_k086t"]
 
 [resource]
 script = ExtResource("2_tchxt")
 toolDamage = 2
-toolType = Array[Resource("res://objects/harvestable/resourceType.gd")]([])
+toolType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("3_ip32d"), ExtResource("4_k086t")])
 itemImage = ExtResource("1_6nifm")
 itemName = "Hoe"

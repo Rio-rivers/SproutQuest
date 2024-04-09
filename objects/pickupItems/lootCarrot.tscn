@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2d183ksym7n5"]
+
+[ext_resource type="Script" path="res://objects/pickupItems/loot.gd" id="1_03be3"]
+[ext_resource type="Resource" uid="uid://bca0kp222sc3c" path="res://UI/items/itemCarrot.tres" id="2_fhsvq"]
+[ext_resource type="Texture2D" uid="uid://ufndstkc1w6p" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/carrot.png" id="3_3hg3o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46xsy"]
+radius = 7.0
+height = 14.1663
+
+[node name="lootCarrot" type="Area2D"]
+script = ExtResource("1_03be3")
+item = ExtResource("2_fhsvq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_3hg3o")
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_46xsy")

@@ -5,13 +5,14 @@ var inventoryOpened: bool = false
 @onready var playerInventory: InventoryTwo = preload("res://Characters/Player/Inventory/playerInventory.tres")
 @onready var itemInSlotClass = preload("res://UI/inventory/ItemInSlotGui.tscn")
 @onready var slots: Array= $NinePatchRect/GridContainer.get_children()
+@onready var bin = $bin
 signal updateHotbar(slotItems)
 signal opened
 signal closed
 
 var index = 0
 var selectedSlot: Slots = null
-
+var selectedBin: bool = false
 
 
 func _ready():
@@ -57,7 +58,10 @@ func updateSlots(inventoryItem:Item, numOfItem: int) ->void:
 	for slot in slots:
 		index += 1
 		if not slot.isEmpty() and slot.storedItem.getItem() == inventoryItem:
-			slot.storedItem.update(inventoryItem,numOfItem)
+			if numOfItem == 0:
+				binAnItem(slot)
+			else:
+				slot.storedItem.update(inventoryItem,numOfItem)
 			if index < 9:
 				hotbarSlotUpdate()
 			return
@@ -116,21 +120,44 @@ func moveItemToSlot(currentSlot: Slots, targetSlot:Slots):
 
 	
 func _on_slot_clicked(slot):
-	
 	if selectedSlot == null:
 		if not slot.isEmpty():
 			selectedSlot = slot
 		return
 	if slot.isEmpty():
 		moveItemToSlot(selectedSlot, slot)
+	elif not slot.isEmpty():
+		selectedSlot = slot
 	elif slot == selectedSlot:
 		selectedSlot = null
-		
+	else:
+		selectedSlot = null
+	
+
+
+func binAnItem(slot):
+	print("BINNING AN ITEM")
+	if not slot.isEmpty():
+		var itemScene = slot.getStoredItem()
+		var item = itemScene.getItem()
+		slot.clearSlot(itemScene)
+		playerInventory.removeItemsFromInventory(item)
+		print_inventory(playerInventory)
+		var slotIndex = slots.find(slot)
+		if slotIndex <8:
+			hotbarSlotUpdate()
+
+
+func _on_bin_button_pressed():
+	if selectedSlot != null:
+		binAnItem(selectedSlot)
+		selectedSlot = null
+	
+	
 func print_inventory(inventory):
 	print("Inventory Contents:")
 	for item in inventory.items.keys():
 		print("Item: ", item, " Count: ", inventory.items[item])
-
 #func updateInventory(inventoryItem:Item, numOfItem: int) ->void:
 	#print_inventory(playerInventory)
 	#print("Inventory Update Started")
@@ -142,4 +169,3 @@ func print_inventory(inventory):
 		#elif slotItem == null:
 			#slot.addToSlot(inventoryItem, numOfItem)
 			#break
-

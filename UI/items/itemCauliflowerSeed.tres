@@ -1,9 +1,14 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://c8fk7nf8tx1gn"]
+[gd_resource type="Resource" script_class="Seeds" load_steps=4 format=3 uid="uid://c8fk7nf8tx1gn"]
 
-[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_31fja"]
 [ext_resource type="Texture2D" uid="uid://nvny3pt5ce2f" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/cauliflowerSeed.png" id="2_f5gyc"]
+[ext_resource type="Resource" uid="uid://b7fifiuk684om" path="res://objects/harvestable/plantable.tres" id="2_o5ckw"]
+[ext_resource type="Script" path="res://objects/usableItems/seedItems.gd" id="3_8iiga"]
 
 [resource]
-script = ExtResource("2_31fja")
+script = ExtResource("3_8iiga")
+uses = 1
+itemType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_o5ckw")])
+growableSeason = Array[int]([1, 2])
+plantPath = "res://GameSystem/crops/cauliflowerPlant.tscn"
 itemImage = ExtResource("2_f5gyc")
 itemName = "Cauliflower Seed"

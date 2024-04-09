@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://boisbfgt7gf78"]
+
+[ext_resource type="Script" path="res://objects/pickupItems/loot.gd" id="1_jwcu6"]
+[ext_resource type="Resource" uid="uid://dlm6lqunm6x1j" path="res://UI/items/itemParsnip.tres" id="2_owhxv"]
+[ext_resource type="Texture2D" uid="uid://dkvaokdh0onm2" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/parsnip.png" id="3_8yylq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_46xsy"]
+radius = 7.0
+height = 14.1663
+
+[node name="lootParsnip" type="Area2D"]
+script = ExtResource("1_jwcu6")
+item = ExtResource("2_owhxv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_8yylq")
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_46xsy")
