@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsp5oxx2cupso"]
+
+[ext_resource type="Texture2D" uid="uid://cvpg8trbmikny" path="res://resources/Sprout Lands - Sprites - premium pack/Animals/Chicken/chicken default.png" id="1_o3rca"]
+
+[node name="Body" type="Sprite2D"]
+texture = ExtResource("1_o3rca")
+offset = Vector2(0, -5)
+hframes = 8
+vframes = 27
+frame = 2

@@ -40,15 +40,6 @@ health = 1
 harvestableType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_xwyld")])
 lootTypes = Array[PackedScene]([ExtResource("3_5u12b")])
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(25.0117, 14.9349)
-scale = Vector2(0.721355, 0.721355)
-texture = ExtResource("5_oxjd7")
-offset = Vector2(0, -5)
-region_enabled = true
-region_rect = Rect2(81, 18, 15, 12)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(25, 13)
 shape = SubResource("RectangleShape2D_wwsss")

@@ -23,6 +23,3 @@ func updateTextures(season):
 	var stairTexture = load(SEASON_STAIR_TEXTURES[season-1])
 	self.tile_set.get_source(7).texture = floorTexture
 	self.tile_set.get_source(15).texture = stairTexture
-
-func _process(delta):
-	pass

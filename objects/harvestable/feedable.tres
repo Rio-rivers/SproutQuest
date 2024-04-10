@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="HarvestType" load_steps=2 format=3 uid="uid://it31vatcy1go"]
+
+[ext_resource type="Script" path="res://objects/harvestable/resourceType.gd" id="1_s6y4k"]
+
+[resource]
+resource_name = "Feedable"
+script = ExtResource("1_s6y4k")
+harvestableTypeName = "Feedable"

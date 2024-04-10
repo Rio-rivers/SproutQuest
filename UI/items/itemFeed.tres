@@ -1,9 +1,13 @@
-[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://4pctdhk5theu"]
+[gd_resource type="Resource" script_class="Feed" load_steps=4 format=3 uid="uid://0cvbrklslawj"]
 
-[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_2srlq"]
-[ext_resource type="Texture2D" uid="uid://d4423tpt3nb6" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/feed.png" id="2_sido8"]
+[ext_resource type="Texture2D" uid="uid://d4423tpt3nb6" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/feed.png" id="1_cuj8b"]
+[ext_resource type="Script" path="res://objects/usableItems/feedItem.gd" id="2_4ji8x"]
+[ext_resource type="Resource" uid="uid://it31vatcy1go" path="res://objects/harvestable/feedable.tres" id="3_tx5ag"]
 
 [resource]
-script = ExtResource("2_2srlq")
-itemImage = ExtResource("2_sido8")
+resource_name = "Feed"
+script = ExtResource("2_4ji8x")
+uses = 1
+toolType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("3_tx5ag")])
+itemImage = ExtResource("1_cuj8b")
 itemName = "Feed"

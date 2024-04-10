@@ -2320,6 +2320,7 @@ position = Vector2(510, 155)
 
 [node name="foodTrough" parent="worldObjects" instance=ExtResource("34_vai3g")]
 position = Vector2(463, 310)
+levelOfFood = null
 
 [connection signal="closed" from="CanvasLayer/MenuGui" to="." method="_on_gui_closed"]
 [connection signal="opened" from="CanvasLayer/MenuGui" to="." method="_on_gui_opened"]

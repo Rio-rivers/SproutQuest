@@ -1,151 +1,121 @@
-[gd_scene load_steps=32 format=3 uid="uid://cq1b2b0s7tlto"]
+[gd_scene load_steps=28 format=3 uid="uid://cq1b2b0s7tlto"]
 
-[ext_resource type="Texture2D" uid="uid://cm3bsr6is326o" path="res://resources/Sprout Lands - Sprites - premium pack/Animals/Cow/Brown cow animations.png" id="1_3xco3"]
 [ext_resource type="Script" path="res://Characters/Animals/Cow.gd" id="1_v8j7d"]
+[ext_resource type="PackedScene" uid="uid://slreiq2hp4rj" path="res://objects/pickupItems/lootMilk.tscn" id="2_xqion"]
+[ext_resource type="Texture2D" uid="uid://bwem70oxm38el" path="res://resources/Sprout Lands - Sprites - premium pack/Animals/Cow_Baby/baby brown cow animations sprites.png" id="3_3dack"]
+[ext_resource type="PackedScene" uid="uid://buk6ux1ruo3lm" path="res://GameSystem/animals/adultCowAnimation.tscn" id="3_thv07"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gp8c"]
 size = Vector2(15, 4)
 
-[sub_resource type="Animation" id="Animation_l23tj"]
+[sub_resource type="Animation" id="Animation_8hukj"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:frame")
+tracks/0/path = NodePath("childSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [40]
 }
 
-[sub_resource type="Animation" id="Animation_ge3l7"]
+[sub_resource type="Animation" id="Animation_5ro46"]
 resource_name = "asleep"
 length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:frame")
+tracks/0/path = NodePath("childSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [33, 34]
+"values": [40, 41]
 }
 
-[sub_resource type="Animation" id="Animation_ipc2u"]
+[sub_resource type="Animation" id="Animation_h1rj0"]
 resource_name = "eating"
 length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:frame")
+tracks/0/path = NodePath("childSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [40, 41, 42, 43, 44, 45, 46, 48, 49, 50, 51, 48, 49, 50, 51, 48, 49, 50, 51, 40]
+"values": [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 56, 57, 58, 59, 56, 57, 58, 59, 48]
 }
 
-[sub_resource type="Animation" id="Animation_pcl1d"]
+[sub_resource type="Animation" id="Animation_y5pp5"]
 resource_name = "idle"
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:frame")
+tracks/0/path = NodePath("childSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [1, 0, 2]
+"values": [8, 9, 10, 11]
 }
 
-[sub_resource type="Animation" id="Animation_63sd8"]
+[sub_resource type="Animation" id="Animation_c1u3q"]
 resource_name = "sitting"
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:frame")
+tracks/0/path = NodePath("childSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [25, 24, 26]
+"values": [32, 33]
 }
 
-[sub_resource type="Animation" id="Animation_nnhwc"]
-resource_name = "sittingDown"
-length = 0.9
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [16, 17, 19]
-}
-
-[sub_resource type="Animation" id="Animation_oylga"]
-resource_name = "standingUp"
-length = 0.9
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Body:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [20, 21, 22]
-}
-
-[sub_resource type="Animation" id="Animation_5o2jw"]
+[sub_resource type="Animation" id="Animation_tyiqu"]
 resource_name = "walking"
-length = 0.7
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Body:frame")
+tracks/0/path = NodePath("childSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [8, 9, 10, 11, 12, 13, 14, 15]
+"values": [16, 17, 18, 19]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_3tgnp"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3okgd"]
 _data = {
-"RESET": SubResource("Animation_l23tj"),
-"asleep": SubResource("Animation_ge3l7"),
-"eating": SubResource("Animation_ipc2u"),
-"idle": SubResource("Animation_pcl1d"),
-"sitting": SubResource("Animation_63sd8"),
-"sittingDown": SubResource("Animation_nnhwc"),
-"standingUp": SubResource("Animation_oylga"),
-"walking": SubResource("Animation_5o2jw")
+"RESET": SubResource("Animation_8hukj"),
+"asleep": SubResource("Animation_5ro46"),
+"eating": SubResource("Animation_h1rj0"),
+"idle": SubResource("Animation_y5pp5"),
+"sitting": SubResource("Animation_c1u3q"),
+"walking": SubResource("Animation_tyiqu")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l0ae1"]
@@ -159,12 +129,6 @@ animation = &"idle"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yu1mx"]
 animation = &"sitting"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xf3rv"]
-animation = &"sittingDown"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e7x56"]
-animation = &"standingUp"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cvdwi"]
 animation = &"walking"
@@ -183,13 +147,9 @@ animation = &"walking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_buv7e"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h0htb"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ccfh3"]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4aoxi"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0aqur"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s16mh"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gjcx2"]
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_0ops4"]
 states/asleep/node = SubResource("AnimationNodeAnimation_l0ae1")
@@ -200,28 +160,18 @@ states/idle/node = SubResource("AnimationNodeAnimation_bg112")
 states/idle/position = Vector2(385.649, 145)
 states/sitting/node = SubResource("AnimationNodeAnimation_yu1mx")
 states/sitting/position = Vector2(402.649, 317.214)
-states/sittingDown/node = SubResource("AnimationNodeAnimation_xf3rv")
-states/sittingDown/position = Vector2(296.649, 235.214)
-states/standingUp/node = SubResource("AnimationNodeAnimation_e7x56")
-states/standingUp/position = Vector2(521.649, 235.214)
 states/walking/node = SubResource("AnimationNodeAnimation_cvdwi")
 states/walking/position = Vector2(296.649, -0.786415)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_e0p7p"), "idle", "walking", SubResource("AnimationNodeStateMachineTransition_fbpex"), "walking", "idle", SubResource("AnimationNodeStateMachineTransition_jb1mq"), "asleep", "idle", SubResource("AnimationNodeStateMachineTransition_ehoog"), "idle", "asleep", SubResource("AnimationNodeStateMachineTransition_4g804"), "idle", "eating", SubResource("AnimationNodeStateMachineTransition_q02cn"), "eating", "idle", SubResource("AnimationNodeStateMachineTransition_buv7e"), "idle", "sittingDown", SubResource("AnimationNodeStateMachineTransition_h0htb"), "sittingDown", "sitting", SubResource("AnimationNodeStateMachineTransition_4aoxi"), "sitting", "standingUp", SubResource("AnimationNodeStateMachineTransition_0aqur"), "standingUp", "idle", SubResource("AnimationNodeStateMachineTransition_s16mh")]
-graph_offset = Vector2(-307.351, -29.159)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_e0p7p"), "idle", "walking", SubResource("AnimationNodeStateMachineTransition_fbpex"), "walking", "idle", SubResource("AnimationNodeStateMachineTransition_jb1mq"), "asleep", "idle", SubResource("AnimationNodeStateMachineTransition_ehoog"), "idle", "asleep", SubResource("AnimationNodeStateMachineTransition_4g804"), "idle", "eating", SubResource("AnimationNodeStateMachineTransition_q02cn"), "eating", "idle", SubResource("AnimationNodeStateMachineTransition_buv7e"), "idle", "sitting", SubResource("AnimationNodeStateMachineTransition_ccfh3"), "sitting", "idle", SubResource("AnimationNodeStateMachineTransition_gjcx2")]
+graph_offset = Vector2(-116.351, 94.841)
 
 [node name="cow" type="CharacterBody2D"]
 y_sort_enabled = true
 floor_snap_length = 0.0
 script = ExtResource("1_v8j7d")
-
-[node name="Body" type="Sprite2D" parent="."]
-y_sort_enabled = true
-position = Vector2(1, -11)
-scale = Vector2(0.817383, 0.980432)
-texture = ExtResource("1_3xco3")
-offset = Vector2(0, -12)
-hframes = 8
-vframes = 8
+ageOfMaturity = 10
+maxAge = 784
+produce = ExtResource("2_xqion")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 process_priority = 1
@@ -229,18 +179,35 @@ process_physics_priority = 1
 position = Vector2(1, -12)
 shape = SubResource("RectangleShape2D_5gp8c")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_3tgnp")
-}
-
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_3tgnp")
+"": SubResource("AnimationLibrary_3okgd")
 }
 tree_root = SubResource("AnimationNodeStateMachine_0ops4")
-anim_player = NodePath("../AnimationPlayer")
+anim_player = NodePath("../childAnimationPlayer")
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="eatingAndDrinkingTimer" type="Timer" parent="."]
+
+[node name="childSprite" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, -11)
+texture = ExtResource("3_3dack")
+offset = Vector2(0, -12)
+hframes = 8
+vframes = 8
+frame = 40
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 256)
+
+[node name="AnimationPlayer" parent="." instance=ExtResource("3_thv07")]
+reset_on_save = false
+
+[node name="childAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3okgd")
+}
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="eatingAndDrinkingTimer" to="." method="_on_eating_and_drinking_timer_timeout"]

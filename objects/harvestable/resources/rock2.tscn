@@ -1,0 +1,59 @@
+[gd_scene load_steps=12 format=3 uid="uid://wj57jdwk7sfh"]
+
+[ext_resource type="Script" path="res://objects/usableItems/itemResource.gd" id="1_lkibu"]
+[ext_resource type="Resource" uid="uid://bo6o0c0ivses0" path="res://objects/harvestable/mineable.tres" id="2_bs4x8"]
+[ext_resource type="PackedScene" uid="uid://q0g3nb7q2jj7" path="res://objects/pickupItems/lootStone.tscn" id="3_fs8g4"]
+[ext_resource type="Texture2D" uid="uid://57ucwrrdjie8" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Mushrooms, Flowers, Stones.png" id="4_hsfvf"]
+[ext_resource type="Texture2D" uid="uid://qwbf85lq2ngp" path="res://resources/Sprout Lands - Sprites - premium pack/Winter/winterStones.png" id="5_x8hh1"]
+[ext_resource type="Script" path="res://GameSystem/tiles/rockBigSeasons.gd" id="6_06j0x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwsss"]
+size = Vector2(21, 7.41016)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pit6r"]
+atlas = ExtResource("4_hsfvf")
+region = Rect2(129, 13, 31, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sankj"]
+atlas = ExtResource("4_hsfvf")
+region = Rect2(160, 13, 31, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynqv2"]
+atlas = ExtResource("5_x8hh1")
+region = Rect2(129, 13, 31, 35)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2evw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pit6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sankj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynqv2")
+}],
+"loop": false,
+"name": &"changingSeasons",
+"speed": 0.0
+}]
+
+[node name="rockBig" type="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(448, 197)
+script = ExtResource("1_lkibu")
+health = 5
+harvestableType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_bs4x8")])
+lootTypes = Array[PackedScene]([ExtResource("3_fs8g4")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24.5, 14.2949)
+shape = SubResource("RectangleShape2D_wwsss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(25, 11)
+scale = Vector2(0.710937, 0.710937)
+sprite_frames = SubResource("SpriteFrames_f2evw")
+animation = &"changingSeasons"
+script = ExtResource("6_06j0x")

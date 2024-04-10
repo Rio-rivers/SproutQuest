@@ -1,5 +1,5 @@
 extends Node
-
+# game day starts around 8am 
 
 const GAME_DAY_DURATION = 10 #840.0
 const GAME_SEASON_DURATION = 2#23520.0
@@ -27,6 +27,7 @@ func updateTime(timePassed):
 	if currentTime >= GAME_DAY_DURATION:
 		currentTime = 0
 		currentDay += 1
+		print(" ")
 		print("DAY: ", currentDay)
 		print("CURRENT SEASON: ", currentSeason)
 		emit_signal("newDay")

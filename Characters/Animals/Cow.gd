@@ -1,20 +1,28 @@
 #this file controls the cows, their movements and their interactions
 
-extends CharacterBody2D
-#get sprite status
-@onready var sprite = $Body
+extends Animal
 
+class_name Cow
+
+@onready var adultSprite= preload("res://GameSystem/animals/adultCowSprite.tscn")
+@onready var adultAnimation= $AnimationPlayer.get_path()
+
+#get sprite status
+@onready var sprite = $childSprite
+@onready var childAnimation = $childAnimationPlayer
 #when script starts, node is accessed
-@onready var animationTree = $AnimationTree
+@onready var animationTree = get_node("AnimationTree")
 
 #allows the change of state of animation
 @onready var state = animationTree.get("parameters/playback")
 @onready var timer = $Timer
-
+@onready var EatingAndDrinkingTimer = $eatingAndDrinkingTimer
 #Speed
 @export var moveSpeed: float = 10
 #Timer for changing of state
 @export var stateTimer : float = randf_range(4, 10)
+# feed and water timer
+@export var FAWTimer : float = randf_range(1, 9)
 
 #enum for different states of animal
 enum cowState {IDLE, EATING,HAPPY, WALK,ASLEEP, SITTING}
@@ -26,11 +34,16 @@ var currentState : cowState = cowState.IDLE
 
 var randomChoice = randi_range(0, 1)
 
+var needsAction = true
+
 
 func _ready():
+	TimeManager.connect("newDay",updateAnimal)
 	add_to_group("cows")
 	add_to_group("animals")
 	changeState()
+	EatingAndDrinkingTimer.start(FAWTimer)
+	
 
 func _physics_process(_delta):
 	if(currentState == cowState.WALK):
@@ -112,3 +125,32 @@ func changeState():
 
 func _on_timer_timeout():
 	changeState()
+	
+	
+func updateAnimal():
+	FAWTimer = randf_range(1, 9)
+	EatingAndDrinkingTimer.start(FAWTimer)
+	growAnimal()
+	if age == ageOfMaturity:
+		updateAnimations()
+
+func updateAnimations():
+	var newSprite = adultSprite.instantiate()
+	add_child(newSprite)
+	sprite.call_deferred("queue_free")
+	sprite = newSprite
+	animationTree.active = false
+	animationTree.anim_player = adultAnimation
+	animationTree.active = true
+	childAnimation.call_deferred("queue_free")
+	changeState()
+	
+func _on_eating_and_drinking_timer_timeout():
+	print("Cow eating or drinking on timer")
+	if not watered:
+		needsAction = getWater() or needsAction
+	if not fed:
+		needsAction = getFood() or needsAction
+	if needsAction:
+		FAWTimer = randf_range(1, 9)
+		EatingAndDrinkingTimer.start(FAWTimer)
