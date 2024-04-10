@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="InventoryTwo" load_steps=7 format=3 uid="uid://dhsskgro1cbc2"]
+[gd_resource type="Resource" script_class="InventoryTwo" load_steps=8 format=3 uid="uid://dhsskgro1cbc2"]
 
 [ext_resource type="Script" path="res://Characters/Player/Inventory/inventoryTwo.gd" id="1_jg2dd"]
 [ext_resource type="Resource" uid="uid://0cvbrklslawj" path="res://UI/items/itemFeed.tres" id="5_rkyoa"]
+[ext_resource type="Resource" uid="uid://c77b5nlchubf7" path="res://UI/items/hoe.tres" id="6_8jm1t"]
 [ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://UI/items/axe.tres" id="7_jy208"]
 [ext_resource type="Resource" uid="uid://b4emiwybx68r0" path="res://UI/items/wateringCan.tres" id="8_5hvub"]
 [ext_resource type="Resource" uid="uid://bbnx4uagns3u5" path="res://UI/items/pickaxe.tres" id="8_nj6fu"]
@@ -14,5 +15,6 @@ ExtResource("10_p8plp"): 5,
 ExtResource("7_jy208"): 1,
 ExtResource("8_nj6fu"): 1,
 ExtResource("8_5hvub"): 1,
-ExtResource("5_rkyoa"): 10
+ExtResource("5_rkyoa"): 10,
+ExtResource("6_8jm1t"): 1
 }

@@ -34,3 +34,7 @@ res://objects/pickupItems/lootFeed.tscn
 res://GameSystem/animals/animal.gd
 res://objects/pickupItems/loot.gd
 res://Characters/Animals/chicken.gd
+res://GameSystem/animals/foodTrough.gd
+res://objects/usableItems/feedItem.gd
+res://UI/items/hoe.tres
+res://GameSystem/tiles/tilledSoil.tscn
