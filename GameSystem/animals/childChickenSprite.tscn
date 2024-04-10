@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://n1dr5b2ogwwx"]
+
+[ext_resource type="Texture2D" uid="uid://cipd06bq4csur" path="res://resources/Sprout Lands - Sprites - premium pack/Animals/Chicken_Baby/Chicken_Baby.png" id="1_hafih"]
+
+[node name="childSprite" type="Sprite2D"]
+texture = ExtResource("1_hafih")
+offset = Vector2(0, -5)
+hframes = 8
+vframes = 16
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 256)

@@ -11,7 +11,7 @@ class_name Seeds
 var isInSeason:bool = false
 
 
-func objectInteraction(body,toolPosition=null):
+func objectInteraction(body,_toolPosition=null):
 	IsInSeason()
 	if isInSeason:
 		if body is TilledSoil:

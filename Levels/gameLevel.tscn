@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://d131v8xynbt2l"]
+[gd_scene load_steps=53 format=3 uid="uid://d131v8xynbt2l"]
 
 [ext_resource type="Script" path="res://Levels/gameLevel.gd" id="1_ri8ge"]
 [ext_resource type="Texture2D" uid="uid://8i601qo61b40" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Grass.png" id="2_tsb1t"]
@@ -31,6 +31,9 @@
 [ext_resource type="Script" path="res://GameSystem/tiles/worldTileMap.gd" id="27_6lgot"]
 [ext_resource type="PackedScene" uid="uid://dfawjblp8cipm" path="res://GameSystem/effects/dayOverlay.tscn" id="28_70flg"]
 [ext_resource type="PackedScene" uid="uid://c8kcwnl7dr43i" path="res://objects/harvestable/resources/rock1.tscn" id="28_c04ai"]
+[ext_resource type="PackedScene" uid="uid://wj57jdwk7sfh" path="res://objects/harvestable/resources/rock2.tscn" id="32_nj1jl"]
+[ext_resource type="PackedScene" uid="uid://d0ionv6dqrs1" path="res://GameSystem/animals/waterTrough.tscn" id="33_o02iq"]
+[ext_resource type="PackedScene" uid="uid://cs6ma83u36qap" path="res://GameSystem/animals/foodTrough.tscn" id="34_vai3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ciaaq"]
 size = Vector2(274, 243)
@@ -2273,6 +2276,7 @@ position = Vector2(474, 206)
 
 [node name="cow" parent="." instance=ExtResource("21_y0hxe")]
 position = Vector2(478, 248)
+moveSpeed = 15.0
 
 [node name="worldObjects" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -2307,6 +2311,15 @@ position = Vector2(134, 178)
 
 [node name="rockSmall3" parent="worldObjects" instance=ExtResource("28_c04ai")]
 position = Vector2(339, 182)
+
+[node name="rockBig" parent="worldObjects" instance=ExtResource("32_nj1jl")]
+position = Vector2(230, 50)
+
+[node name="waterTrough" parent="worldObjects" instance=ExtResource("33_o02iq")]
+position = Vector2(510, 155)
+
+[node name="foodTrough" parent="worldObjects" instance=ExtResource("34_vai3g")]
+position = Vector2(463, 310)
 
 [connection signal="closed" from="CanvasLayer/MenuGui" to="." method="_on_gui_closed"]
 [connection signal="opened" from="CanvasLayer/MenuGui" to="." method="_on_gui_opened"]

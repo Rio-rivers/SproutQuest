@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://cs6ma83u36qap"]
+
+[ext_resource type="Script" path="res://GameSystem/animals/foodTrough.gd" id="1_i4s8g"]
+[ext_resource type="Resource" uid="uid://it31vatcy1go" path="res://objects/harvestable/feedable.tres" id="2_8x7io"]
+[ext_resource type="Texture2D" uid="uid://bmjgxt8l4o3y6" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures/foodTray.PNG" id="3_01da2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kkw4"]
+atlas = ExtResource("3_01da2")
+region = Rect2(96, 0, 32, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgy1g"]
+atlas = ExtResource("3_01da2")
+region = Rect2(64, 0, 32, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyel8"]
+atlas = ExtResource("3_01da2")
+region = Rect2(32, 0, 32, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfoof"]
+atlas = ExtResource("3_01da2")
+region = Rect2(0, 0, 32, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fdod"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kkw4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgy1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyel8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfoof")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1d0g"]
+size = Vector2(32, 9.5)
+
+[node name="foodTrough" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_i4s8g")
+harvestableType = Array[Resource("res://objects/harvestable/resourceType.gd")]([ExtResource("2_8x7io")])
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4fdod")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_p1d0g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_p1d0g")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlre3yjr2mri5"]
+
+[ext_resource type="Texture2D" uid="uid://cm3bsr6is326o" path="res://resources/Sprout Lands - Sprites - premium pack/Animals/Cow/Brown cow animations.png" id="1_udhu5"]
+
+[node name="Body" type="Sprite2D"]
+y_sort_enabled = true
+position = Vector2(1, -11)
+scale = Vector2(0.817383, 0.980432)
+texture = ExtResource("1_udhu5")
+offset = Vector2(0, -12)
+hframes = 8
+vframes = 8

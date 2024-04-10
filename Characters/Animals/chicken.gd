@@ -1,18 +1,24 @@
 #this file controls the chickens, their movements and their interactions
 
-extends CharacterBody2D
+extends Animal
+
+class_name Chicken
 
 
+@onready var adultSprite= preload("res://GameSystem/animals/adultChickenSprite.tscn")
+@onready var adultAnimation= $AnimationPlayer.get_path()
 #get sprite status
-@onready var sprite = $Body
-
+@onready var sprite = $childSprite
+@onready var childAnimation = $childAnimation
 #when script starts, node is accessed
-@onready var animationTree = $AnimationTree
+@onready var animationTree = get_node("AnimationTree")
 
 #allows the change of state of animation
 @onready var state = animationTree.get("parameters/playback")
 @onready var timer = $Timer
+@onready var EatingAndDrinkingTimer = $eatingAndDrinkingTimer
 
+@export var FAWTimer : float = randf_range(1, 9)
 #Speed
 @export var moveSpeed: float = 15
 #Timer for changing of state
@@ -28,13 +34,17 @@ var direction : Vector2 = Vector2.ZERO
 #holds the animals current state
 var currentState : chickenState = chickenState.IDLE
 
+var needsAction = true
 
 func _ready():
+	TimeManager.connect("newDay",updateAnimal)
 	add_to_group("chickens")
 	add_to_group("animals")
 	changeState()
+	EatingAndDrinkingTimer.start(FAWTimer)
 
 func _physics_process(_delta):
+
 	if(currentState == chickenState.WALK):
 		velocity = direction * moveSpeed
 		move_and_slide()
@@ -51,6 +61,7 @@ func _physics_process(_delta):
 						changeState()
 				
 				
+
 
 func moveFromPlayer(playerPosition: Vector2):
 	direction = (playerPosition)
@@ -109,3 +120,33 @@ func changeState():
 
 func _on_timer_timeout():
 	changeState()
+
+func updateAnimal():
+	FAWTimer = randf_range(1, 9)
+	EatingAndDrinkingTimer.start(FAWTimer)
+	growAnimal()
+	if age == ageOfMaturity:
+		updateAnimations()
+
+
+func updateAnimations():
+	var newSprite = adultSprite.instantiate()
+	add_child(newSprite)
+	sprite.call_deferred("queue_free")
+	sprite = newSprite
+
+	animationTree.active = false
+	animationTree.anim_player = adultAnimation
+	animationTree.active = true
+	childAnimation.call_deferred("queue_free")
+	changeState()
+		
+func _on_eating_and_drinking_timer_timeout():
+	print("Chicken eating or drinking on timer")
+	if not watered:
+		needsAction = getWater() or needsAction
+	if not fed:
+		needsAction = getFood() or needsAction
+	if needsAction:
+		FAWTimer = randf_range(1, 9)
+		EatingAndDrinkingTimer.start(FAWTimer)

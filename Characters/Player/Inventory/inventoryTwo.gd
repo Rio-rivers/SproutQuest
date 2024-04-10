@@ -9,13 +9,13 @@ signal itemCountUpdate(item:Item, numOfItem: int)
 signal addNewItem(item:Item, numOfItem: int)
 
 
-func addItemsToInventory(item: Item, numOfItem):
+func addItemsToInventory(item: Item, numToAdd):
 	
 	if item in items:
-		items[item] += numOfItem
+		items[item] += numToAdd
 		emit_signal("itemCountUpdate",item, items[item])
 	else:
-		items[item] = numOfItem
+		items[item] = numToAdd
 		emit_signal("addNewItem",item, items[item])
 	#emit_signal("itemCountUpdate")
 

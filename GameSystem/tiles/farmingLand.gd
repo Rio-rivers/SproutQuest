@@ -1,7 +1,6 @@
 extends Area2D
 class_name FarmLand
 
-@onready var grid: GridContainer = $"../GridContainer"
 @onready var tilledSoilClass = preload("res://GameSystem/tiles/tilledSoil.tscn")
 @onready var children = get_children()
 @export var harvestableType: Array[HarvestType]
@@ -25,4 +24,5 @@ func tillLand(toolPosition):
 				return
 	var tilledSoil = tilledSoilClass.instantiate() as TilledSoil
 	tilledSoil.position = localPosition
-	add_child(tilledSoil)
+	#add_child(tilledSoil)
+	call_deferred("add_child", tilledSoil)

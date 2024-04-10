@@ -19,7 +19,6 @@ func _ready():
 	frameDuration = max(ageUntilHarvest / (growthStages - 1), 1)
 	
 func isHarvestable()->bool:
-	print("IS HARVESTABLE>: ", harvestable)
 	return harvestable
 	
 func growth():
@@ -32,11 +31,9 @@ func growth():
 			collision.disabled = false
 	elif age == ageUntilHarvest:
 		makeHarvestable()
-	print("PLANT AGE: ",age)
 	if age == ageUntilHarvest:
 		makeHarvestable()
 func makeHarvestable():
-	print("MADE HARVESTABLE")
 	harvestable = true
 	animatedSprite.frame = growthStages-1
 	

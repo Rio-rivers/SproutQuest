@@ -52,7 +52,8 @@ func insertPlant(item:Item):
 		var plantScene = seeds.get_plant_scene()
 		if plantScene:
 			var plantInstance = plantScene.instantiate() as PlantedPlant
-			plantContainer.add_child(plantInstance)
+			#plantContainer.add_child(plantInstance)
+			plantContainer.call_deferred("add_child", plantInstance)
 			plantGrowing = plantInstance
 			playerInventory.depleteItemsFromInventory(item,1)
 

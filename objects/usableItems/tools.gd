@@ -21,6 +21,7 @@ func objectInteraction(body,toolPosition=null):
 					var harvest = body.isHarvestable()
 					if harvest:
 						body.harvestResource(toolDamage)
+				
 				else:
 					body.harvestResource(toolDamage)
 	
@@ -28,7 +29,11 @@ func objectInteraction(body,toolPosition=null):
 		for type in toolType:
 			if body.harvestableType.has(type):
 				body.waterSoil()
-				
+	elif body is WaterTrough:
+		for type in toolType:
+			if body.harvestableType.has(type):
+				body.fillWithWater()
+
 	elif body is FarmLand:
 			for type in toolType:
 				if body.harvestableType.has(type):
