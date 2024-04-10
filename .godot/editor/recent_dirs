@@ -1,3 +1,8 @@
+res://UI/notebook
+res://GameSystem/shop
+res://resources/UI
+res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Icons/special icons
+res://UI/HUD
 res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures
 res://objects/usableItems
 res://GameSystem/animals
@@ -15,8 +20,3 @@ res://UI/inventory
 res://Characters/Player/Inventory
 res://UI
 res://objects/harvestable
-res://resources/Sprout Lands - Sprites - premium pack/Characters
-res://objects/pickupItems
-res://objects
-res://resources
-res://

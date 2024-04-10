@@ -11,6 +11,8 @@ class_name Player
 
 @export var inventory:InventoryTwo
 
+@export var money:int = 100
+
 #when script starts, node is accessed
 @onready var animationTree = $AnimationTree
 
@@ -30,9 +32,12 @@ var usingTool = false
 # array of animation states. used to stop movement whilst tool/usable item animation is running
 var restrictedStates = ["swingHoe","swingAxe","swingPickaxe","pourWateringCan","plantSeed","pourFeed"]
 
+signal moneyChanged
+
 func _ready():
 	add_to_group("players")
 	updateAnimations(startPosition)
+	call_deferred("emit_signal","moneyChanged", money)
 	
 	
 func _physics_process(_delta):
@@ -92,9 +97,20 @@ func updateAnimations(moveInput : Vector2):
 			animationTree.set("parameters/pourWateringCan/blend_position",moveInput)
 			animationTree.set("parameters/plantSeed/blend_position",moveInput)
 			animationTree.set("parameters/pourFeed/blend_position",moveInput)
-		
-	
 
+func increaseMoney(amount: int) -> void:
+	money += amount
+	emit_signal("moneyChanged", money)
+
+func decreaseMoney(amount: int) -> bool:
+	if money >= amount:
+		money -= amount
+		emit_signal("moneyChanged", money)
+		return true
+	return false
+	
+	
+	
 #used to control when animations switch state
 func  states():
 	#checks for left click
