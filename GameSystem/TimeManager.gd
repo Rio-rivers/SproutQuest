@@ -47,3 +47,6 @@ func nextSeason():
 	
 func getSeason()->int:
 	return currentSeason
+	
+func getDay()->int:
+	return currentDay

@@ -1,11 +1,11 @@
-res://UI/notebook
 res://GameSystem/shop
+res://GameSystem/animals
+res://UI/notebook
 res://resources/UI
 res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Icons/special icons
 res://UI/HUD
 res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures
 res://objects/usableItems
-res://GameSystem/animals
 res://Characters/Animals
 res://GameSystem/tiles
 res://resources/Sprout Lands - Sprites - premium pack/Winter

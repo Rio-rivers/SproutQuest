@@ -109,7 +109,8 @@ func decreaseMoney(amount: int) -> bool:
 		return true
 	return false
 	
-	
+func getMoney()->int:
+	return money
 	
 #used to control when animations switch state
 func  states():

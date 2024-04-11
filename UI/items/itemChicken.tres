@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://d1w0ask3r81x4"]
+
+[ext_resource type="PackedScene" uid="uid://dh3qbpkoi4jnv" path="res://Characters/Animals/chicken.tscn" id="1_vi00l"]
+[ext_resource type="Texture2D" uid="uid://hrjboneu02ql" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/chicken.png" id="2_2n867"]
+[ext_resource type="Script" path="res://GameSystem/animals/itemAnimals.gd" id="3_7qist"]
+
+[resource]
+script = ExtResource("3_7qist")
+animalType = "chicken"
+animalInstance = ExtResource("1_vi00l")
+itemImage = ExtResource("2_2n867")
+itemName = "Chicken"

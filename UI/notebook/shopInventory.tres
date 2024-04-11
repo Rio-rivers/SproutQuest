@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ShopInventory" load_steps=28 format=3 uid="uid://8vee1jlf0mff"]
+[gd_resource type="Resource" script_class="ShopInventory" load_steps=30 format=3 uid="uid://8vee1jlf0mff"]
 
 [ext_resource type="Script" path="res://GameSystem/shop/ShopInventory.gd" id="1_eik7v"]
 [ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://UI/items/axe.tres" id="2_uu2jp"]
@@ -27,92 +27,37 @@
 [ext_resource type="Resource" uid="uid://b2yaihq12ibgs" path="res://UI/items/itemWheatSeed.tres" id="25_4gn3s"]
 [ext_resource type="Resource" uid="uid://bbnx4uagns3u5" path="res://UI/items/pickaxe.tres" id="26_p4oxu"]
 [ext_resource type="Resource" uid="uid://b4emiwybx68r0" path="res://UI/items/wateringCan.tres" id="27_ilcbr"]
+[ext_resource type="Resource" uid="uid://d11xns4mb82qn" path="res://UI/items/itemCow.tres" id="28_2ga0b"]
+[ext_resource type="Resource" uid="uid://d1w0ask3r81x4" path="res://UI/items/itemChicken.tres" id="29_fstlv"]
 
 [resource]
 script = ExtResource("1_eik7v")
 shopItems = {
-ExtResource("27_ilcbr"): {
+ExtResource("2_uu2jp"): {
+"price": 20,
+"seasons": [1, 2, 3, 4],
+"sellable": false
+},
+ExtResource("3_av63n"): {
 "price": 0,
 "seasons": [1, 2, 3, 4],
 "sellable": false
 },
-ExtResource("26_p4oxu"): {
+ExtResource("4_06wvp"): {
+"price": 2,
+"sellable": true
+},
+ExtResource("5_7fbgo"): {
 "price": 10,
+"sellable": true
+},
+ExtResource("6_loell"): {
+"price": 5,
 "seasons": [1, 2, 3, 4],
 "sellable": false
 },
-ExtResource("25_4gn3s"): {
-"price": 6,
-"seasons": [3],
-"sellable": false
-},
-ExtResource("24_jnerd"): {
-"price": 18,
-"sellable": true
-},
-ExtResource("23_r1dro"): {
-"price": 3,
-"sellable": true
-},
-ExtResource("22_cfcyl"): {
-"price": 7,
-"seasons": [1],
-"sellable": false
-},
-ExtResource("21_lwc8j"): {
-"price": 15,
-"sellable": true
-},
-ExtResource("20_yn76v"): {
-"price": 4,
-"seasons": [1, 2, 3],
-"sellable": true
-},
-ExtResource("19_a7agt"): {
-"price": 8,
-"sellable": true
-},
-ExtResource("18_cnmmh"): {
-"price": 18,
-"sellable": true
-},
-ExtResource("17_mlxta"): {
+ExtResource("7_58fuy"): {
 "price": 5,
-"sellable": true
-},
-ExtResource("16_f3pcb"): {
-"price": 3,
-"sellable": false
-},
-ExtResource("15_4fao7"): {
-"price": 7,
-"sellable": true
-},
-ExtResource("14_oahfh"): {
-"price": 4,
-"seasons": [2, 3],
-"sellable": false
-},
-ExtResource("13_2608m"): {
-"price": 9,
-"sellable": true
-},
-ExtResource("12_b47q5"): {
-"price": 4,
-"seasons": [1, 2, 3],
-"sellable": false
-},
-ExtResource("11_qb5oa"): {
-"price": 7,
-"sellable": true
-},
-ExtResource("10_on353"): {
-"price": 7,
-"seasons": [1, 2],
-"sellable": false
-},
-ExtResource("9_64cmr"): {
-"price": 15,
 "sellable": true
 },
 ExtResource("8_1mmof"): {
@@ -120,38 +65,101 @@ ExtResource("8_1mmof"): {
 "seasons": [1, 3, 4],
 "sellable": false
 },
-ExtResource("7_58fuy"): {
+ExtResource("9_64cmr"): {
+"price": 15,
+"sellable": true
+},
+ExtResource("10_on353"): {
+"price": 7,
+"seasons": [1, 2],
+"sellable": false
+},
+ExtResource("11_qb5oa"): {
+"price": 7,
+"sellable": true
+},
+ExtResource("12_b47q5"): {
+"price": 4,
+"seasons": [1, 2, 3],
+"sellable": false
+},
+ExtResource("13_2608m"): {
+"price": 9,
+"sellable": true
+},
+ExtResource("14_oahfh"): {
+"price": 4,
+"seasons": [2, 3],
+"sellable": false
+},
+ExtResource("15_4fao7"): {
+"price": 7,
+"sellable": true
+},
+ExtResource("16_f3pcb"): {
+"price": 3,
+"seasons": [1, 2, 3, 4],
+"sellable": false
+},
+ExtResource("17_mlxta"): {
 "price": 5,
 "sellable": true
 },
-ExtResource("6_loell"): {
-"price": 5,
-"seasons": [1, 2, 3, 4],
-"sellable": false,
-"type": "item"
+ExtResource("18_cnmmh"): {
+"price": 18,
+"sellable": true
 },
-ExtResource("5_7fbgo"): {
+ExtResource("19_a7agt"): {
+"price": 8,
+"sellable": true
+},
+ExtResource("20_yn76v"): {
+"price": 4,
+"seasons": [1, 2, 3],
+"sellable": true
+},
+ExtResource("21_lwc8j"): {
+"price": 15,
+"sellable": true
+},
+ExtResource("22_cfcyl"): {
+"price": 7,
+"seasons": [1],
+"sellable": false
+},
+ExtResource("23_r1dro"): {
+"price": 3,
+"sellable": true
+},
+ExtResource("24_jnerd"): {
+"price": 18,
+"sellable": true
+},
+ExtResource("25_4gn3s"): {
+"price": 6,
+"seasons": [3],
+"sellable": false
+},
+ExtResource("26_p4oxu"): {
 "price": 10,
-"seasons": [],
-"sellable": true,
-"type": "item"
+"seasons": [1, 2, 3, 4],
+"sellable": false
 },
-ExtResource("4_06wvp"): {
-"price": 2,
-"seasons": [],
-"sellable": true,
-"type": "item"
-},
-ExtResource("3_av63n"): {
+ExtResource("27_ilcbr"): {
 "price": 0,
 "seasons": [1, 2, 3, 4],
-"sellable": false,
-"type": "item"
+"sellable": false
 },
-ExtResource("2_uu2jp"): {
+ExtResource("28_2ga0b"): {
 "price": 20,
 "seasons": [1, 2, 3, 4],
 "sellable": false,
-"type": "item"
+"type": "animal"
+},
+ExtResource("29_fstlv"): {
+"price": 20,
+"seasons": [1, 2, 3, 4],
+"sellable": false,
+"type": "animal"
 }
 }

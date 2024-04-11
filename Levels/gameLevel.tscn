@@ -2276,9 +2276,9 @@ visible = false
 
 [node name="notebookGUI" parent="CanvasLayer" instance=ExtResource("27_f0mnd")]
 offset_left = -304.0
-offset_top = -164.0
+offset_top = -171.0
 offset_right = 299.0
-offset_bottom = 164.0
+offset_bottom = 157.0
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("28_txdtn")]
 
@@ -2334,6 +2334,8 @@ position = Vector2(510, 155)
 [node name="foodTrough" parent="worldObjects" instance=ExtResource("34_vai3g")]
 position = Vector2(463, 310)
 
+[connection signal="close" from="CanvasLayer" to="." method="_on_gui_closed"]
+[connection signal="open" from="CanvasLayer" to="." method="_on_gui_opened"]
 [connection signal="closed" from="CanvasLayer/MenuGui" to="." method="_on_gui_closed"]
 [connection signal="opened" from="CanvasLayer/MenuGui" to="." method="_on_gui_opened"]
 [connection signal="closed" from="CanvasLayer/InventoryGui" to="." method="_on_gui_closed"]

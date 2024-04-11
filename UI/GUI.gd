@@ -4,6 +4,10 @@ extends CanvasLayer
 @onready var menuGui = $MenuGui
 @onready var notebookGui = $notebookGUI
 @onready var notebookSignal = $notebookIcon
+
+signal open
+signal close
+
 func _ready():
 	inventoryGui.closeInventory()
 	menuGui.closeMenu()
@@ -14,8 +18,10 @@ func _ready():
 func toggleNotebook(value):
 	if value == 0:
 		notebookGui.closeNotebook()
+		emit_signal("close")
 	else:
 		notebookGui.openNotebook()
+		emit_signal("open")
 	
 func _input(event):
 	if event.is_action_pressed("inventoryToggle"):
@@ -31,7 +37,9 @@ func _input(event):
 	elif event.is_action_pressed("notebookToggle"):
 		if notebookGui.notebookOpened:
 			notebookGui.closeNotebook()
+			emit_signal("close")
 		else:
 				notebookGui.openNotebook()
+				emit_signal("open")
 				
 
