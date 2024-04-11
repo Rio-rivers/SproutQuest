@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Task" load_steps=6 format=3 uid="uid://dfhsv0cjg3m61"]
+
+[ext_resource type="Texture2D" uid="uid://2r0ns7p5k2vo" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/cabbage.png" id="1_2bfmf"]
+[ext_resource type="Script" path="res://GameSystem/tasks/Tasks.gd" id="1_a0d6g"]
+[ext_resource type="Resource" uid="uid://c8exrvxsc5t8u" path="res://UI/items/itemParsnipSeed.tres" id="2_tljvh"]
+[ext_resource type="Texture2D" uid="uid://btgnmjro68gvn" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/parsnipSeed.png" id="3_1abm5"]
+[ext_resource type="Resource" uid="uid://dffd5fidgx260" path="res://UI/items/itemCabbage.tres" id="5_8ecrw"]
+
+[resource]
+script = ExtResource("1_a0d6g")
+description = "Grow and harvest 5 cabbage"
+image = ExtResource("1_2bfmf")
+taskItemName = "Cabbage"
+rewardImage = ExtResource("3_1abm5")
+type = "collection"
+isCompleted = false
+seasonal = true
+completionCriteria = 5
+taskProgress = 0
+taskItem = ExtResource("5_8ecrw")
+reward = ExtResource("2_tljvh")

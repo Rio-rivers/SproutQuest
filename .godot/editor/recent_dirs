@@ -1,3 +1,5 @@
+res://UI/notebook/tasks
+res://GameSystem/tasks
 res://GameSystem/shop
 res://GameSystem/animals
 res://UI/notebook
@@ -18,5 +20,3 @@ res://UI/hotbar
 res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Mouse sprites
 res://UI/inventory
 res://Characters/Player/Inventory
-res://UI
-res://objects/harvestable

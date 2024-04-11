@@ -14,11 +14,11 @@ func _ready():
 	
 
 func updateDay():
-	day += 1
+	day = TimeManager.getDay()
 	dayText.text = str(day)
 	
 func updateSeason(season):
-	day = 0
+
 	if season == 1:
 		seasonIcon.frame = 0
 	elif season == 2:
