@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://cua6d0td8e6ki"]
+
+[ext_resource type="Script" path="res://UI/notebook/tasks/taskSlot.gd" id="1_3c2ds"]
+[ext_resource type="Texture2D" uid="uid://d3ynl5pmtcjkh" path="res://resources/UI/shopSlot.PNG" id="2_k0y75"]
+[ext_resource type="Texture2D" uid="uid://fpf2efn8pekq" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/cabbageSeed.png" id="4_7jtvb"]
+[ext_resource type="Texture2D" uid="uid://dr1xrow5dli80" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/cow.png" id="4_tguhw"]
+
+[node name="Panel" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(267, 42)
+offset_right = 267.0
+offset_bottom = 42.0
+script = ExtResource("1_3c2ds")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(266, 42)
+layout_mode = 0
+offset_right = 266.0
+offset_bottom = 42.0
+texture = ExtResource("2_k0y75")
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10
+
+[node name="descriptionLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 162.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 7
+text = "Item
+"
+horizontal_alignment = 1
+autowrap_mode = 3
+clip_text = true
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 18.0
+offset_right = 64.0
+offset_bottom = 39.0
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+layout_mode = 0
+offset_left = -5.0
+offset_right = 28.0
+offset_bottom = 21.0
+color = Color(1, 0.839216, 0.698039, 0.462745)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(3, 3)
+texture = ExtResource("4_tguhw")
+centered = false
+
+[node name="rewardLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 3.0
+offset_right = 206.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 6
+text = "Reward:"
+horizontal_alignment = 1
+
+[node name="rewardPanel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.360784)
+layout_mode = 0
+offset_left = 163.0
+offset_top = 15.0
+offset_right = 204.0
+offset_bottom = 40.0
+
+[node name="rewardSprite" type="Sprite2D" parent="rewardPanel"]
+position = Vector2(14, 6)
+texture = ExtResource("4_7jtvb")
+centered = false
+
+[node name="progressLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 18.0
+offset_right = 163.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 10
+text = "0/0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 15.0
+offset_right = 260.0
+offset_bottom = 28.0
+color = Color(0.396078, 0.580392, 0.313726, 0.709804)
+
+[node name="collectLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 215.0
+offset_top = 15.0
+offset_right = 260.0
+offset_bottom = 28.0
+theme_override_font_sizes/font_size = 6
+text = "Collect reward"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 213.0
+offset_top = 15.0
+offset_right = 261.0
+offset_bottom = 28.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

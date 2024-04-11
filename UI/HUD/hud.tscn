@@ -1,0 +1,128 @@
+[gd_scene load_steps=13 format=3 uid="uid://byd6jtmua1kpg"]
+
+[ext_resource type="Texture2D" uid="uid://3ys7le0hp47a" path="res://resources/UI/InventoryRect.png" id="1_u4wnw"]
+[ext_resource type="Texture2D" uid="uid://dmb3b85gy1dp6" path="res://resources/UI/spring.PNG" id="2_6fstr"]
+[ext_resource type="Script" path="res://UI/HUD/hud.gd" id="2_bv6wn"]
+[ext_resource type="Texture2D" uid="uid://c5jukutwbwbte" path="res://resources/UI/summer.PNG" id="3_8d3np"]
+[ext_resource type="Texture2D" uid="uid://dtw4gyv86wmf5" path="res://resources/UI/fall.PNG" id="4_m1we0"]
+[ext_resource type="Texture2D" uid="uid://bqsspnlg8a8gn" path="res://resources/UI/winter.PNG" id="5_h5lxj"]
+[ext_resource type="Texture2D" uid="uid://duy7tcqqp6s45" path="res://resources/UI/coin.PNG" id="6_2si0d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu1th"]
+atlas = ExtResource("2_6fstr")
+region = Rect2(0, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdqkr"]
+atlas = ExtResource("3_8d3np")
+region = Rect2(0, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goywj"]
+atlas = ExtResource("4_m1we0")
+region = Rect2(0, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yysx"]
+atlas = ExtResource("5_h5lxj")
+region = Rect2(0, 0, 26, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hyt4q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu1th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdqkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goywj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yysx")
+}],
+"loop": false,
+"name": &"seasonsChange",
+"speed": 0.0
+}]
+
+[node name="HUD" type="NinePatchRect"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -72.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = 44.0
+grow_horizontal = 0
+texture = ExtResource("1_u4wnw")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("2_bv6wn")
+
+[node name="day" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(58, 13)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 6.0
+offset_right = 63.0
+offset_bottom = 19.0
+
+[node name="Panel" type="Panel" parent="day"]
+self_modulate = Color(0.976471, 0.921569, 0.85098, 0.188235)
+layout_mode = 0
+offset_left = 1.0
+offset_right = 17.0
+offset_bottom = 13.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="day"]
+position = Vector2(9.25, 6.74994)
+scale = Vector2(0.442309, 0.442309)
+sprite_frames = SubResource("SpriteFrames_hyt4q")
+animation = &"seasonsChange"
+
+[node name="textLabel" type="Label" parent="day"]
+layout_mode = 0
+offset_left = 9.0
+offset_right = 53.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 8
+text = "Day:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dayLabel" type="Label" parent="day"]
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 0
+offset_left = 38.0
+offset_right = 51.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 8
+text = "1
+"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="money" type="Panel" parent="."]
+self_modulate = Color(1, 0.486275, 0.270588, 0)
+custom_minimum_size = Vector2(58, 13)
+layout_mode = 0
+offset_left = 5.0
+offset_top = 21.0
+offset_right = 63.0
+offset_bottom = 34.0
+
+[node name="Sprite2D" type="Sprite2D" parent="money"]
+position = Vector2(9.25, 6.74995)
+scale = Vector2(0.475005, 0.475005)
+texture = ExtResource("6_2si0d")
+
+[node name="Label" type="Label" parent="money"]
+layout_mode = 0
+offset_left = 15.0
+offset_right = 51.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 8
+text = "0"
+horizontal_alignment = 2

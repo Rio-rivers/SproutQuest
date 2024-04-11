@@ -1,0 +1,234 @@
+[gd_scene load_steps=13 format=3 uid="uid://dc6fu0du2723x"]
+
+[ext_resource type="Script" path="res://UI/notebook/notebook.gd" id="1_vvmly"]
+[ext_resource type="Texture2D" uid="uid://3ys7le0hp47a" path="res://resources/UI/InventoryRect.png" id="2_fbvkc"]
+[ext_resource type="Script" path="res://UI/notebook/market.gd" id="3_w7mok"]
+[ext_resource type="Resource" uid="uid://8vee1jlf0mff" path="res://UI/notebook/shopInventory.tres" id="4_jpea1"]
+[ext_resource type="Texture2D" uid="uid://b3248ji25ykgx" path="res://resources/UI/arrow.png" id="5_fd00y"]
+[ext_resource type="Texture2D" uid="uid://cm7l68xi20e8n" path="res://resources/UI/buttonUnclicked.png" id="5_fkt6b"]
+[ext_resource type="Texture2D" uid="uid://b51xepv6nhtyr" path="res://resources/UI/buttonclicked.png" id="6_ale23"]
+[ext_resource type="Texture2D" uid="uid://du8d0x3pskc5f" path="res://resources/UI/arrowPressed.png" id="6_qkck4"]
+[ext_resource type="Script" path="res://UI/notebook/Tasks.gd" id="7_si3nh"]
+[ext_resource type="Resource" uid="uid://dfhsv0cjg3m61" path="res://UI/notebook/tasks/taskCollectCabbage.tres" id="8_6tl37"]
+[ext_resource type="Resource" uid="uid://c5if6wsg7k77t" path="res://UI/notebook/tasks/taskCollectParsnip.tres" id="9_la5qc"]
+[ext_resource type="Resource" uid="uid://ff0ts6snecya" path="res://UI/notebook/tasks/taskCollectBranches.tres" id="10_mpenp"]
+
+[node name="notebookGUI" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -122.0
+offset_right = 162.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vvmly")
+
+[node name="market" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(280, 213)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -111.0
+offset_right = 140.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fbvkc")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("3_w7mok")
+shopInventory = ExtResource("4_jpea1")
+
+[node name="marketLabel" type="Label" parent="market"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 275.0
+offset_bottom = 17.0
+theme_override_font_sizes/font_size = 10
+text = "Market"
+horizontal_alignment = 1
+
+[node name="purchase" type="GridContainer" parent="market"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512
+anchor_top = 0.577
+anchor_right = 0.512
+anchor_bottom = 0.577
+offset_left = -134.36
+offset_top = -88.901
+offset_right = 134.64
+offset_bottom = 89.099
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="sell" type="GridContainer" parent="market"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.514
+anchor_top = 0.57
+anchor_right = 0.514
+anchor_bottom = 0.57
+offset_left = -134.92
+offset_top = -87.41
+offset_right = 135.08
+offset_bottom = 87.59
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="purchaseLabel" type="Label" parent="market"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 16.0
+offset_right = 275.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 6
+text = "Items for purchase:"
+horizontal_alignment = 1
+
+[node name="sellLabel" type="Label" parent="market"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 16.0
+offset_right = 275.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 6
+text = "Sell your items:"
+horizontal_alignment = 1
+
+[node name="Button" type="TextureButton" parent="market"]
+custom_minimum_size = Vector2(26, 21)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.0
+offset_top = -99.5
+offset_right = -105.0
+offset_bottom = -78.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_fkt6b")
+texture_pressed = ExtResource("6_ale23")
+
+[node name="buyButtonLabel" type="Label" parent="market"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 7
+text = "Buy"
+horizontal_alignment = 1
+
+[node name="sellButtonLabel" type="Label" parent="market"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 32.0
+offset_bottom = 21.0
+theme_override_font_sizes/font_size = 7
+text = "Sell"
+horizontal_alignment = 1
+
+[node name="Tasks" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(280, 213)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -111.0
+offset_right = 140.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fbvkc")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+script = ExtResource("7_si3nh")
+tasks = Array[Resource("res://GameSystem/tasks/Tasks.gd")]([ExtResource("8_6tl37"), ExtResource("9_la5qc"), ExtResource("10_mpenp")])
+
+[node name="Label" type="Label" parent="Tasks"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 275.0
+offset_bottom = 17.0
+theme_override_font_sizes/font_size = 10
+text = "Tasks"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Tasks"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.545
+anchor_right = 0.5
+anchor_bottom = 0.545
+offset_left = -133.0
+offset_top = -93.085
+offset_right = 137.0
+offset_bottom = 92.915
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="leftButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(8, 13)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.0
+offset_top = 87.5
+offset_right = -143.0
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_fd00y")
+texture_pressed = ExtResource("6_qkck4")
+ignore_texture_size = true
+flip_h = true
+
+[node name="rightButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(8, 13)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.0
+offset_top = 87.5
+offset_right = 151.0
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_fd00y")
+texture_pressed = ExtResource("6_qkck4")
+
+[connection signal="pressed" from="market/Button" to="market" method="_on_shop_toggle_button_pressed"]
+[connection signal="pressed" from="leftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="rightButton" to="." method="_on_right_button_pressed"]

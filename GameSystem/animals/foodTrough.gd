@@ -3,8 +3,6 @@ extends StaticBody2D
 class_name FoodTrough
 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
-#@onready var playerInventory: InventoryTwo 
-#@onready var playerInventory = preload("res://Characters/Player/Inventory/playerInventory.tres")
 
 @export var levelOfFood: int = 0
 @export var harvestableType: Array[HarvestType]

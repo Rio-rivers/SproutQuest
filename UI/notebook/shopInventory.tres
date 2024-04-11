@@ -1,0 +1,165 @@
+[gd_resource type="Resource" script_class="ShopInventory" load_steps=30 format=3 uid="uid://8vee1jlf0mff"]
+
+[ext_resource type="Script" path="res://GameSystem/shop/ShopInventory.gd" id="1_eik7v"]
+[ext_resource type="Resource" uid="uid://cheojfk6lajuq" path="res://UI/items/axe.tres" id="2_uu2jp"]
+[ext_resource type="Resource" uid="uid://c77b5nlchubf7" path="res://UI/items/hoe.tres" id="3_av63n"]
+[ext_resource type="Resource" uid="uid://cqgd8ymtks4yn" path="res://UI/items/itemBranch.tres" id="4_06wvp"]
+[ext_resource type="Resource" uid="uid://dffd5fidgx260" path="res://UI/items/itemCabbage.tres" id="5_7fbgo"]
+[ext_resource type="Resource" uid="uid://cx4gon66eyg43" path="res://UI/items/itemCabbageSeed.tres" id="6_loell"]
+[ext_resource type="Resource" uid="uid://bca0kp222sc3c" path="res://UI/items/itemCarrot.tres" id="7_58fuy"]
+[ext_resource type="Resource" uid="uid://c24k8mcil0qjx" path="res://UI/items/itemCarrotSeed.tres" id="8_1mmof"]
+[ext_resource type="Resource" uid="uid://c836pil53pc30" path="res://UI/items/itemCauliflower.tres" id="9_64cmr"]
+[ext_resource type="Resource" uid="uid://c8fk7nf8tx1gn" path="res://UI/items/itemCauliflowerSeed.tres" id="10_on353"]
+[ext_resource type="Resource" uid="uid://b6r1u4o36uwn2" path="res://UI/items/itemCorn.tres" id="11_qb5oa"]
+[ext_resource type="Resource" uid="uid://b5fqrptgaobp3" path="res://UI/items/itemCornSeed.tres" id="12_b47q5"]
+[ext_resource type="Resource" uid="uid://bsysd80j03r0e" path="res://UI/items/itemCucumber.tres" id="13_2608m"]
+[ext_resource type="Resource" uid="uid://bo4vgbb8ed02m" path="res://UI/items/itemCucumberSeed.tres" id="14_oahfh"]
+[ext_resource type="Resource" uid="uid://m8mqdj0x1ove" path="res://UI/items/itemEgg.tres" id="15_4fao7"]
+[ext_resource type="Resource" uid="uid://0cvbrklslawj" path="res://UI/items/itemFeed.tres" id="16_f3pcb"]
+[ext_resource type="Resource" uid="uid://cuayh56wuoini" path="res://UI/items/itemLog.tres" id="17_mlxta"]
+[ext_resource type="Resource" uid="uid://dowolwq8hkkxe" path="res://UI/items/itemMilk.tres" id="18_cnmmh"]
+[ext_resource type="Resource" uid="uid://dlm6lqunm6x1j" path="res://UI/items/itemParsnip.tres" id="19_a7agt"]
+[ext_resource type="Resource" uid="uid://c8exrvxsc5t8u" path="res://UI/items/itemParsnipSeed.tres" id="20_yn76v"]
+[ext_resource type="Resource" uid="uid://be06tgveju88d" path="res://UI/items/itemPumpkin.tres" id="21_lwc8j"]
+[ext_resource type="Resource" uid="uid://b80wpkwoq288" path="res://UI/items/itemPumpkinSeed.tres" id="22_cfcyl"]
+[ext_resource type="Resource" uid="uid://b3sm5fjt6u5yo" path="res://UI/items/itemStone.tres" id="23_r1dro"]
+[ext_resource type="Resource" uid="uid://b5qojxmkqpiyd" path="res://UI/items/itemWheat.tres" id="24_jnerd"]
+[ext_resource type="Resource" uid="uid://b2yaihq12ibgs" path="res://UI/items/itemWheatSeed.tres" id="25_4gn3s"]
+[ext_resource type="Resource" uid="uid://bbnx4uagns3u5" path="res://UI/items/pickaxe.tres" id="26_p4oxu"]
+[ext_resource type="Resource" uid="uid://b4emiwybx68r0" path="res://UI/items/wateringCan.tres" id="27_ilcbr"]
+[ext_resource type="Resource" uid="uid://d11xns4mb82qn" path="res://UI/items/itemCow.tres" id="28_2ga0b"]
+[ext_resource type="Resource" uid="uid://d1w0ask3r81x4" path="res://UI/items/itemChicken.tres" id="29_fstlv"]
+
+[resource]
+script = ExtResource("1_eik7v")
+shopItems = {
+ExtResource("2_uu2jp"): {
+"price": 20,
+"seasons": [1, 2, 3, 4],
+"sellable": false
+},
+ExtResource("3_av63n"): {
+"price": 0,
+"seasons": [1, 2, 3, 4],
+"sellable": false
+},
+ExtResource("4_06wvp"): {
+"price": 2,
+"sellable": true
+},
+ExtResource("5_7fbgo"): {
+"price": 10,
+"sellable": true
+},
+ExtResource("6_loell"): {
+"price": 5,
+"seasons": [1, 2, 3, 4],
+"sellable": false
+},
+ExtResource("7_58fuy"): {
+"price": 5,
+"sellable": true
+},
+ExtResource("8_1mmof"): {
+"price": 2,
+"seasons": [1, 3, 4],
+"sellable": false
+},
+ExtResource("9_64cmr"): {
+"price": 15,
+"sellable": true
+},
+ExtResource("10_on353"): {
+"price": 7,
+"seasons": [1, 2],
+"sellable": false
+},
+ExtResource("11_qb5oa"): {
+"price": 7,
+"sellable": true
+},
+ExtResource("12_b47q5"): {
+"price": 4,
+"seasons": [1, 2, 3],
+"sellable": false
+},
+ExtResource("13_2608m"): {
+"price": 9,
+"sellable": true
+},
+ExtResource("14_oahfh"): {
+"price": 4,
+"seasons": [2, 3],
+"sellable": false
+},
+ExtResource("15_4fao7"): {
+"price": 7,
+"sellable": true
+},
+ExtResource("16_f3pcb"): {
+"price": 3,
+"seasons": [1, 2, 3, 4],
+"sellable": false
+},
+ExtResource("17_mlxta"): {
+"price": 5,
+"sellable": true
+},
+ExtResource("18_cnmmh"): {
+"price": 18,
+"sellable": true
+},
+ExtResource("19_a7agt"): {
+"price": 8,
+"sellable": true
+},
+ExtResource("20_yn76v"): {
+"price": 4,
+"seasons": [1, 2, 3],
+"sellable": true
+},
+ExtResource("21_lwc8j"): {
+"price": 15,
+"sellable": true
+},
+ExtResource("22_cfcyl"): {
+"price": 7,
+"seasons": [1],
+"sellable": false
+},
+ExtResource("23_r1dro"): {
+"price": 3,
+"sellable": true
+},
+ExtResource("24_jnerd"): {
+"price": 18,
+"sellable": true
+},
+ExtResource("25_4gn3s"): {
+"price": 6,
+"seasons": [3],
+"sellable": false
+},
+ExtResource("26_p4oxu"): {
+"price": 10,
+"seasons": [1, 2, 3, 4],
+"sellable": false
+},
+ExtResource("27_ilcbr"): {
+"price": 0,
+"seasons": [1, 2, 3, 4],
+"sellable": false
+},
+ExtResource("28_2ga0b"): {
+"price": 20,
+"seasons": [1, 2, 3, 4],
+"sellable": false,
+"type": "animal"
+},
+ExtResource("29_fstlv"): {
+"price": 20,
+"seasons": [1, 2, 3, 4],
+"sellable": false,
+"type": "animal"
+}
+}

@@ -7,6 +7,7 @@ var numOfItem:int
 
 signal itemCountUpdate(item:Item, numOfItem: int)
 signal addNewItem(item:Item, numOfItem: int)
+signal removedItem
 
 
 func addItemsToInventory(item: Item, numToAdd):
@@ -22,6 +23,7 @@ func addItemsToInventory(item: Item, numToAdd):
 func removeItemsFromInventory(item: Item):
 	if item in items:
 		items.erase(item)
+		emit_signal("removedItem")
 		
 func depleteItemsFromInventory(item:Item, numToRemove:int):
 	if item in items:
