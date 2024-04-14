@@ -8,13 +8,14 @@
 
 [resource]
 script = ExtResource("4_h3pnq")
-description = "Collect 6 branches"
+description = "Collect 1 branch"
 image = ExtResource("1_2mmic")
 taskItemName = "Branch"
 rewardImage = ExtResource("3_oaxrm")
 type = "collection"
 isCompleted = false
-seasonal = true
+rewardCollected = false
+seasonal = false
 completionCriteria = 1
 taskProgress = 0
 taskItem = ExtResource("5_t07sg")

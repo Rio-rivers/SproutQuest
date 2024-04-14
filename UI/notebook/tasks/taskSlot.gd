@@ -39,4 +39,8 @@ func updateSlot(progress:int):
 
 func _on_button_pressed():
 	print("HELLO")
+	collectButton.disabled = true
+	collectLabel.text = "Collected"
+	color.color = "a27b68b5"
+	currentTask.rewardCollected = true
 	emit_signal("buttonPressed",currentTask)

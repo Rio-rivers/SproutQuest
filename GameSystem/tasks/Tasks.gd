@@ -8,6 +8,7 @@ class_name Task
 @export var rewardImage:Texture
 @export var type:String 
 @export var isCompleted:bool = false
+@export var rewardCollected:bool = false
 @export var seasonal:bool = false
 @export var completionCriteria: int
 @export var taskProgress: int = 0
@@ -28,6 +29,7 @@ func getProgress():
 func renewTask():
 	if seasonal:
 		isCompleted = false
+		rewardCollected = false
 		taskProgress = 0
 
 func updateProgress(progress:int, extraInfo = null):

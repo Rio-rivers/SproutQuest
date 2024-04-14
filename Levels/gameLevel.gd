@@ -1,7 +1,12 @@
 extends Node2D
 
-@export var harvestableType: Array[HarvestType]
+@onready var player:= $player
 
+
+var _save: SaveGame
+
+func _ready():
+	pass
 
 func _on_gui_closed():
 	get_tree().paused = false
