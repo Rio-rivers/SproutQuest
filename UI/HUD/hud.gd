@@ -6,6 +6,7 @@ extends NinePatchRect
 @onready var player: Player = get_tree().get_first_node_in_group("players")
 
 var day = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	TimeManager.connect("newSeason",updateSeason)

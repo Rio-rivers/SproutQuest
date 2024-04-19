@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://d11xns4mb82qn"]
+[gd_resource type="Resource" script_class="AnimalItem" load_steps=4 format=3 uid="uid://d11xns4mb82qn"]
 
 [ext_resource type="PackedScene" uid="uid://cq1b2b0s7tlto" path="res://Characters/Animals/Cow.tscn" id="1_4vvy0"]
 [ext_resource type="Texture2D" uid="uid://dr1xrow5dli80" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/cow.png" id="2_vyvf4"]

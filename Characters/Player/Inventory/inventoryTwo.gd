@@ -9,6 +9,24 @@ signal itemCountUpdate(item:Item, numOfItem: int)
 signal addNewItem(item:Item, numOfItem: int)
 signal removedItem
 
+func _init():
+	items = {}
+func getInventory():
+	var tempDir = {}
+	for item in items:
+		var itemPath = item.scene_file_path
+		tempDir[itemPath] = items[item]
+	return tempDir
+
+func loadInventory(data):
+	var itemsToRemove = items.keys()
+	for item in itemsToRemove:
+		depleteItemsFromInventory(item,items[item])
+	items.clear()
+	
+	for item in data.keys():
+		addItemsToInventory(item, data[item])
+		
 
 func addItemsToInventory(item: Item, numToAdd):
 	
@@ -30,6 +48,7 @@ func depleteItemsFromInventory(item:Item, numToRemove:int):
 		items[item] -= numToRemove
 		if items[item] <= 0:
 			emit_signal("itemCountUpdate",item, 0)
+			
 		else:
 			emit_signal("itemCountUpdate",item, items[item])
 	

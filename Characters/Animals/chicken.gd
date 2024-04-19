@@ -4,7 +4,6 @@ extends Animal
 
 class_name Chicken
 
-
 @onready var adultSprite= preload("res://GameSystem/animals/adultChickenSprite.tscn")
 @onready var adultAnimation= $AnimationPlayer.get_path()
 #get sprite status
@@ -42,8 +41,24 @@ func _ready():
 	add_to_group("animals")
 	changeState()
 	EatingAndDrinkingTimer.start(FAWTimer)
+	
+func save():
+	
+	var saveDict = {
+		"posX": position.x,
+		"posY": position.y,
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"age": age,
+		"happiness": happiness,
+		"fed": fed,
+		"watered": watered,
+		"isMature": isMature,
+	}
+	return saveDict
 
 func _physics_process(_delta):
+	
 
 	if(currentState == chickenState.WALK):
 		velocity = direction * moveSpeed
@@ -130,19 +145,20 @@ func updateAnimal():
 
 
 func updateAnimations():
-	var newSprite = adultSprite.instantiate()
-	add_child(newSprite)
-	sprite.call_deferred("queue_free")
-	sprite = newSprite
+	
+	if age >= ageOfMaturity:
+		var newSprite = adultSprite.instantiate()
+		add_child(newSprite)
+		sprite.call_deferred("queue_free")
+		sprite = newSprite
 
-	animationTree.active = false
-	animationTree.anim_player = adultAnimation
-	animationTree.active = true
-	childAnimation.call_deferred("queue_free")
-	changeState()
+		animationTree.active = false
+		animationTree.anim_player = adultAnimation
+		animationTree.active = true
+		childAnimation.call_deferred("queue_free")
+		changeState()
 		
 func _on_eating_and_drinking_timer_timeout():
-	print("Chicken eating or drinking on timer")
 	if not watered:
 		needsAction = getWater() or needsAction
 	if not fed:

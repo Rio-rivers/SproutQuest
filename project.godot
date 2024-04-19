@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Sprout Quest"
-run/main_scene="res://Levels/gameLevel.tscn"
+run/main_scene="res://GameSystem/mainMenu/mainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 TimeManager="*res://GameSystem/TimeManager.gd"
+SaveLoadGame="*res://GameSystem/save/SaveLoadGame.gd"
 
 [display]
 

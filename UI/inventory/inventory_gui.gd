@@ -22,6 +22,7 @@ func _ready():
 	fillSlots()
 	connectSlots()
 	call_deferred("hotbarSlotUpdate")
+	print_inventory("ITEMS ON LOAD:",playerInventory)
 	
 
 func connectSlots():
@@ -92,7 +93,7 @@ func addNewItemToSlots(inventoryItem: Item, numOfItem: int) -> void:
 			return
 
 func fillSlots() -> void:
-	print_inventory(playerInventory)
+	#print_inventory("ITEMS AFTER FILLED:",playerInventory)
 	index = 0
 	for item in playerInventory.items.keys():
 		if index >= slots.size():
@@ -107,7 +108,6 @@ func fillSlots() -> void:
 	
 	
 func moveItemToSlot(currentSlot: Slots, targetSlot:Slots):
-	print("MOVING")
 	var item = currentSlot.getStoredItem()
 	var currentSlotIndex = slots.find(currentSlot)
 	var targetSlotIndex = slots.find(targetSlot)
@@ -142,7 +142,7 @@ func binAnItem(slot):
 		var item = itemScene.getItem()
 		slot.clearSlot(itemScene)
 		playerInventory.removeItemsFromInventory(item)
-		print_inventory(playerInventory)
+		#print_inventory("ITEMS AFTER BIN:",playerInventory)
 		var slotIndex = slots.find(slot)
 		if slotIndex <8:
 			hotbarSlotUpdate()
@@ -154,10 +154,10 @@ func _on_bin_button_pressed():
 		selectedSlot = null
 	
 	
-func print_inventory(inventory):
-	print("Inventory Contents:")
-	for item in inventory.items.keys():
-		print("Item: ", item, " Count: ", inventory.items[item])
+func print_inventory(reason,inventory):
+	print(reason, inventory.items)
+	#for item in inventory.items.keys():
+		#print(reason,"Item: ", item,"Item name: ", item.itemName, " Count: ", inventory.items[item])
 #func updateInventory(inventoryItem:Item, numOfItem: int) ->void:
 	#print_inventory(playerInventory)
 	#print("Inventory Update Started")

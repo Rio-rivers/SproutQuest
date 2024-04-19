@@ -28,8 +28,8 @@ func updateTime(timePassed):
 		currentTime = 0
 		currentDay += 1
 		print(" ")
-		print("DAY: ", currentDay)
-		print("CURRENT SEASON: ", currentSeason)
+		#print("DAY: ", currentDay)
+		#print("CURRENT SEASON: ", currentSeason)
 		emit_signal("newDay")
 		if currentDay > GAME_SEASON_DURATION:
 			nextSeason()
@@ -37,9 +37,9 @@ func updateTime(timePassed):
 func nextSeason():
 	currentDay = 1
 	currentSeason = (currentSeason % 4) + 1
-	print(" ")
-	print("DAY: ", currentDay)
-	print("NEW SEASON: ", currentSeason)
+	#print(" ")
+	#print("DAY: ", currentDay)
+	#print("NEW SEASON: ", currentSeason)
 	
 	
 	emit_signal("newSeason",currentSeason)

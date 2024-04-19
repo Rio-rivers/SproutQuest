@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://d1w0ask3r81x4"]
+[gd_resource type="Resource" script_class="AnimalItem" load_steps=4 format=3 uid="uid://d1w0ask3r81x4"]
 
 [ext_resource type="PackedScene" uid="uid://dh3qbpkoi4jnv" path="res://Characters/Animals/chicken.tscn" id="1_vi00l"]
 [ext_resource type="Texture2D" uid="uid://hrjboneu02ql" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/chicken.png" id="2_2n867"]

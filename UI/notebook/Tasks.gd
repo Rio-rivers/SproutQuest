@@ -15,11 +15,12 @@ func _ready():
 	displayTasks()
 	
 func displayTasks():
-	#var slots = grid.get_children()
-	#for child in slots:
-		#grid.remove_child(child)
+	var slots = grid.get_children()
+	for child in slots:
+		if !child.currentTask.isCompleted or child.currentTask.rewardCollected:
+			grid.remove_child(child)
 	for task in tasks:
-		if !task.isCompleted:
+		if !task.isCompleted : #or !task.rewardCollected
 			var newTaskSlot = taskSlot.instantiate()
 			grid.add_child(newTaskSlot)
 			newTaskSlot.createSlot(task)
@@ -29,9 +30,17 @@ func clearChildren():
 	for child in grid.get_children():
 		call_deferred("queue_free",child)
 		
-func updateTasks():
+func updateOnceTasks():
 	for task in tasks:
-		if task.isCompleted:#and task.seasonal
+		if task.rewardCollected and !task.seasonal:
+			task.renewTask()
+		elif !task.isCompleted:
+			progressTasks()
+	displayTasks()
+		
+func updateTasks(season=null):
+	for task in tasks:
+		if task.rewardCollected and task.seasonal:
 			task.renewTask()
 		elif !task.isCompleted:
 			progressTasks()

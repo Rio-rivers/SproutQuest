@@ -6,7 +6,7 @@ class_name TilledSoil
 
 @onready var backgroundImage: Sprite2D = $background
 @onready var plantContainer: CenterContainer = $CenterContainer
-@onready var playerInventory: InventoryTwo = preload("res://Characters/Player/Inventory/playerInventory.tres")
+#@onready var playerInventory: InventoryTwo = preload("res://Characters/Player/Inventory/playerInventory.tres")
 
 const TIME_UNTIL_UNTILLED: int = 6
 const MAX_UNWATERED_TIME: int = 3
@@ -18,6 +18,19 @@ var daysSinceWater: int = 0
 
 func _ready():
 	TimeManager.connect("newDay",newDay)
+	add_to_group("saveable")
+	
+func save():
+	for child in get_children():
+		if child.has_method("save") :
+			print("CHILD's CHILD HAS SAVE")
+	var saveDict = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"harvestType": harvestableType,
+		"children": [get_children()],
+	}
+	return saveDict
 	
 func newDay():
 	if plantGrowing:
@@ -52,6 +65,7 @@ func insertPlant(item:Item):
 		var plantScene = seeds.get_plant_scene()
 		if plantScene:
 			var plantInstance = plantScene.instantiate() as PlantedPlant
+			var playerInventory = load("res://Characters/Player/Inventory/playerInventory.tres")
 			#plantContainer.add_child(plantInstance)
 			plantContainer.call_deferred("add_child", plantInstance)
 			plantGrowing = plantInstance

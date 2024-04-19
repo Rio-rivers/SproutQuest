@@ -17,9 +17,20 @@ var harvestable:bool
 func _ready():
 	TimeManager.connect("newDay",growth)
 	frameDuration = max(ageUntilHarvest / (growthStages - 1), 1)
+	add_to_group("saveable")
 	
 func isHarvestable()->bool:
 	return harvestable
+	
+func save():
+	var saveDict = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"harvestType": harvestableType,
+		"age": age,
+		"harvestable": harvestable,
+	}
+	return saveDict
 	
 func growth():
 	age += 1

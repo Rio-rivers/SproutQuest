@@ -17,12 +17,12 @@ extends NinePatchRect
 
 var itemsForSale = []
 var itemsForPurchase = []
-var marketState = 0
+var marketState = 1
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print_inventory()
+	#print_inventory()
 	var currentSeason = TimeManager.getSeason()
 	updateShopInventory(currentSeason)
 	player.connect("moneyChanged",updateSlots)
