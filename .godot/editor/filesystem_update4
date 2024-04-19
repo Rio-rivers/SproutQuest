@@ -63,3 +63,4 @@ res://GameSystem/tiles/farmingLand.gd
 res://GameSystem/tiles/farmable_tile_map.tscn
 res://GameSystem/tiles/tilledSoil.gd
 res://GameSystem/crops/plantedPlant.gd
+res://GameSystem/effects/dayOverlay.tscn

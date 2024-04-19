@@ -109,3 +109,5 @@ func loadGame():
 			player.increaseMoney(0)
 		elif newObject is PlantedPlant:
 			newObject.checkAge()
+		elif newObject is TilledSoil and nodeData["watered"]:
+			newObject.waterSoil()
