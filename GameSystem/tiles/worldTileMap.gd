@@ -17,6 +17,8 @@ const SEASON_STAIR_TEXTURES = [
 
 func _ready():
 	TimeManager.connect("newSeason",updateTextures)
+	TimeManager.connect("loadedcurrentSeason",updateTextures)
+
 
 func updateTextures(season):
 	var floorTexture = load(SEASON_FLOOR_TEXTURES[season-1])

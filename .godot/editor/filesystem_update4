@@ -52,3 +52,14 @@ res://Characters/Animals/Cow.gd
 res://GameSystem/animals/animal.gd
 res://GameSystem/TimeManager.gd
 res://UI/hotbar/hotbar.tscn
+res://GameSystem/effects/dayOverlay.gd
+res://GameSystem/tiles/worldTileMap.gd
+res://GameSystem/tiles/treeSeasons.gd
+res://objects/harvestable/resources/rock1.tscn
+res://GameSystem/tiles/rockSmallSeasons.gd
+res://objects/harvestable/resources/rock2.tscn
+res://GameSystem/tiles/rockBigSeasons.gd
+res://GameSystem/tiles/farmingLand.gd
+res://GameSystem/tiles/farmable_tile_map.tscn
+res://GameSystem/tiles/tilledSoil.gd
+res://GameSystem/crops/plantedPlant.gd

@@ -17,7 +17,7 @@ func closeMenu():
 
 
 func _on_save_button_pressed():
-	SaveLoadGame.save_game()
+	SaveLoadGame.saveGame()
 	SaveLoadGame.saveToInventorySave()
 
 

@@ -11,6 +11,9 @@ var day = 1
 func _ready():
 	TimeManager.connect("newSeason",updateSeason)
 	TimeManager.connect("newDay",updateDay)
+	TimeManager.connect("loadedcurrentSeason",updateSeason)
+	TimeManager.connect("loadedcurrentDay",updateDay)
+
 	player.connect("moneyChanged", updateMoney)
 	
 
