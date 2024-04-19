@@ -18,6 +18,8 @@ func _ready():
 	TimeManager.connect("newDay",growth)
 	frameDuration = max(ageUntilHarvest / (growthStages - 1), 1)
 	add_to_group("saveable")
+
+	#
 	
 func isHarvestable()->bool:
 	return harvestable
@@ -34,7 +36,9 @@ func save():
 	
 func growth():
 	age += 1
-	
+	checkAge()
+func checkAge():
+	print("PLANT CALLED")
 	if age < ageUntilHarvest:
 		var currentFrame = min(age / frameDuration, growthStages - 2)
 		animatedSprite.frame = currentFrame

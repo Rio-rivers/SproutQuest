@@ -19,16 +19,18 @@ var daysSinceWater: int = 0
 func _ready():
 	TimeManager.connect("newDay",newDay)
 	add_to_group("saveable")
+	print("TILLED",get_scene_file_path()," ",get_parent().get_path())
 	
 func save():
-	for child in get_children():
-		if child.has_method("save") :
-			print("CHILD's CHILD HAS SAVE")
+
 	var saveDict = {
 		"filename" : get_scene_file_path(),
 		"parent" : get_parent().get_path(),
 		"harvestType": harvestableType,
-		"children": [get_children()],
+		"name": name,
+		"watered":watered,
+		"posX": position.x,
+		"posY": position.y,
 	}
 	return saveDict
 	

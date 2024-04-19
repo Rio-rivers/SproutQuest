@@ -7,6 +7,7 @@ func _ready():
 	animation.play("test")
 	#animation.play("timeChangeSpring")
 	TimeManager.connect("newDay",_on_playDayAnimation)
+	
 
 
 func _on_playDayAnimation():

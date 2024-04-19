@@ -3,7 +3,7 @@ extends AnimatedSprite2D
 
 func _ready():
 	TimeManager.connect("newSeason",changeTexture)
-
+	TimeManager.connect("loadedcurrentSeason",changeTexture)
 
 func changeTexture(season):
 	if season == 4:

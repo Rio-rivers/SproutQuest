@@ -5,6 +5,7 @@ const GAME_DAY_DURATION = 10 #840.0
 const GAME_SEASON_DURATION = 2#23520.0
 
 enum seasons { SPRING = 1, SUMMER =2, FALL=3, WINTER=4 }
+enum time { DAY = 1, EVENING =2, NIGHT=3}
 
 var currentTime = 0
 var currentDay = 1
@@ -14,6 +15,8 @@ var currentSeason = seasons.SPRING
 
 signal newDay
 signal newSeason(currentSeason)
+signal loadedcurrentDay
+signal loadedcurrentSeason(currentSeason)
 
 func _ready():
 	set_process(true)
@@ -34,16 +37,20 @@ func updateTime(timePassed):
 		if currentDay > GAME_SEASON_DURATION:
 			nextSeason()
 
+
 func nextSeason():
 	currentDay = 1
 	currentSeason = (currentSeason % 4) + 1
 	#print(" ")
-	#print("DAY: ", currentDay)
-	#print("NEW SEASON: ", currentSeason)
+	print("DAY: ", currentDay)
+	print("NEW SEASON: ", currentSeason)
 	
 	
 	emit_signal("newSeason",currentSeason)
 	
+func loadDaySeason():
+	emit_signal("loadedcurrentDay")
+	emit_signal("loadedcurrentSeason",currentSeason)
 	
 func getSeason()->int:
 	return currentSeason

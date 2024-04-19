@@ -11,7 +11,7 @@ var _save: InventorySave = InventorySave.new()
 func controlPanel():
 	if loadOldWorld:
 		loadInventorySave()
-		load_game()
+		loadGame()
 	else:
 		createNewSave()
 	loadOldWorld = false
@@ -19,7 +19,6 @@ func controlPanel():
 func createNewSave():
 	_save = InventorySave.new()
 	_save.inventory = InventoryTwo.new()
-	#_save.writeSaveFile()
 	playerInventory.loadInventory(_save.inventory.items)
 	
 func loadInventorySave():
@@ -32,84 +31,81 @@ func loadInventorySave():
 	print("PLAYER INVENTORY", playerInventory.items)
 
 func saveToInventorySave():
-	#if _save.saveFileExists():
 		_save.inventory.items = {}
 		_save.inventory.items = playerInventory.items
 		_save.writeSaveFile()
 		
-
-func save_game():
-	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
-	var save_nodes = get_tree().get_nodes_in_group("saveable")
-	for node in save_nodes:
-		# Check the node is an instanced scene so it can be instanced again during load.
-		if node.scene_file_path.is_empty():
-			print("persistent node '%s' is not an instanced scene, skipped" % node.name)
-			continue
-
-		# Check the node has a save function.
-		if !node.has_method("save"):
-			print("persistent node '%s' is missing a save() function, skipped" % node.name)
-			continue
-
-		# Call the node's save function.
-		var node_data = node.call("save")
-
-		# JSON provides a static method to serialized JSON string.
-		var json_string = JSON.stringify(node_data)
-
-		# Store the save dictionary as a new line in the save file.
-		save_game.store_line(json_string)
-		
-func load_game():
-	print("LOAD CALLED")
-	if not FileAccess.file_exists("user://savegame.save"):
-		return # Error! We don't have a save to load.
-
-	var save_nodes = get_tree().get_nodes_in_group("saveable")
-	var player: Player
-	for i in save_nodes:
-		if !(i is Player):
-			i.queue_free()
-		else:
-			player = i
-
-	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
-	while save_game.get_position() < save_game.get_length():
-		var json_string = save_game.get_line()
-
-		# Creates the helper class to interact with JSON
-		var json = JSON.new()
-
-		# Check if there is any error while parsing the JSON string, skip in case of failure
-		var parse_result = json.parse(json_string)
-		if not parse_result == OK:
-			print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
-			continue
-
-		# Get the data from the JSON object
-		var node_data = json.get_data()
-
-		# Firstly, we need to create the object and add it to the tree and set its position.
-		
-		var new_object = load(node_data["filename"]).instantiate()
-		if "money" not in node_data:
-			
-			get_node(node_data["parent"]).add_child(new_object)
-			
-			
-		else:
-			new_object = player
-		new_object.position = Vector2(node_data["posX"], node_data["posY"])
-		
-		
+func saveGame():
+	var saveGame = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+	var saveNodes = get_tree().get_nodes_in_group("saveable")
 	
-		# Now we set the remaining variables.
-		for key in node_data.keys():
-			if key in ["filename", "parent", "posX", "posY", "Inventory"]:
-				continue
-			new_object.set(key, node_data[key])
-		if new_object is Animal:
-				new_object.updateAnimations()
-		elif new_object is Player:
-			new_object.increaseMoney(0)
+	var timeManagerDict = {
+		"currentTime": TimeManager.currentTime,
+		"currentDay": TimeManager.currentDay,
+		"currentSeason": TimeManager.currentSeason
+	}
+	var jsonString = JSON.stringify(timeManagerDict)
+
+	saveGame.store_line(jsonString)
+	for node in saveNodes:
+		print("NODES",node)
+		if  not node.has_method("save"):#node.scene_file_path.is_empty() or
+			continue
+ 
+		var nodeData = node.call("save")
+		jsonString = JSON.stringify(nodeData)
+		saveGame.store_line(jsonString)
+
+
+func loadGame():
+	if not FileAccess.file_exists("user://savegame.save"):
+		return
+	
+	var saveNodes = get_tree().get_nodes_in_group("saveable")
+	var player: Player
+	for node in saveNodes:
+		if node is Player:
+			player = node
+		else:
+			node.queue_free()
+	var saveGame = FileAccess.open("user://savegame.save", FileAccess.READ)
+	while saveGame.get_position() < saveGame.get_length():
+		var jsonString = saveGame.get_line()
+		var json = JSON.new()
+		var parseResult = json.parse(jsonString)
+		if parseResult != OK:
+			continue
+		
+		var nodeData = json.get_data()
+		var newObject = null
+
+		if "filename" in nodeData:
+			newObject = load(nodeData["filename"]).instantiate()
+		else:
+			newObject = TimeManager
+
+		if "money" not in nodeData and "currentDay" not in nodeData:
+			var parent = get_node(nodeData["parent"])
+			parent.add_child(newObject)
+			if "posX" in nodeData:
+				if newObject is TilledSoil:
+					parent.setPosition(newObject,Vector2(nodeData["posX"], nodeData["posY"]))
+				else:
+					newObject.position = Vector2(nodeData["posX"], nodeData["posY"])
+		elif "money" in nodeData:
+			player.position = Vector2(nodeData["posX"], nodeData["posY"])
+		elif "currentDay" in nodeData:
+			TimeManager.currentDay = int(nodeData["currentDay"])
+			TimeManager.currentSeason = int(nodeData["currentSeason"])
+			TimeManager.loadDaySeason()
+
+		for key in nodeData.keys():
+			if key not in ["filename", "parent", "posX", "posY", "Inventory", "currentSeason", "currentDay"]:
+				newObject.set(key, nodeData[key])
+
+		if newObject is Animal:
+			newObject.updateAnimations()
+		elif newObject is Player:
+			player.increaseMoney(0)
+		elif newObject is PlantedPlant:
+			newObject.checkAge()
