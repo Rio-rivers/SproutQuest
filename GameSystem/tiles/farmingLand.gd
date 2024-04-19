@@ -11,7 +11,18 @@ const MAX_DISTANCE= 16
 func _ready():
 	pass # Replace with function body.
 
-
+func save():
+	var children = []
+	for child in get_children():
+		if child.has_method("save") :
+			children += child
+	var saveDict = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"harvestType": harvestableType,
+		"children": children,
+	}
+	return saveDict
 
 func tillLand(toolPosition):
 	var localPosition = to_local(toolPosition)

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="GameLevelSave" load_steps=3 format=3 uid="uid://djn50amcrpo1n"]
+
+[ext_resource type="Script" path="res://GameSystem/save/gameLevel.gd" id="1_cnvha"]
+[ext_resource type="PackedScene" uid="uid://d131v8xynbt2l" path="res://Levels/gameLevel.tscn" id="1_s4him"]
+
+[resource]
+script = ExtResource("1_cnvha")
+currentLevel = ExtResource("1_s4him")

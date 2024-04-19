@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 TimeManager="*res://GameSystem/TimeManager.gd"
+SaveLoadGame="*res://GameSystem/save/SaveLoadGame.gd"
 
 [display]
 

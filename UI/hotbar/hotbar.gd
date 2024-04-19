@@ -23,7 +23,7 @@ func _on_inventory_gui_update_hotbar(slotItems):
 	for i in slotItems.keys():
 		var hotbar_slot = slots[i]
 		var item = slotItems[i]
-		if item:
+		if item and item in playerInventory.items:
 			hotbar_slot.update(item,playerInventory.items[item])
 		else:
 			hotbar_slot.update(item,0)

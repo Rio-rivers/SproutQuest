@@ -45,6 +45,21 @@ func _ready():
 	EatingAndDrinkingTimer.start(FAWTimer)
 	
 
+func save():
+	
+	var saveDict = {
+		"posX": position.x,
+		"posY": position.y,
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"age": age,
+		"happiness": happiness,
+		"fed": fed,
+		"watered": watered,
+		"isMature": isMature,
+	}
+	return saveDict
+
 func _physics_process(_delta):
 	if(currentState == cowState.WALK):
 		velocity = direction * moveSpeed
@@ -135,18 +150,18 @@ func updateAnimal():
 		updateAnimations()
 
 func updateAnimations():
-	var newSprite = adultSprite.instantiate()
-	add_child(newSprite)
-	sprite.call_deferred("queue_free")
-	sprite = newSprite
-	animationTree.active = false
-	animationTree.anim_player = adultAnimation
-	animationTree.active = true
-	childAnimation.call_deferred("queue_free")
-	changeState()
+	if age >= ageOfMaturity:
+		var newSprite = adultSprite.instantiate()
+		add_child(newSprite)
+		sprite.call_deferred("queue_free")
+		sprite = newSprite
+		animationTree.active = false
+		animationTree.anim_player = adultAnimation
+		animationTree.active = true
+		childAnimation.call_deferred("queue_free")
+		changeState()
 	
 func _on_eating_and_drinking_timer_timeout():
-	print("Cow eating or drinking on timer")
 	if not watered:
 		needsAction = getWater() or needsAction
 	if not fed:

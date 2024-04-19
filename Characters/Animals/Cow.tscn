@@ -165,7 +165,7 @@ states/walking/position = Vector2(296.649, -0.786415)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_e0p7p"), "idle", "walking", SubResource("AnimationNodeStateMachineTransition_fbpex"), "walking", "idle", SubResource("AnimationNodeStateMachineTransition_jb1mq"), "asleep", "idle", SubResource("AnimationNodeStateMachineTransition_ehoog"), "idle", "asleep", SubResource("AnimationNodeStateMachineTransition_4g804"), "idle", "eating", SubResource("AnimationNodeStateMachineTransition_q02cn"), "eating", "idle", SubResource("AnimationNodeStateMachineTransition_buv7e"), "idle", "sitting", SubResource("AnimationNodeStateMachineTransition_ccfh3"), "sitting", "idle", SubResource("AnimationNodeStateMachineTransition_gjcx2")]
 graph_offset = Vector2(-116.351, 94.841)
 
-[node name="cow" type="CharacterBody2D"]
+[node name="cow" type="CharacterBody2D" groups=["cows", "saveable"]]
 y_sort_enabled = true
 floor_snap_length = 0.0
 script = ExtResource("1_v8j7d")

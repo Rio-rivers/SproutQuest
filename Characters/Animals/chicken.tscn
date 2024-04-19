@@ -139,7 +139,7 @@ states/walking/position = Vector2(518, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ua0h0"), "idle", "walking", SubResource("AnimationNodeStateMachineTransition_kaeqa"), "walking", "idle", SubResource("AnimationNodeStateMachineTransition_jda8j"), "asleep", "idle", SubResource("AnimationNodeStateMachineTransition_li8v7"), "idle", "asleep", SubResource("AnimationNodeStateMachineTransition_cgfui"), "eating", "idle", SubResource("AnimationNodeStateMachineTransition_rjec3"), "idle", "eating", SubResource("AnimationNodeStateMachineTransition_g652n")]
 graph_offset = Vector2(-322, -55)
 
-[node name="chicken" type="CharacterBody2D"]
+[node name="chicken" type="CharacterBody2D" groups=["chickens", "saveable"]]
 y_sort_enabled = true
 floor_snap_length = 0.0
 platform_floor_layers = 4294967294

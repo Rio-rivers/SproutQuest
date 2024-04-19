@@ -1,3 +1,4 @@
+Timer
 Label
 ColorRect
 TextureButton
@@ -11,4 +12,3 @@ Panel
 AnimatedSprite2D
 Control
 AnimationPlayer
-Timer

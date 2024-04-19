@@ -18,6 +18,8 @@ class_name Player
 
 @onready var animationPlayer = $AnimationPlayer
 
+@onready var playerInventory: InventoryTwo = preload("res://Characters/Player/Inventory/playerInventory.tres")
+
 #allows the change of state of animation
 @onready var state = animationTree.get("parameters/playback")
 
@@ -38,6 +40,7 @@ func _ready():
 	add_to_group("players")
 	updateAnimations(startPosition)
 	call_deferred("emit_signal","moneyChanged", money)
+	
 	
 	
 func _physics_process(_delta):
@@ -80,6 +83,18 @@ func _physics_process(_delta):
 					collision.get_collider().moveFromPlayer(inputDirection.normalized())
 					
 	
+
+func save():
+	
+	var saveDict = {
+		"posX": position.x,
+		"posY": position.y,
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"money": money,
+		#"Inventory": playerInventory.getInventory()
+	}
+	return saveDict
 
 
 func collectItem(item: Item, count: int):
@@ -141,4 +156,4 @@ func  states():
 #used to update equipped item
 func _on_equipped_tool_equipped_item(item):
 	equippedTool = item
-	print("Equipped tool: ", item)
+	

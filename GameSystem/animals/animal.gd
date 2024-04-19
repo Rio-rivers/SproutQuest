@@ -30,6 +30,7 @@ func growAnimal():
 	if age == ageOfMaturity:
 		matureAnimal()
 	elif age > maxAge:
+		print("animal left because of age")
 		leaveFarm()
 	if isMature and happiness > 30.0:
 		giveProduce()
@@ -71,8 +72,8 @@ func updateHappiness(method,value):
 	else:
 		happiness += value
 	if happiness <= 10.0:
+		print("animal left because of unhappiness")
 		leaveFarm()
 	
 func leaveFarm():
-	print("animal left")
 	call_deferred("queue_free")

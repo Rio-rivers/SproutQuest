@@ -17,7 +17,8 @@ func closeMenu():
 
 
 func _on_save_button_pressed():
-	pass # Replace with function body.
+	SaveLoadGame.save_game()
+	SaveLoadGame.saveToInventorySave()
 
 
 func _on_main_menu_button_pressed():
@@ -25,4 +26,5 @@ func _on_main_menu_button_pressed():
 
 
 func _on_quit_button_pressed():
+	
 	get_tree().quit()
