@@ -19,7 +19,7 @@ var daysSinceWater: int = 0
 func _ready():
 	TimeManager.connect("newDay",newDay)
 	add_to_group("saveable")
-	print("TILLED",get_scene_file_path()," ",get_parent().get_path())
+
 	
 func save():
 
@@ -62,7 +62,6 @@ func clearPlant() -> void:
 func insertPlant(item:Item):
 	
 	if item and item is Seeds:
-		print(item.itemName)
 		var seeds = item as Seeds
 		var plantScene = seeds.get_plant_scene()
 		if plantScene:

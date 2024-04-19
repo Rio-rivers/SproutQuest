@@ -1,3 +1,4 @@
+AnimatedSprite2D
 TileMap
 Timer
 Label
@@ -10,6 +11,4 @@ MarginContainer
 GridContainer
 Sprite2D
 Panel
-AnimatedSprite2D
 Control
-AnimationPlayer

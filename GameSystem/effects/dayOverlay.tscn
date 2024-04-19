@@ -1,60 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfawjblp8cipm"]
+[gd_scene load_steps=2 format=3 uid="uid://dfawjblp8cipm"]
 
 [ext_resource type="Script" path="res://GameSystem/effects/dayOverlay.gd" id="1_lceej"]
-
-[sub_resource type="Animation" id="Animation_ia7q7"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0.054902, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_nqdep"]
-resource_name = "test"
-length = 84.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1, 50.1, 84),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0.054902, 0), Color(0, 0, 0.054902, 0.784314), Color(0, 0, 0.054902, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_o1w5x"]
-resource_name = "timeChangeSpring"
-length = 840.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 352.7, 560, 840),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0.054902, 0), Color(0, 0, 0.054902, 0), Color(0, 0, 0.054902, 0.603922), Color(0, 0, 0.054902, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rueq2"]
-_data = {
-"RESET": SubResource("Animation_ia7q7"),
-"test": SubResource("Animation_nqdep"),
-"timeChangeSpring": SubResource("Animation_o1w5x")
-}
 
 [node name="DayOverlay" type="StaticBody2D"]
 script = ExtResource("1_lceej")
@@ -65,9 +11,4 @@ offset_top = -32.0
 offset_right = 1950.0
 offset_bottom = 1107.0
 mouse_filter = 2
-color = Color(0, 0, 0.054902, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_rueq2")
-}
+color = Color(0, 0, 0.054902, 0.192157)
