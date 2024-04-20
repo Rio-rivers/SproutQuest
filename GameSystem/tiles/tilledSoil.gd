@@ -8,7 +8,7 @@ class_name TilledSoil
 @onready var plantContainer: CenterContainer = $CenterContainer
 #@onready var playerInventory: InventoryTwo = preload("res://Characters/Player/Inventory/playerInventory.tres")
 
-const TIME_UNTIL_UNTILLED: int = 6
+const TIME_UNTIL_UNTILLED: int = 4
 const MAX_UNWATERED_TIME: int = 3
 
 var plantGrowing: PlantedPlant = null
@@ -39,6 +39,7 @@ func newDay():
 		if !watered:
 			daysSinceWater+=1
 			if daysSinceWater >= MAX_UNWATERED_TIME:
+				SeasonSummary.cropsDied += 1
 				clearPlant()
 	elif !plantGrowing:
 		if !watered:
@@ -65,16 +66,14 @@ func insertPlant(item:Item):
 		var seeds = item as Seeds
 		var plantScene = seeds.get_plant_scene()
 		if plantScene:
+			daysSinceWater = 0
 			var plantInstance = plantScene.instantiate() as PlantedPlant
 			var playerInventory = load("res://Characters/Player/Inventory/playerInventory.tres")
-			#plantContainer.add_child(plantInstance)
+			SeasonSummary.cropsPlanted += 1
 			plantContainer.call_deferred("add_child", plantInstance)
 			plantGrowing = plantInstance
 			playerInventory.depleteItemsFromInventory(item,1)
 
-		
-#plantGrowing = item
-		#plantContainer.add_child(item)
 func waterSoil():
 	backgroundImage.frame = 0
 	watered = true

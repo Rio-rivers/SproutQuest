@@ -106,8 +106,11 @@ func loadGame():
 		if newObject is Animal:
 			newObject.updateAnimations()
 		elif newObject is Player:
+			player.money = nodeData["money"]
 			player.increaseMoney(0)
+			
 		elif newObject is PlantedPlant:
 			newObject.checkAge()
+			
 		elif newObject is TilledSoil and nodeData["watered"]:
 			newObject.waterSoil()

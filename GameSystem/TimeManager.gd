@@ -1,8 +1,8 @@
 extends Node
 # game day starts around 8am 
 
-const GAME_DAY_DURATION = 30 #840.0
-const GAME_SEASON_DURATION = 2#23520.0
+const GAME_DAY_DURATION = 10 #840.0
+const GAME_SEASON_DURATION = 5#23520.0
 const DAY_TIME:float = GAME_DAY_DURATION / (10/5)
 const EVENING_TIME:float = DAY_TIME + (GAME_DAY_DURATION / (10/3))
 const NIGHT_TIME:float = EVENING_TIME + (GAME_DAY_DURATION / (10/2))
@@ -24,9 +24,6 @@ signal newTimeOfDay(currentTime)
 
 func _ready():
 	set_process(true)
-	print(DAY_TIME)
-	print(EVENING_TIME)
-	print(NIGHT_TIME)
 
 func _process(delta):
 	currentTime += delta
@@ -48,6 +45,7 @@ func _process(delta):
 
 func changeTimeOfDay():
 	currentTimeOfDay= (currentSeason % 3) + 1
+	
 
 func nextSeason():
 	currentDay = 1
@@ -63,6 +61,9 @@ func getSeason()->int:
 	
 func getTimeOfDay()->int:
 	return currentTimeOfDay
+	
+func getNextSeason():
+	return (currentSeason % 4) + 1
 	
 func getDay()->int:
 	return currentDay

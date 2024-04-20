@@ -1,3 +1,4 @@
+res://GameSystem
 res://GameSystem/save
 res://GameSystem/mainMenu
 res://UI/notebook/tasks
@@ -17,6 +18,5 @@ res://resources/Sprout Lands - Sprites - premium pack/Objects
 res://resources/Sprout Lands - Sprites - premium pack/Autumn
 res://GameSystem/crops
 res://GameSystem/effects
-res://GameSystem
 res://UI/hotbar
 res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Mouse sprites

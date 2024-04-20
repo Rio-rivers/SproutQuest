@@ -4,7 +4,7 @@ extends CanvasLayer
 @onready var menuGui = $MenuGui
 @onready var notebookGui = $notebookGUI
 @onready var notebookSignal = $notebookIcon
-
+@onready var summaryGui = $summaryGUI
 signal open
 signal close
 
@@ -13,7 +13,7 @@ func _ready():
 	menuGui.closeMenu()
 	notebookGui.closeNotebook()
 	notebookSignal.connect("toggleNotebook",toggleNotebook)
-
+	summaryGui.closeUI()
 
 func toggleNotebook(value):
 	if value == 0:

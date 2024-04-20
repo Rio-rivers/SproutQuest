@@ -11,7 +11,10 @@ class_name Player
 
 @export var inventory:InventoryTwo
 
-@export var money:int = 100
+var money: int = 50
+
+
+
 
 #when script starts, node is accessed
 @onready var animationTree = $AnimationTree
@@ -40,7 +43,7 @@ func _ready():
 	add_to_group("players")
 	updateAnimations(startPosition)
 	call_deferred("emit_signal","moneyChanged", money)
-	
+
 	
 	
 func _physics_process(_delta):
@@ -115,10 +118,12 @@ func updateAnimations(moveInput : Vector2):
 
 func increaseMoney(amount: int) -> void:
 	money += amount
+	SeasonSummary.totalMoneyMade += amount
 	emit_signal("moneyChanged", money)
 
 func decreaseMoney(amount: int) -> bool:
 	if money >= amount:
+		SeasonSummary.totalMoneySpent += amount
 		money -= amount
 		emit_signal("moneyChanged", money)
 		return true

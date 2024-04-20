@@ -8,7 +8,7 @@ func _ready():
 	changeDayOverlay(time)
 
 func changeDayOverlay(timeOfDay):
-	print(timeOfDay)
+
 	if timeOfDay == 1:
 		overlay.visible = false
 	elif timeOfDay == 2:

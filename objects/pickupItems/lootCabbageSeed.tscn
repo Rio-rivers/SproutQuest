@@ -9,6 +9,7 @@ radius = 7.0
 height = 14.1663
 
 [node name="lootCabbageSeed" type="Area2D"]
+y_sort_enabled = true
 script = ExtResource("1_44gvk")
 item = ExtResource("2_mdw4y")
 

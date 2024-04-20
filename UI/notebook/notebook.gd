@@ -16,6 +16,7 @@ func openNotebook():
 	visible = true
 	notebookOpened = true
 	
+	
 
 
 func closeNotebook():

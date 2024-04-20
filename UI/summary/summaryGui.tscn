@@ -1,0 +1,230 @@
+[gd_scene load_steps=14 format=3 uid="uid://dw3c526li506u"]
+
+[ext_resource type="Script" path="res://UI/summary/summaryGui.gd" id="1_buabp"]
+[ext_resource type="Texture2D" uid="uid://3ys7le0hp47a" path="res://resources/UI/InventoryRect.png" id="2_1e31k"]
+[ext_resource type="Resource" uid="uid://b5fqrptgaobp3" path="res://UI/items/itemCornSeed.tres" id="2_euckc"]
+[ext_resource type="Texture2D" uid="uid://vmwc3nctqg2u" path="res://resources/UI/buttonUnclickedLong.png" id="3_3ig4l"]
+[ext_resource type="Resource" uid="uid://cx4gon66eyg43" path="res://UI/items/itemCabbageSeed.tres" id="3_h7qg1"]
+[ext_resource type="Texture2D" uid="uid://dnomwo0t4bwkr" path="res://resources/UI/seasonSlot.png" id="3_q0f1a"]
+[ext_resource type="Texture2D" uid="uid://e4j12sscppa7" path="res://resources/UI/buttonClickedLong.png" id="4_1git8"]
+[ext_resource type="Resource" uid="uid://c8exrvxsc5t8u" path="res://UI/items/itemParsnipSeed.tres" id="4_ubbiv"]
+[ext_resource type="Resource" uid="uid://c8fk7nf8tx1gn" path="res://UI/items/itemCauliflowerSeed.tres" id="5_cfq8k"]
+[ext_resource type="Resource" uid="uid://b2yaihq12ibgs" path="res://UI/items/itemWheatSeed.tres" id="6_awkf1"]
+[ext_resource type="Resource" uid="uid://bo4vgbb8ed02m" path="res://UI/items/itemCucumberSeed.tres" id="7_v62bs"]
+[ext_resource type="Resource" uid="uid://c24k8mcil0qjx" path="res://UI/items/itemCarrotSeed.tres" id="8_lu6gn"]
+[ext_resource type="Texture2D" uid="uid://duy7tcqqp6s45" path="res://resources/UI/coin.PNG" id="11_titsa"]
+
+[node name="summaryGUI" type="Control"]
+custom_minimum_size = Vector2(280, 212)
+layout_mode = 3
+anchor_left = 0.537
+anchor_top = 0.524
+anchor_right = 0.537
+anchor_bottom = 0.524
+offset_left = -140.04
+offset_top = -105.92
+offset_right = 139.96
+offset_bottom = 106.08
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_buabp")
+rewards = {
+1: [ExtResource("2_euckc"), ExtResource("3_h7qg1"), 30],
+2: [ExtResource("4_ubbiv"), ExtResource("5_cfq8k"), 30],
+3: [ExtResource("6_awkf1"), ExtResource("7_v62bs"), 30],
+4: [ExtResource("3_h7qg1"), ExtResource("8_lu6gn"), 50]
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(280, 213)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.502
+anchor_right = 0.504
+anchor_bottom = 0.502
+offset_left = -140.12
+offset_top = -106.424
+offset_right = 139.88
+offset_bottom = 106.576
+texture = ExtResource("2_1e31k")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.505
+anchor_right = 0.5
+anchor_bottom = 0.505
+offset_left = -135.0
+offset_top = -77.565
+offset_right = 134.0
+offset_bottom = 77.435
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="animalLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "text"
+horizontal_alignment = 1
+
+[node name="animalLeftLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "text"
+horizontal_alignment = 1
+
+[node name="cropsLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "text"
+horizontal_alignment = 1
+
+[node name="cropsDiedLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "text"
+horizontal_alignment = 1
+
+[node name="profitLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "text"
+horizontal_alignment = 1
+
+[node name="rewardLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Rewards:"
+horizontal_alignment = 1
+
+[node name="Panel" type="HBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 2
+texture = ExtResource("3_q0f1a")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect/CenterContainer"]
+position = Vector2(3, 2)
+centered = false
+
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 2
+texture = ExtResource("3_q0f1a")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect2/CenterContainer"]
+position = Vector2(3, 2)
+centered = false
+
+[node name="TextureRect3" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 2
+texture = ExtResource("3_q0f1a")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect3/CenterContainer"]
+position = Vector2(10, 10)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("11_titsa")
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 187.0
+offset_right = 275.0
+offset_bottom = 206.0
+texture_normal = ExtResource("3_3ig4l")
+texture_pressed = ExtResource("4_1git8")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.474
+anchor_right = 0.5
+anchor_bottom = 0.474
+offset_left = -54.5
+offset_top = -6.006
+offset_right = 54.5
+offset_bottom = 5.994
+theme_override_font_sizes/font_size = 8
+text = "Start New Season"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="titleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 276.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 10
+text = "Season Summary"
+horizontal_alignment = 1
+
+[node name="summarydescLabel" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 17.0
+offset_right = 275.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 6
+text = "A new season has begun! Here is your summary for last season"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
