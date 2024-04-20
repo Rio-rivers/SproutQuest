@@ -78,7 +78,7 @@ func clearChildren():
 		child.queue_free()
 		
 
-func updateSellableItems(value = null,number = null):
+func updateSellableItems(_value = null,_number = null):
 	var sellSlots = sellGrid.get_children()
 	for child in sellSlots:
 		sellGrid.remove_child(child)

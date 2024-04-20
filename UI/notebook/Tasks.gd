@@ -38,7 +38,7 @@ func updateOnceTasks():
 			progressTasks()
 	displayTasks()
 		
-func updateTasks(season=null):
+func updateTasks(_season=null):
 	for task in tasks:
 		if task.rewardCollected and task.seasonal:
 			task.renewTask()

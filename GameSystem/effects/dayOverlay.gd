@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-@onready var animation = $AnimationPlayer
 @onready var overlay:ColorRect = $ColorRect
 # Called when the node enters the scene tree for the first time.
 func _ready():

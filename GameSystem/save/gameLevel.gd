@@ -15,9 +15,10 @@ func writeSaveFile()->void:
 		print("Failed to save resource: %s" % error)
 	
 func loadSaveFile()->Resource:
-
-	return ResourceLoader.load(SAVE_GAME_PATH,"",2)
-
+	return ResourceLoader.load(SAVE_GAME_PATH,"",0)
+	
+	
+ 
 		
 func saveFileExists()->bool:
 	return ResourceLoader.exists(SAVE_GAME_PATH)
