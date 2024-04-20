@@ -32,7 +32,7 @@ func renewTask():
 		rewardCollected = false
 		taskProgress = 0
 
-func updateProgress(progress:int, extraInfo = null):
+func updateProgress(progress:int, _extraInfo = null):
 	if taskProgress != completionCriteria:
 		if type == "collection":
 			taskProgress += progress

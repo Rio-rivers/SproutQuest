@@ -1,0 +1,190 @@
+[gd_scene load_steps=13 format=3 uid="uid://dw3c526li506u"]
+
+[ext_resource type="Script" path="res://UI/summary/summaryGui.gd" id="1_buabp"]
+[ext_resource type="Texture2D" uid="uid://3ys7le0hp47a" path="res://resources/UI/InventoryRect.png" id="2_1e31k"]
+[ext_resource type="PackedScene" uid="uid://qmm7ie86pyss" path="res://objects/pickupItems/lootCornSeed.tscn" id="2_wbd7q"]
+[ext_resource type="Texture2D" uid="uid://vmwc3nctqg2u" path="res://resources/UI/buttonUnclickedLong.png" id="3_3ig4l"]
+[ext_resource type="PackedScene" uid="uid://dilhojgqnc6e7" path="res://objects/pickupItems/lootCabbageSeed.tscn" id="3_auj4k"]
+[ext_resource type="Texture2D" uid="uid://dnomwo0t4bwkr" path="res://resources/UI/seasonSlot.png" id="3_q0f1a"]
+[ext_resource type="Texture2D" uid="uid://e4j12sscppa7" path="res://resources/UI/buttonClickedLong.png" id="4_1git8"]
+[ext_resource type="PackedScene" uid="uid://c64r00edq4law" path="res://objects/pickupItems/lootParsnipSeed.tscn" id="4_58i0c"]
+[ext_resource type="PackedScene" uid="uid://bnwu85ugedruf" path="res://objects/pickupItems/lootCauliflowerSeed.tscn" id="5_avtj4"]
+[ext_resource type="PackedScene" uid="uid://b2h1nj4djai5m" path="res://objects/pickupItems/lootWheatSeed.tscn" id="6_ey62j"]
+[ext_resource type="PackedScene" uid="uid://cgd1om6u028ew" path="res://objects/pickupItems/lootCucumberSeed.tscn" id="7_cthgs"]
+[ext_resource type="PackedScene" uid="uid://bcrvr1aq8nn1a" path="res://objects/pickupItems/lootCarrotSeed.tscn" id="8_8vf7o"]
+
+[node name="summaryGUI" type="Control"]
+custom_minimum_size = Vector2(280, 212)
+layout_mode = 3
+anchor_left = 0.537
+anchor_top = 0.524
+anchor_right = 0.537
+anchor_bottom = 0.524
+offset_left = -140.04
+offset_top = -105.92
+offset_right = 139.96
+offset_bottom = 106.08
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_buabp")
+rewards = {
+1: [ExtResource("2_wbd7q"), ExtResource("3_auj4k"), 30],
+2: [ExtResource("4_58i0c"), ExtResource("5_avtj4"), 30],
+3: [ExtResource("6_ey62j"), ExtResource("7_cthgs"), 30],
+4: [ExtResource("3_auj4k"), ExtResource("8_8vf7o"), 50]
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+custom_minimum_size = Vector2(280, 213)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.504
+anchor_top = 0.502
+anchor_right = 0.504
+anchor_bottom = 0.502
+offset_left = -140.12
+offset_top = -106.424
+offset_right = 139.88
+offset_bottom = 106.576
+texture = ExtResource("2_1e31k")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.505
+anchor_right = 0.5
+anchor_bottom = 0.505
+offset_left = -135.0
+offset_top = -77.565
+offset_right = 134.0
+offset_bottom = 77.435
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+
+[node name="animalLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "text"
+horizontal_alignment = 1
+
+[node name="animalLeftLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "text"
+horizontal_alignment = 1
+
+[node name="cropsLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "text"
+horizontal_alignment = 1
+
+[node name="cropsDiedLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "text"
+horizontal_alignment = 1
+
+[node name="profitLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "text"
+horizontal_alignment = 1
+
+[node name="rewardLabel" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "Rewards:"
+horizontal_alignment = 1
+
+[node name="Panel" type="HBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 2
+texture = ExtResource("3_q0f1a")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect"]
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect/CenterContainer"]
+
+[node name="TextureRect2" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 2
+texture = ExtResource("3_q0f1a")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect2"]
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect2/CenterContainer"]
+
+[node name="TextureRect3" type="TextureRect" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 2
+texture = ExtResource("3_q0f1a")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect3"]
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Sprite2D" type="Sprite2D" parent="NinePatchRect/MarginContainer/VBoxContainer/Panel/TextureRect3/CenterContainer"]
+
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 187.0
+offset_right = 275.0
+offset_bottom = 206.0
+texture_normal = ExtResource("3_3ig4l")
+texture_pressed = ExtResource("4_1git8")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.474
+anchor_right = 0.5
+anchor_bottom = 0.474
+offset_left = -54.5
+offset_top = -6.006
+offset_right = 54.5
+offset_bottom = 5.994
+theme_override_font_sizes/font_size = 8
+text = "Start New Season"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="titleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 276.0
+offset_bottom = 18.0
+theme_override_font_sizes/font_size = 10
+text = "Season Summary"
+horizontal_alignment = 1
+
+[node name="summarydescLabel" type="Label" parent="."]
+offset_left = 6.0
+offset_top = 17.0
+offset_right = 275.0
+offset_bottom = 26.0
+theme_override_font_sizes/font_size = 6
+text = "A new season has begun! Here is your summary for last season"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

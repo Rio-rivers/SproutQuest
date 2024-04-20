@@ -21,19 +21,20 @@ func createNewSave():
 	_save.inventory = InventoryTwo.new()
 	playerInventory.loadInventory(_save.inventory.items)
 	
+	
 func loadInventorySave():
 	if _save.saveFileExists():
 		_save = _save.loadSaveFile() as InventorySave
 		playerInventory.loadInventory(_save.inventory.items)
 	else:
 		createNewSave()
-	
-	print("PLAYER INVENTORY", playerInventory.items)
+
 
 func saveToInventorySave():
 		_save.inventory.items = {}
 		_save.inventory.items = playerInventory.items
 		_save.writeSaveFile()
+
 		
 func saveGame():
 	var saveGame = FileAccess.open("user://savegame.save", FileAccess.WRITE)
@@ -48,7 +49,6 @@ func saveGame():
 
 	saveGame.store_line(jsonString)
 	for node in saveNodes:
-		print("NODES",node)
 		if  not node.has_method("save"):#node.scene_file_path.is_empty() or
 			continue
  
@@ -106,8 +106,11 @@ func loadGame():
 		if newObject is Animal:
 			newObject.updateAnimations()
 		elif newObject is Player:
+			player.money = nodeData["money"]
 			player.increaseMoney(0)
+			
 		elif newObject is PlantedPlant:
 			newObject.checkAge()
+			
 		elif newObject is TilledSoil and nodeData["watered"]:
 			newObject.waterSoil()

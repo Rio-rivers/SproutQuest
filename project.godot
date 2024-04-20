@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 TimeManager="*res://GameSystem/TimeManager.gd"
 SaveLoadGame="*res://GameSystem/save/SaveLoadGame.gd"
+SeasonSummary="*res://GameSystem/seasonSummary.gd"
 
 [display]
 

@@ -19,6 +19,9 @@ var timeSinceWatered: int
 var timeSinceFed:int
 
 
+func _exit_tree():
+	SeasonSummary.animalsLeft += 1
+	
 func growAnimal():
 	age += 1
 	if !fed:

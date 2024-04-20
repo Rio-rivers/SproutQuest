@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-@onready var animation = $AnimationPlayer
 @onready var overlay:ColorRect = $ColorRect
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,7 +8,7 @@ func _ready():
 	changeDayOverlay(time)
 
 func changeDayOverlay(timeOfDay):
-	print(timeOfDay)
+
 	if timeOfDay == 1:
 		overlay.visible = false
 	elif timeOfDay == 2:

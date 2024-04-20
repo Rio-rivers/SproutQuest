@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://d131v8xynbt2l"]
+[gd_scene load_steps=61 format=3 uid="uid://d131v8xynbt2l"]
 
 [ext_resource type="Script" path="res://Levels/gameLevel.gd" id="1_ri8ge"]
 [ext_resource type="Texture2D" uid="uid://8i601qo61b40" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Grass.png" id="2_tsb1t"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://c2vsb1yucffc7" path="res://Characters/Player/player.tscn" id="23_ak72a"]
 [ext_resource type="PackedScene" uid="uid://csl4hi62kxkky" path="res://UI/inventory/inventory_gui.tscn" id="23_dcfjn"]
 [ext_resource type="Texture2D" uid="uid://bb5qnkclpfanc" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Water well.png" id="24_v2k2c"]
+[ext_resource type="PackedScene" uid="uid://dw3c526li506u" path="res://UI/summary/summaryGui.tscn" id="26_ob28u"]
 [ext_resource type="PackedScene" uid="uid://bj4ryjibv5mb1" path="res://UI/hotbar/hotbar.tscn" id="26_pmjtg"]
 [ext_resource type="PackedScene" uid="uid://cyj6201c0c5co" path="res://UI/menu/menu_gui.tscn" id="26_xmx72"]
 [ext_resource type="Script" path="res://GameSystem/tiles/worldTileMap.gd" id="27_6lgot"]
@@ -2414,14 +2415,25 @@ offset_top = -171.0
 offset_right = 299.0
 offset_bottom = 157.0
 
+[node name="summaryGUI" parent="CanvasLayer" instance=ExtResource("26_ob28u")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -120.0
+offset_right = 135.0
+offset_bottom = 92.0
+
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("28_txdtn")]
 
 [node name="notebookIcon" parent="CanvasLayer" instance=ExtResource("29_kx6bh")]
 
-[node name="chicken" parent="." instance=ExtResource("14_tuuns")]
+[node name="chicken" parent="." groups=["animals"] instance=ExtResource("14_tuuns")]
 position = Vector2(474, 206)
 
-[node name="cow" parent="." instance=ExtResource("21_y0hxe")]
+[node name="cow" parent="." groups=["animals"] instance=ExtResource("21_y0hxe")]
 position = Vector2(478, 248)
 moveSpeed = 15.0
 
@@ -2478,4 +2490,6 @@ one_shot = true
 [connection signal="closed" from="CanvasLayer/InventoryGui" to="." method="_on_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGui" to="." method="_on_gui_opened"]
 [connection signal="updateHotbar" from="CanvasLayer/InventoryGui" to="CanvasLayer/Hotbar" method="_on_inventory_gui_update_hotbar"]
+[connection signal="closed" from="CanvasLayer/summaryGUI" to="." method="_on_gui_closed"]
+[connection signal="opened" from="CanvasLayer/summaryGUI" to="." method="_on_gui_opened"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
