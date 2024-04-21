@@ -1,4 +1,4 @@
-# Distributed systems development
+# Digital Systems Project
 ## Educational game
 
 This project is for my final year project at UWE and it is my first attempt at game development. The game was developed using GoDot as the game engine. My goal was to develop an educational game aimed at teaching the basics of the environment and agriculture to a younger audience.
