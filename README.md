@@ -12,6 +12,7 @@ This project is for my final year project at UWE and it is my first attempt at g
 5. Use the 'Esc' to open the menu
 6. Use the scroll wheel or numbers to select an item in the hotbar
 7. To use a tool or seeds - Left click
+8. Use the space bar to advance in dialog
 
 
 ## Credits
