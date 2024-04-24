@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://d131v8xynbt2l"]
+[gd_scene load_steps=64 format=3 uid="uid://d131v8xynbt2l"]
 
 [ext_resource type="Script" path="res://Levels/gameLevel.gd" id="1_ri8ge"]
 [ext_resource type="Texture2D" uid="uid://8i601qo61b40" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Grass.png" id="2_tsb1t"]
@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://c0w0aoqpdkwks" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Fences.png" id="7_2hc5j"]
 [ext_resource type="Script" path="res://GameSystem/dialog/animalLand.gd" id="7_p2fs3"]
 [ext_resource type="Texture2D" uid="uid://c658uff2jy5ed" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Grass_Hill_Tiles_Slopes v.2.png" id="8_a60qq"]
-[ext_resource type="Texture2D" uid="uid://cklgpu0mj55hx" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/water frames/Water_1.png" id="8_nd1yx"]
 [ext_resource type="Texture2D" uid="uid://57ucwrrdjie8" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Mushrooms, Flowers, Stones.png" id="9_dbe0t"]
 [ext_resource type="Texture2D" uid="uid://bmd76jsc7n8l" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Wooden House.png" id="10_5preg"]
 [ext_resource type="Texture2D" uid="uid://cqamf1pxgnc3j" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Grass_Tile_Layers.png" id="11_h08xi"]
@@ -2455,12 +2454,6 @@ texture = ExtResource("19_k0op8")
 2:2/0/physics_layer_0/angular_velocity = 0.0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.04688, -8, 1.59375, -2.375, -0.78125, 0.125, -8, 0.125, -8, 6, 2.09375, 6, 6.03125, 1.1875, 5.98438, -8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ilwqg"]
-texture = ExtResource("8_nd1yx")
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-
 [sub_resource type="TileSet" id="TileSet_mmb01"]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 1
@@ -2471,7 +2464,6 @@ terrain_set_0/terrain_1/color = Color(0.133333, 0.713726, 0.933333, 1)
 sources/0 = SubResource("TileSetAtlasSource_cyrjr")
 sources/5 = SubResource("TileSetAtlasSource_gkjpd")
 sources/7 = SubResource("TileSetAtlasSource_qx0x1")
-sources/9 = SubResource("TileSetAtlasSource_ilwqg")
 sources/12 = SubResource("TileSetAtlasSource_84mux")
 sources/13 = SubResource("TileSetAtlasSource_vp24i")
 sources/14 = SubResource("TileSetAtlasSource_ghgdi")

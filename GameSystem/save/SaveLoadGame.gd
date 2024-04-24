@@ -8,7 +8,7 @@ var loadOldWorld: bool = false
 
 var _save: InventorySave = InventorySave.new()
 
-const lines: Array[String]= ["HELLO!","Its nice to meet you" ,"I am Pip" , "I see that you are new here", "let me go over the basics ...","press 'E' for the market and tasks","press 'I' for your inventory", "try buying some tools and feed to start off with","well thats it for now ...", "Im excited to see what you can do with this place!"]
+const lines: Array[String]= ["Hello!","it's nice to meet you" ,"I am Pip" , "I see that you are new here", "let me go over the basics ...","press 'E' for the market and tasks","and press 'I' for your inventory", "try buying some tools and feed to start off with","well thats it for now ...", "I'm excited to see what you can do with this place!"]
 
 func controlPanel():
 	if loadOldWorld:
