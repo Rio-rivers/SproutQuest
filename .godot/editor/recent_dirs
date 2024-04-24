@@ -1,3 +1,4 @@
+res://GameSystem/mainMenu
 res://GameSystem/dialog
 res://UI/dialog
 res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Dialouge UI/Emotes
@@ -5,7 +6,6 @@ res://GameSystem/music
 res://resources/UI
 res://GameSystem
 res://GameSystem/save
-res://GameSystem/mainMenu
 res://UI/notebook/tasks
 res://GameSystem/tasks
 res://GameSystem/shop
