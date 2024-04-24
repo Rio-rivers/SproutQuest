@@ -1,5 +1,5 @@
-res://resources/UI
 E:/GoDot
+res://resources/UI
 res://GameSystem/mainMenu
 res://GameSystem/dialog
 res://UI/dialog
@@ -12,7 +12,6 @@ res://GameSystem/tasks
 res://GameSystem/shop
 res://GameSystem/animals
 res://UI/notebook
-res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Icons/special icons
 res://UI/HUD
 res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures
 res://objects/usableItems

@@ -29,3 +29,5 @@ res://UI/items/itemChicken.tres
 res://UI/notebook/shopInventory.tres
 res://Levels/gameLevel.tscn
 res://GameSystem/mainMenu/mainMenu.tscn
+res://GameSystem/save/SaveLoadGame.gd
+res://GameSystem/animals/animal.gd
