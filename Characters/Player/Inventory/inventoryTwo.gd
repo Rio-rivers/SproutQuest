@@ -11,12 +11,7 @@ signal removedItem
 
 func _init():
 	items = {}
-func getInventory():
-	var tempDir = {}
-	for item in items:
-		var itemPath = item.scene_file_path
-		tempDir[itemPath] = items[item]
-	return tempDir
+
 
 func loadInventory(data):
 	var itemsToRemove = items.keys()
@@ -36,7 +31,7 @@ func addItemsToInventory(item: Item, numToAdd):
 	else:
 		items[item] = numToAdd
 		emit_signal("addNewItem",item, items[item])
-	#emit_signal("itemCountUpdate")
+
 
 func removeItemsFromInventory(item: Item):
 	if item in items:

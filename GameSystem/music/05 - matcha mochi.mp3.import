@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bit51ggkluk22"
+path="res://.godot/imported/05 - matcha mochi.mp3-d9cdf277aed2da1e5b33eaf8534779c7.mp3str"
+
+[deps]
+
+source_file="res://GameSystem/music/05 - matcha mochi.mp3"
+dest_files=["res://.godot/imported/05 - matcha mochi.mp3-d9cdf277aed2da1e5b33eaf8534779c7.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

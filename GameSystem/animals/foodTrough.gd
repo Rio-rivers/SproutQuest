@@ -4,7 +4,7 @@ class_name FoodTrough
 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 
-@export var levelOfFood: int = 0
+@export var levelOfContents: int = 0
 @export var harvestableType: Array[HarvestType]
 
 
@@ -18,28 +18,36 @@ func _ready():
 	
 func useTrough():
 	if !isEmpty:
-		levelOfFood -=1
-		print("FooD TROUGH USED: ", levelOfFood)
-		if levelOfFood == 0:
+		levelOfContents -=1
+		if levelOfContents == 0:
 			isEmpty = true
 		updateTrough()
 
 func updateTrough():
 	if isEmpty:
 		animation.frame = 0
-	elif levelOfFood <= 5:
+	elif levelOfContents <= 5:
 		animation.frame = 1
-	elif levelOfFood <= 10:
+	elif levelOfContents <= 10:
 		
 		animation.frame = 2
 	else:
 		animation.frame = 3
 
+func save():
+	
+	var saveDict = {
+		"levelOfContents": levelOfContents,
+		"isEmpty": isEmpty,
+		"type":"FoodTrough"
+	}
+	return saveDict
+
 func fillWithFood(item:Item):
 	var playerInventory = load("res://Characters/Player/Inventory/playerInventory.tres")
 	if item:
-		if levelOfFood <=10:
-			levelOfFood += 5
+		if levelOfContents <=10:
+			levelOfContents += 5
 			isEmpty = false
 			updateTrough()
 			playerInventory.depleteItemsFromInventory(item,1)

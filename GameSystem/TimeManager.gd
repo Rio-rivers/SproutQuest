@@ -1,8 +1,8 @@
 extends Node
 # game day starts around 8am 
 
-const GAME_DAY_DURATION = 10 #840.0
-const GAME_SEASON_DURATION = 5#23520.0
+const GAME_DAY_DURATION = 120 
+const GAME_SEASON_DURATION = 7
 const DAY_TIME:float = GAME_DAY_DURATION / (10/5)
 const EVENING_TIME:float = DAY_TIME + (GAME_DAY_DURATION / (10/3))
 const NIGHT_TIME:float = EVENING_TIME + (GAME_DAY_DURATION / (10/2))
@@ -14,7 +14,6 @@ var currentTime = 0
 var currentDay = 1
 var currentSeason = seasons.SPRING
 
-#10pm would be 490 seconds, 6am would be 770 seconds
 
 signal newDay
 signal newSeason(currentSeason)

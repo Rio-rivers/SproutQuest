@@ -107,10 +107,7 @@ func newDirection():
 func changeState():
 	#allows the animal a random choice in actions
 	var choice = randi_range(0, 3)
-	
-	#change to idle
 	if(currentState == cowState.WALK):
-
 		state.travel("idle")
 		currentState = cowState.IDLE
 		timer.start(stateTimer)
@@ -127,11 +124,9 @@ func changeState():
 			state.travel("eating")
 			currentState = cowState.EATING
 		elif (choice == 2):
-			
 			state.travel("asleep")
 			currentState = cowState.ASLEEP
 		elif (choice == 3):
-			
 			state.travel("sitting")
 			currentState = cowState.SITTING
 		timer.start(stateTimer)

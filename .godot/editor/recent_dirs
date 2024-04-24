@@ -1,3 +1,8 @@
+res://GameSystem/dialog
+res://UI/dialog
+res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Dialouge UI/Emotes
+res://GameSystem/music
+res://resources/UI
 res://GameSystem
 res://GameSystem/save
 res://GameSystem/mainMenu
@@ -6,7 +11,6 @@ res://GameSystem/tasks
 res://GameSystem/shop
 res://GameSystem/animals
 res://UI/notebook
-res://resources/UI
 res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Icons/special icons
 res://UI/HUD
 res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Animal Structures
@@ -16,7 +20,3 @@ res://GameSystem/tiles
 res://resources/Sprout Lands - Sprites - premium pack/Winter
 res://resources/Sprout Lands - Sprites - premium pack/Objects
 res://resources/Sprout Lands - Sprites - premium pack/Autumn
-res://GameSystem/crops
-res://GameSystem/effects
-res://UI/hotbar
-res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Mouse sprites

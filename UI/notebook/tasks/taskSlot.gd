@@ -27,7 +27,6 @@ func createSlot(item:Task):
 	
 	
 func updateSlot(progress:int):
-	print("updated slot")
 	if progress >= currentTask.completionCriteria:
 		collectLabel.visible = true
 		collectButton.disabled = false
@@ -38,7 +37,6 @@ func updateSlot(progress:int):
 		progressLabel.text = str(currentTask.taskProgress,"/",currentTask.completionCriteria)
 
 func _on_button_pressed():
-	print("HELLO")
 	collectButton.disabled = true
 	collectLabel.text = "Collected"
 	color.color = "a27b68b5"

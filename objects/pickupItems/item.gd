@@ -1,4 +1,4 @@
-#this file controls all items that are picked up
+#this file controls all items that are used
 extends Resource
 
 class_name Item

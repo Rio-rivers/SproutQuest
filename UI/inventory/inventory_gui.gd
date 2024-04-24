@@ -22,7 +22,7 @@ func _ready():
 	fillSlots()
 	connectSlots()
 	call_deferred("hotbarSlotUpdate")
-	print_inventory("ITEMS ON LOAD:",playerInventory)
+
 	
 
 func connectSlots():
@@ -42,18 +42,7 @@ func closeInventory():
 	inventoryOpened = false
 	closed.emit()
 
-#func updateInventory() -> void:
-	#print_inventory(playerInventory)
-	#print("Inventory Update Started")
-	#for slot in slots:
-		#slot.clearSlot()
-	#index = 0
-	#for item in playerInventory.items.keys():
-		#if index < slots.size():
-			#slots[index].updateSlot(item, playerInventory.items[item])
-			#index += 1
-		#else:
-			#break
+
 func updateSlots(inventoryItem:Item, numOfItem: int) ->void:
 	index = 0
 	for slot in slots:
@@ -93,7 +82,6 @@ func addNewItemToSlots(inventoryItem: Item, numOfItem: int) -> void:
 			return
 
 func fillSlots() -> void:
-	#print_inventory("ITEMS AFTER FILLED:",playerInventory)
 	index = 0
 	for item in playerInventory.items.keys():
 		if index >= slots.size():
@@ -136,13 +124,12 @@ func _on_slot_clicked(slot):
 
 
 func binAnItem(slot):
-	print("BINNING AN ITEM")
 	if not slot.isEmpty():
 		var itemScene = slot.getStoredItem()
 		var item = itemScene.getItem()
 		slot.clearSlot(itemScene)
 		playerInventory.removeItemsFromInventory(item)
-		#print_inventory("ITEMS AFTER BIN:",playerInventory)
+
 		var slotIndex = slots.find(slot)
 		if slotIndex <8:
 			hotbarSlotUpdate()
@@ -152,20 +139,3 @@ func _on_bin_button_pressed():
 	if selectedSlot != null:
 		binAnItem(selectedSlot)
 		selectedSlot = null
-	
-	
-func print_inventory(reason,inventory):
-	print(reason, inventory.items)
-	#for item in inventory.items.keys():
-		#print(reason,"Item: ", item,"Item name: ", item.itemName, " Count: ", inventory.items[item])
-#func updateInventory(inventoryItem:Item, numOfItem: int) ->void:
-	#print_inventory(playerInventory)
-	#print("Inventory Update Started")
-	#for slot in slots:
-		#var slotItem = slot.getStoredItem()
-		#if slotItem == inventoryItem:
-			#slot.updateSlot(inventoryItem, numOfItem)
-			#break
-		#elif slotItem == null:
-			#slot.addToSlot(inventoryItem, numOfItem)
-			#break

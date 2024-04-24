@@ -17,6 +17,5 @@ var equip : Equip
 func onPress():
 	if item is Equippables:
 		if equip != null:
-			#equip.currentTool = item
 			equip.setTool(item)
 

@@ -16,10 +16,9 @@ func _ready():
 func calcAnimals():
 	animals = get_tree().get_nodes_in_group("animals").size()
 
-func showSummaryGUI(season):
+func showSummaryGUI(_season):
 	calcAnimals()
 	profit = totalMoneyMade - totalMoneySpent
-	print("Animals: ",animals," Animals Left: ",animalsLeft," Crops planted : ",cropsPlanted," Crops died: ",cropsDied," Money made: ",totalMoneyMade," Money spent: ",totalMoneySpent)
 	emit_signal("seasonSummary",animals,animalsLeft,cropsPlanted,cropsDied,profit)
 	
 	animals = 0

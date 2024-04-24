@@ -170,6 +170,8 @@ anim_player = NodePath("../childAnimation")
 [node name="childAnimation" parent="." instance=ExtResource("3_1tr1y")]
 
 [node name="AnimationPlayer" parent="." instance=ExtResource("3_voiay")]
+editor_description = "Chicken animations
+"
 reset_on_save = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

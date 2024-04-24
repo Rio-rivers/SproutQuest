@@ -6,9 +6,7 @@ class_name Slots
 @onready var backgroundImage: Sprite2D = $background
 @onready var itemContainer: CenterContainer = $CenterContainer
 
-var itemInSlot: ItemInSlot 
 var storedItem: ItemInSlot = null
-
 
 func getStoredItem()-> ItemInSlot:
 	return storedItem
@@ -23,9 +21,7 @@ func clearSlot(item:ItemInSlot) -> void:
 	backgroundImage.frame = 0
 	
 func insertSlot(item:ItemInSlot):
-
 	if item:
-		itemInSlot = item
 		storedItem = item
 		backgroundImage.frame = 1
 		itemContainer.add_child(item)
