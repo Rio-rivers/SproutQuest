@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://duh64pu73hok6"]
+
+[ext_resource type="AudioStream" uid="uid://bit51ggkluk22" path="res://GameSystem/music/05 - matcha mochi.mp3" id="1_dte6q"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+process_mode = 3
+stream = ExtResource("1_dte6q")
+autoplay = true

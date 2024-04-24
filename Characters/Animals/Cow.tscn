@@ -202,6 +202,7 @@ region_enabled = true
 region_rect = Rect2(0, 0, 256, 256)
 
 [node name="AnimationPlayer" parent="." instance=ExtResource("3_thv07")]
+editor_description = "Cow animations"
 reset_on_save = false
 
 [node name="childAnimationPlayer" type="AnimationPlayer" parent="."]

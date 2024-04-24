@@ -6,7 +6,7 @@ class_name TilledSoil
 
 @onready var backgroundImage: Sprite2D = $background
 @onready var plantContainer: CenterContainer = $CenterContainer
-#@onready var playerInventory: InventoryTwo = preload("res://Characters/Player/Inventory/playerInventory.tres")
+
 
 const TIME_UNTIL_UNTILLED: int = 4
 const MAX_UNWATERED_TIME: int = 3

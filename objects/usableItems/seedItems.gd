@@ -1,8 +1,6 @@
 #this file is for when seeds are used: this uses the player animation to detect the area body collision
 extends Equippables
-
 class_name Seeds
-
 @export var uses: int = 1
 @export var itemType : Array[HarvestType]
 @export var growableSeason:Array[int]
@@ -10,6 +8,7 @@ class_name Seeds
 
 var isInSeason:bool = false
 
+const lines: Array[String]= ["HI!","Im afraid that this seed isnt in season","Try planting it another time!"]
 
 func objectInteraction(body,_toolPosition=null):
 	IsInSeason()
@@ -17,10 +16,11 @@ func objectInteraction(body,_toolPosition=null):
 		if body is TilledSoil:
 			var plantInTilledSoil = body.getStoredPlant()
 			if !plantInTilledSoil:
-				print("area is tilled soil")
 				for type in itemType:
 					if body.harvestableType.has(type):
 						body.insertPlant(self)
+	else:
+		TextManager.runDialog(lines)
 
 func get_plant_scene() -> PackedScene:
 	return load(plantPath)

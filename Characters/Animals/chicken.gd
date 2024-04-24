@@ -59,7 +59,6 @@ func save():
 
 func _physics_process(_delta):
 	
-
 	if(currentState == chickenState.WALK):
 		velocity = direction * moveSpeed
 		move_and_slide()
@@ -74,8 +73,7 @@ func _physics_process(_delta):
 						newDirection()
 					else:
 						changeState()
-				
-				
+
 
 
 func moveFromPlayer(playerPosition: Vector2):

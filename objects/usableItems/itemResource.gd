@@ -4,7 +4,6 @@ extends StaticBody2D
 
 class_name itemSource
 
-
 @export var health : int
 
 #create variable to be able to set the type of resource
@@ -16,7 +15,6 @@ class_name itemSource
 var numOfResources : int
 
 
-# CHANGE SO THAT CURRENT RESOURCES WILL GIVE OUT ALL RESOURCES/ SOME RESOURCES BEFORE IT DIES
 func harvestResource(damage : int):
 	
 	numOfResources = randomResourceCount()

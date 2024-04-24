@@ -18,9 +18,8 @@ class_name Animal
 var timeSinceWatered: int
 var timeSinceFed:int
 
-
-func _exit_tree():
-	SeasonSummary.animalsLeft += 1
+const animalUnhappy: Array[String]= ["Hello...","this is hard to say...","but your animal left the farm because it was unhappy","make sure to give them food and water regularly"]
+const animalOld: Array[String]= ["Hello...","this is hard to say...","but your animal left the farm due to old age"]
 	
 func growAnimal():
 	age += 1
@@ -33,7 +32,8 @@ func growAnimal():
 	if age == ageOfMaturity:
 		matureAnimal()
 	elif age > maxAge:
-		print("animal left because of age")
+		SeasonSummary.animalsLeft += 1
+		TextManager.runDialog(animalOld)
 		leaveFarm()
 	if isMature and happiness > 30.0:
 		giveProduce()
@@ -75,7 +75,8 @@ func updateHappiness(method,value):
 	else:
 		happiness += value
 	if happiness <= 10.0:
-		print("animal left because of unhappiness")
+		SeasonSummary.animalsLeft += 1
+		TextManager.runDialog(animalUnhappy)
 		leaveFarm()
 	
 func leaveFarm():

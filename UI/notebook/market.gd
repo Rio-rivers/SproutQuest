@@ -22,7 +22,6 @@ var marketState = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#print_inventory()
 	var currentSeason = TimeManager.getSeason()
 	updateShopInventory(currentSeason)
 	player.connect("moneyChanged",updateSlots)
@@ -32,11 +31,6 @@ func _ready():
 	toggleView()
 	
 
-func print_inventory():
-	print("Inventory Contents:")
-	for item in shopInventory.shopItems.keys():
-		print("Item: ", item.itemName, " Count: ", shopInventory.shopItems[item])
-		#print(item, shopInventory.shopItems[item])
 
 
 func updateShopInventory(season):
@@ -51,18 +45,12 @@ func updateShopInventory(season):
 		isInSeason = itemDict.get("seasons", []) and season in itemDict["seasons"]
 		isSellable = itemDict.get("sellable", false)
 		if isSellable and (not itemDict.has("seasons") or isInSeason):
-			#itemsForSale[itemKey] = itemDict["price"]
 			itemsForSale.append({"key": itemKey, "price": itemDict["price"]})
 		elif not isSellable and isInSeason:
-			#itemsForPurchase[itemKey] = itemDict["price"]
 			itemsForPurchase.append({"key": itemKey, "price": itemDict["price"]})
-	
-	
-	#print("for sale: ", itemsForSale)
-	#print("")
-	#print("for purchase: ", itemsForPurchase)
 	addItemsToSlots()
-	
+
+
 func addItemsToSlots():
 	var playersMoney = player.getMoney()
 	for item in itemsForPurchase:

@@ -4,7 +4,7 @@ class_name WaterTrough
 
 @onready var animation: AnimatedSprite2D = $AnimatedSprite2D
 
-@export var levelOfWater: int = 0
+@export var levelOfContents: int = 0
 @export var harvestableType: Array[HarvestType]
 
 
@@ -18,25 +18,33 @@ func _ready():
 	
 func useTrough():
 	if !isEmpty:
-		levelOfWater -=1
-		print("WATER TROUGH USED: ", levelOfWater)
-		if levelOfWater == 0:
+		levelOfContents -=1
+		if levelOfContents == 0:
 			isEmpty = true
 		updateTrough()
 
 func updateTrough():
 	if isEmpty:
 		animation.frame = 0
-	elif levelOfWater <= 5:
+	elif levelOfContents <= 5:
 		animation.frame = 1
-	elif levelOfWater <= 10:
+	elif levelOfContents <= 10:
 		animation.frame = 2
 	else:
 		animation.frame = 3
 
+func save():
+	
+	var saveDict = {
+		"levelOfContents": levelOfContents,
+		"isEmpty": isEmpty,
+		"type": "WaterTrough"
+	}
+	return saveDict
+
 func fillWithWater():
-	if levelOfWater <=10:
-		levelOfWater += 5
+	if levelOfContents <=10:
+		levelOfContents += 5
 		isEmpty = false
 		updateTrough()
 	

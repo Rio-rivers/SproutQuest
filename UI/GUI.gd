@@ -5,6 +5,8 @@ extends CanvasLayer
 @onready var notebookGui = $notebookGUI
 @onready var notebookSignal = $notebookIcon
 @onready var summaryGui = $summaryGUI
+@onready var hotbar = $Hotbar
+@onready var dialogBox = $DialogBox
 signal open
 signal close
 
@@ -14,6 +16,8 @@ func _ready():
 	notebookGui.closeNotebook()
 	notebookSignal.connect("toggleNotebook",toggleNotebook)
 	summaryGui.closeUI()
+	dialogBox.connect("opened",toggleHotbar)
+
 
 func toggleNotebook(value):
 	if value == 0:
@@ -42,4 +46,9 @@ func _input(event):
 				notebookGui.openNotebook()
 				emit_signal("open")
 				
+func toggleHotbar(dialogIsOpened):
+	if dialogIsOpened:
+		hotbar.visible = false
+	else:
+		hotbar.visible = true
 

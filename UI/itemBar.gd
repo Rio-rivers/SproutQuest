@@ -8,10 +8,10 @@ extends MarginContainer
 @onready var timer = $Timer
 #find player
 @onready var player: Player = get_tree().get_first_node_in_group("players")
-#@onready var playerInventory: InventoryTwo = preload("res://Characters/Player/Inventory/playerInventory.tres")
+
 var itemsInItemBar: Array[ItemDisplay]
 var equip : Equip
-#var playerInventory: InventoryTwo
+
 var selectedSlot = 0
 var canScroll = true
 
@@ -19,9 +19,6 @@ var canScroll = true
 func _ready():
 	if player:
 		#finds the class name of player's inventory node
-		#playerInventory = player.find_child("Inventory") as Inventory
-		
-		#playerInventory.connect("itemCountUpdate",_on_itemDisplay_changed)
 		equip = player.find_child("EquippedTool")
 		
 		#checks the itembar for usable items
@@ -57,7 +54,7 @@ func moveSelectedIcon(slotIndex):
 	
 func buttonPressed(buttonNumber):
 	var children = $Grid.get_children()
-	print("item bar button pressed: ", buttonNumber)
+
 	# Ensure the slot index is valid and there is a button in that slot
 	if buttonNumber <= children.size():
 		selectedSlot = buttonNumber
@@ -75,8 +72,7 @@ func buttonPressed(buttonNumber):
 		
 
 func _on_itemDisplay_changed(item:Item, numOfItem: int) ->void:
-	print("display name: "+ item.itemName + " count: "+ str(numOfItem))
-	
+
 	# checks item already exists within itemBar else: create
 	var currentItemDisplay: ItemDisplay
 	
@@ -94,9 +90,6 @@ func _on_itemDisplay_changed(item:Item, numOfItem: int) ->void:
 		newItemDisplay.item = item
 		newItemDisplay.updateItemCount(numOfItem)
 		itemsInItemBar.append(newItemDisplay)
-	
-
-
 
 func _on_timer_timeout():
 	canScroll = true

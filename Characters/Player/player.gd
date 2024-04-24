@@ -92,10 +92,8 @@ func save():
 	var saveDict = {
 		"posX": position.x,
 		"posY": position.y,
-		"filename" : get_scene_file_path(),
-		"parent" : get_parent().get_path(),
 		"money": money,
-		#"Inventory": playerInventory.getInventory()
+		"type":"Player"
 	}
 	return saveDict
 
@@ -105,7 +103,7 @@ func collectItem(item: Item, count: int):
 
 #based on the input, update the animations of the character
 func updateAnimations(moveInput : Vector2):
-	if(moveInput != Vector2.ZERO):
+	if moveInput != Vector2.ZERO:
 		if not usingTool:
 			animationTree.set("parameters/idle/blend_position",moveInput)
 			animationTree.set("parameters/walking/blend_position",moveInput)
@@ -134,11 +132,8 @@ func getMoney()->int:
 	
 #used to control when animations switch state
 func  states():
-	#checks for left click
 	if Input.is_action_just_pressed("useTool") and equippedTool != "None":#
 		usingTool = true
-		
-
 		if equippedTool == "Axe":
 			state.travel("swingAxe")
 		elif equippedTool == "Hoe":
@@ -151,7 +146,6 @@ func  states():
 			state.travel("plantSeed")
 		elif equippedTool.ends_with("Feed"):
 			state.travel("pourFeed")
-			
 	elif(velocity!=Vector2.ZERO):
 		state.travel("walking")
 	else:

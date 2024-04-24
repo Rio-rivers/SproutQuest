@@ -20,7 +20,7 @@ func displayTasks():
 		if !child.currentTask.isCompleted or child.currentTask.rewardCollected:
 			grid.remove_child(child)
 	for task in tasks:
-		if !task.isCompleted : #or !task.rewardCollected
+		if !task.isCompleted :
 			var newTaskSlot = taskSlot.instantiate()
 			grid.add_child(newTaskSlot)
 			newTaskSlot.createSlot(task)
@@ -54,12 +54,10 @@ func progressTasks(item:Item = null, countOfItem = null):
 					if task.taskItemName == item.itemName:
 						task.updateProgress(countOfItem)
 						for slot in grid.get_children():
-							print("SLOT")
 							if slot.currentTask == task:
 								slot.updateSlot(task.taskProgress)
 
 func giveRewards(task):
-	print("GIVE REWARD")
 	var rewardItem = task.reward as Item
 	playerInventory.addItemsToInventory(rewardItem, 1)
 

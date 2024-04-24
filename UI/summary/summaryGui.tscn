@@ -219,6 +219,7 @@ text = "Season Summary"
 horizontal_alignment = 1
 
 [node name="summarydescLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 17.0
 offset_right = 275.0
