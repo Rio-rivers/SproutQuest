@@ -102,7 +102,7 @@ func loadGame():
 			parent.add_child(newObject)
 			if newObject is TilledSoil:
 					parent.setPosition(newObject,Vector2(nodeData["posX"], nodeData["posY"]))
-			else:
+			elif "posX" in nodeData:
 				newObject.position = Vector2(nodeData["posX"], nodeData["posY"])
 		elif "type" in nodeData:
 			if nodeData["type"] == "WaterTrough": 
