@@ -1,9 +1,9 @@
-res://Characters/Player/player.tscn
+res://Levels/gameLevel.tscn
 res://Characters/Player/Inventory/inventoryItem.gd
-res://objects/harvestable/waterable.tres
-res://objects/harvestable/plantable.tres
 res://Levels/gameLevel.gd
 res://UI/inventory/inventory_gui.gd
+res://objects/harvestable/waterable.tres
+res://objects/harvestable/plantable.tres
 res://UI/notebook/market.gd
 res://UI/GUI.gd
 res://objects/harvestable/tillable.tres
@@ -27,7 +27,4 @@ res://UI/items/wateringCan.tres
 res://UI/items/itemCow.tres
 res://UI/items/itemChicken.tres
 res://UI/notebook/shopInventory.tres
-res://Levels/gameLevel.tscn
-res://GameSystem/mainMenu/mainMenu.tscn
-res://GameSystem/save/SaveLoadGame.gd
-res://GameSystem/animals/animal.gd
+res://GameSystem/TimeManager.gd

@@ -2575,7 +2575,6 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="DayOverlay" parent="CanvasLayer" instance=ExtResource("28_70flg")]
-visible = false
 
 [node name="notebookGUI" parent="CanvasLayer" instance=ExtResource("27_f0mnd")]
 offset_left = -304.0
