@@ -1,7 +1,7 @@
 extends Node
 # game day starts around 8am 
 
-const GAME_DAY_DURATION = 120 
+const GAME_DAY_DURATION = 90 
 const GAME_SEASON_DURATION = 7
 const DAY_TIME:float = GAME_DAY_DURATION / (10/5)
 const EVENING_TIME:float = DAY_TIME + (GAME_DAY_DURATION / (10/3))
