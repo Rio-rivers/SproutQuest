@@ -1,4 +1,4 @@
-res://Levels/gameLevel.tscn
+res://Characters/Player/player.tscn
 res://Characters/Player/Inventory/inventoryItem.gd
 res://Levels/gameLevel.gd
 res://UI/inventory/inventory_gui.gd
@@ -27,4 +27,15 @@ res://UI/items/wateringCan.tres
 res://UI/items/itemCow.tres
 res://UI/items/itemChicken.tres
 res://UI/notebook/shopInventory.tres
-res://GameSystem/TimeManager.gd
+res://Levels/gameLevel.tscn
+res://GameSystem/mainMenu/mainMenu.tscn
+res://GameSystem/crops/cabbagePlant.tscn
+res://GameSystem/crops/carrotPlant.tscn
+res://GameSystem/crops/cauliflowerPlant.tscn
+res://GameSystem/crops/cornPlant.tscn
+res://GameSystem/crops/cucumberPlant.tscn
+res://GameSystem/crops/parsnipPlant.tscn
+res://GameSystem/crops/pumpkinPlant.tscn
+res://GameSystem/crops/wheatPlant.tscn
+res://GameSystem/save/SaveLoadGame.gd
+res://objects/usableItems/tools.gd

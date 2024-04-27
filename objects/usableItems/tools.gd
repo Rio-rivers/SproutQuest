@@ -23,7 +23,7 @@ func objectInteraction(body,toolPosition=null):
 						body.harvestResource(toolDamage)
 				else:
 					body.harvestResource(toolDamage)
-			else:
+			elif type.harvestableTypeName != "Waterable" and !body is FarmLand:
 				TextManager.runDialog(lines)
 	elif body is TilledSoil:
 		for type in toolType:
