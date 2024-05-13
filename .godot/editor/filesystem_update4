@@ -30,5 +30,8 @@ res://UI/notebook/shopInventory.tres
 res://UI/items/itemMoney.tres
 res://Levels/gameLevel.tscn
 res://UI/menu/menu_gui.tscn
-res://UI/menu/settingsGUI.gd
 res://GameSystem/music/music.tscn
+res://UI/notebook/notebook.tscn
+res://UI/notebook/Tasks.gd
+res://Characters/Player/Inventory/inventoryTwo.gd
+res://UI/menu/settingsGUI.gd
