@@ -18,4 +18,4 @@ seasonal = false
 completionCriteria = 4
 taskProgress = 0
 reward = ExtResource("2_q0len")
-amountOfReward = 100
+amountOfReward = 50

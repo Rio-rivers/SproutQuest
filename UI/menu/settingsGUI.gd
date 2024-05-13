@@ -10,9 +10,7 @@ signal closed
 
 func _ready():
 	musicToggle.toggle_mode = true
-	if Music.playing:
-		musicToggle.pressed
-	else:
+	if !Music.playing:
 		musicToggle.button_pressed = false
 
 func openMenu():
@@ -41,8 +39,7 @@ func _on_close_button_pressed():
 	closeMenu()
 
 
-func _on_music_toogle_button_toggled(toggled_on):
-	print("TOGGLED ON")
+func _on_music_toogle_button_toggled(_toggled_on):
 	if musicOn:
 		Music.stop()
 		musicOn = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://d131v8xynbt2l"]
+[gd_scene load_steps=63 format=3 uid="uid://d131v8xynbt2l"]
 
 [ext_resource type="Script" path="res://Levels/gameLevel.gd" id="1_ri8ge"]
 [ext_resource type="Texture2D" uid="uid://8i601qo61b40" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Grass.png" id="2_tsb1t"]
@@ -18,12 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://cqamf1pxgnc3j" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/New tiles/Grass_Tile_Layers.png" id="11_h08xi"]
 [ext_resource type="Texture2D" uid="uid://caeyotvkajmam" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/door animation sprites.png" id="11_qi34w"]
 [ext_resource type="Texture2D" uid="uid://da6r327efy21s" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/Building parts/Fence gates animation sprites .png" id="12_2sjwu"]
-[ext_resource type="PackedScene" uid="uid://dh3qbpkoi4jnv" path="res://Characters/Animals/chicken.tscn" id="14_tuuns"]
 [ext_resource type="Texture2D" uid="uid://c5pscydj65i2p" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Boats.png" id="15_g7es7"]
 [ext_resource type="Texture2D" uid="uid://d24uem8rj7607" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Water Objects.png" id="16_vpi3b"]
 [ext_resource type="Texture2D" uid="uid://dc43ors5a22g" path="res://resources/Sprout Lands - Sprites - premium pack/Spring/Grass_Hill_Tiles_v2.png" id="19_k0op8"]
 [ext_resource type="Script" path="res://UI/GUI.gd" id="21_qh2v2"]
-[ext_resource type="PackedScene" uid="uid://cq1b2b0s7tlto" path="res://Characters/Animals/Cow.tscn" id="21_y0hxe"]
 [ext_resource type="PackedScene" uid="uid://m08rw38ol2ep" path="res://objects/harvestable/resources/tree.tscn" id="23_0ik4y"]
 [ext_resource type="PackedScene" uid="uid://c2vsb1yucffc7" path="res://Characters/Player/player.tscn" id="23_ak72a"]
 [ext_resource type="PackedScene" uid="uid://csl4hi62kxkky" path="res://UI/inventory/inventory_gui.tscn" id="23_dcfjn"]
@@ -41,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://wj57jdwk7sfh" path="res://objects/harvestable/resources/rock2.tscn" id="32_nj1jl"]
 [ext_resource type="PackedScene" uid="uid://d0ionv6dqrs1" path="res://GameSystem/animals/waterTrough.tscn" id="33_o02iq"]
 [ext_resource type="PackedScene" uid="uid://cs6ma83u36qap" path="res://GameSystem/animals/foodTrough.tscn" id="34_vai3g"]
+[ext_resource type="Texture2D" uid="uid://bfb18ukgkguo7" path="res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Mouse sprites/Arrow Mouse icon 4.png" id="42_02m34"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_joduh"]
 texture = ExtResource("3_v6ibr")
@@ -965,6 +964,7 @@ texture = ExtResource("5_hgifo")
 1:6/0 = 0
 1:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:6/0/physics_layer_0/angular_velocity = 0.0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 2:6/0 = 0
 2:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:6/0/physics_layer_0/angular_velocity = 0.0
@@ -2620,12 +2620,14 @@ offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="chicken" parent="." groups=["animals"] instance=ExtResource("14_tuuns")]
-position = Vector2(590, 175)
-
-[node name="cow" parent="." groups=["animals"] instance=ExtResource("21_y0hxe")]
-position = Vector2(656, 245)
-moveSpeed = 15.0
+[node name="Mouse" type="Sprite2D" parent="CanvasLayer"]
+process_mode = 3
+top_level = true
+z_index = 4
+position = Vector2(-5.5, -6.875)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("42_02m34")
+centered = false
 
 [node name="worldObjects" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -2770,7 +2772,7 @@ position = Vector2(612, 441)
 position = Vector2(-389, 39)
 
 [node name="waterTrough" parent="worldObjects" groups=["saveable"] instance=ExtResource("33_o02iq")]
-position = Vector2(510, 155)
+position = Vector2(509, 163)
 
 [node name="foodTrough" parent="worldObjects" groups=["saveable"] instance=ExtResource("34_vai3g")]
 position = Vector2(463, 310)

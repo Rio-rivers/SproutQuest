@@ -21,7 +21,12 @@ func _ready():
 	add_to_group("saveable")
 
 
-	
+func getTilledParent():
+	var parent = self.get_parent()
+	var tilled = parent.get_parent()
+	if tilled:
+		return tilled
+
 func isHarvestable()->bool:
 	return harvestable
 	

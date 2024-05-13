@@ -5,6 +5,8 @@ class_name Tool
 @export var toolDamage: int = 1
 @export var toolType : Array[HarvestType]
 
+var allowedTypes = ["Waterable", "Tillable", "Harvestable"]
+
 const lines: Array[String]= ["Howdy!","Im afraid that you cant use that tool here","Try it on something else!"]
 const waterTroughLines: Array[String]= ["Bonjour!","This is a water trough for your animals","Try filling it up with a watering can!"]
 
@@ -20,10 +22,13 @@ func objectInteraction(body,toolPosition=null):
 				if body is PlantedPlant:
 					var harvest = body.isHarvestable()
 					if harvest:
+						#resets tilled soil
+						if body.getTilledParent():
+							body.getTilledParent().plantGrowing = null
 						body.harvestResource(toolDamage)
 				else:
 					body.harvestResource(toolDamage)
-			elif type.harvestableTypeName != "Waterable" and !body is FarmLand:
+			elif not type.harvestableTypeName in allowedTypes and !body is FarmLand and !body is PlantedPlant:
 				TextManager.runDialog(lines)
 	elif body is TilledSoil:
 		for type in toolType:

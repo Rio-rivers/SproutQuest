@@ -48,7 +48,7 @@ func updateTasks(_season=null):
 			progressTasks()
 	displayTasks()
 
-func progressTasks(item = null, countOfItem = null):
+func progressTasks(item = null, _countOfItem = null):
 	for task in tasks:
 		if !task.isCompleted:
 			if task.type == "collection":

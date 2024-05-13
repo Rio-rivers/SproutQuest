@@ -1,6 +1,7 @@
 extends Control
 
 @onready var market: NinePatchRect = $market
+@onready var tasks: NinePatchRect = $Tasks
 
 var notebookOpened: bool = false
 var currentPage = 1
@@ -15,6 +16,7 @@ func _ready():
 func openNotebook():
 	visible = true
 	notebookOpened = true
+	tasks.progressTasks(0,0)
 	
 func closeNotebook():
 	visible = false

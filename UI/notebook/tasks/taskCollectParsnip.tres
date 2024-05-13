@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Task" load_steps=6 format=3 uid="uid://c5if6wsg7k77t"]
 
 [ext_resource type="Texture2D" uid="uid://dkvaokdh0onm2" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/parsnip.png" id="1_67183"]
-[ext_resource type="Resource" uid="uid://b80wpkwoq288" path="res://UI/items/itemPumpkinSeed.tres" id="2_1xvfx"]
+[ext_resource type="Resource" uid="uid://1yywjp7skbqe" path="res://UI/items/itemMoney.tres" id="2_afb2a"]
 [ext_resource type="Script" path="res://GameSystem/tasks/Tasks.gd" id="2_tyh56"]
-[ext_resource type="Texture2D" uid="uid://dwvfkprjdwpbo" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/Items/pumpkinSeed.png" id="3_7kjpr"]
+[ext_resource type="Texture2D" uid="uid://duy7tcqqp6s45" path="res://resources/UI/coin.PNG" id="3_fhse8"]
 [ext_resource type="Resource" uid="uid://dlm6lqunm6x1j" path="res://UI/items/itemParsnip.tres" id="5_kruyv"]
 
 [resource]
@@ -11,7 +11,7 @@ script = ExtResource("2_tyh56")
 description = "Grow and harvest 12 parsnip"
 image = ExtResource("1_67183")
 taskItemName = "Parsnip"
-rewardImage = ExtResource("3_7kjpr")
+rewardImage = ExtResource("3_fhse8")
 type = "collection"
 isCompleted = false
 rewardCollected = false
@@ -19,5 +19,5 @@ seasonal = true
 completionCriteria = 12
 taskProgress = 0
 taskItem = ExtResource("5_kruyv")
-reward = ExtResource("2_1xvfx")
-amountOfReward = 2
+reward = ExtResource("2_afb2a")
+amountOfReward = 100
