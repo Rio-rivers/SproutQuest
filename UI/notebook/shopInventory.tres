@@ -34,19 +34,19 @@
 script = ExtResource("1_eik7v")
 shopItems = {
 ExtResource("29_fstlv"): {
-"price": 35,
+"price": 60,
 "seasons": [1, 2, 3, 4],
 "sellable": false,
 "type": "animal"
 },
 ExtResource("28_2ga0b"): {
-"price": 50,
+"price": 150,
 "seasons": [1, 2, 3, 4],
 "sellable": false,
 "type": "animal"
 },
 ExtResource("27_ilcbr"): {
-"price": 0,
+"price": 5,
 "seasons": [1, 2, 3, 4],
 "sellable": false
 },
@@ -69,12 +69,12 @@ ExtResource("23_r1dro"): {
 "sellable": true
 },
 ExtResource("22_cfcyl"): {
-"price": 7,
+"price": 10,
 "seasons": [1],
 "sellable": false
 },
 ExtResource("21_lwc8j"): {
-"price": 15,
+"price": 20,
 "sellable": true
 },
 ExtResource("20_yn76v"): {
@@ -87,7 +87,7 @@ ExtResource("19_a7agt"): {
 "sellable": true
 },
 ExtResource("18_cnmmh"): {
-"price": 18,
+"price": 10,
 "sellable": true
 },
 ExtResource("17_mlxta"): {
@@ -100,7 +100,7 @@ ExtResource("16_f3pcb"): {
 "sellable": false
 },
 ExtResource("15_4fao7"): {
-"price": 7,
+"price": 3,
 "sellable": true
 },
 ExtResource("14_oahfh"): {
@@ -141,7 +141,7 @@ ExtResource("7_58fuy"): {
 },
 ExtResource("6_loell"): {
 "price": 5,
-"seasons": [1, 2, 3, 4],
+"seasons": [1, 2, 4],
 "sellable": false
 },
 ExtResource("5_7fbgo"): {
@@ -153,12 +153,12 @@ ExtResource("4_06wvp"): {
 "sellable": true
 },
 ExtResource("3_av63n"): {
-"price": 0,
+"price": 10,
 "seasons": [1, 2, 3, 4],
 "sellable": false
 },
 ExtResource("2_uu2jp"): {
-"price": 20,
+"price": 35,
 "seasons": [1, 2, 3, 4],
 "sellable": false
 }

@@ -35,3 +35,10 @@ res://UI/notebook/notebook.tscn
 res://UI/notebook/Tasks.gd
 res://Characters/Player/Inventory/inventoryTwo.gd
 res://UI/menu/settingsGUI.gd
+res://objects/usableItems/tools.gd
+res://UI/notebook/notebook.gd
+res://GameSystem/crops/cucumberPlant.tscn
+res://GameSystem/crops/plantedPlant.gd
+res://GameSystem/TimeManager.gd
+res://UI/notebook/tasks/taskCollectParsnip.tres
+res://UI/notebook/tasks/taskKeepAnimals.tres
