@@ -11,10 +11,8 @@ signal closed
 func _ready():
 	musicToggle.toggle_mode = true
 	if Music.playing:
-		print("MUSIC IS PLAYING")
 		musicToggle.pressed
 	else:
-		print("MUSIC NOT PLAYING")
 		musicToggle.button_pressed = false
 
 func openMenu():

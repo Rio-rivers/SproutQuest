@@ -11,8 +11,7 @@ extends NinePatchRect
 func _ready():
 	TimeManager.connect("newDay",updateTasks)
 	TimeManager.connect("newSeason",updateTasks)
-	playerInventory.connect("itemCountUpdate",progressTasks)
-	playerInventory.connect("addNewItem",progressTasks)
+	playerInventory.connect("updateTasks",progressTasks)
 	market.connect("animalAdded",progressTasks)
 	displayTasks()
 	
@@ -55,7 +54,7 @@ func progressTasks(item = null, countOfItem = null):
 			if task.type == "collection":
 				if item:
 					if task.taskItemName == item.itemName:
-						task.updateProgress(countOfItem)
+						task.updateProgress(1)
 						for slot in grid.get_children():
 							if slot.currentTask == task:
 								slot.updateSlot(task.taskProgress)
