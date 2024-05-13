@@ -14,6 +14,7 @@ class_name Task
 @export var taskProgress: int = 0
 @export var taskItem: Item
 @export var reward: Item
+@export var amountOfReward: int = 1
 
 signal taskCompleted(task)
 
@@ -36,4 +37,6 @@ func updateProgress(progress:int, _extraInfo = null):
 	if taskProgress != completionCriteria:
 		if type == "collection":
 			taskProgress += progress
+		elif type == "animalCare":
+			taskProgress = progress
 	checkCompletion()

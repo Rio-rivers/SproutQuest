@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dc6fu0du2723x"]
+[gd_scene load_steps=14 format=3 uid="uid://dc6fu0du2723x"]
 
 [ext_resource type="Script" path="res://UI/notebook/notebook.gd" id="1_vvmly"]
 [ext_resource type="Texture2D" uid="uid://3ys7le0hp47a" path="res://resources/UI/InventoryRect.png" id="2_fbvkc"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://dfhsv0cjg3m61" path="res://UI/notebook/tasks/taskCollectCabbage.tres" id="8_6tl37"]
 [ext_resource type="Resource" uid="uid://c5if6wsg7k77t" path="res://UI/notebook/tasks/taskCollectParsnip.tres" id="9_la5qc"]
 [ext_resource type="Resource" uid="uid://ff0ts6snecya" path="res://UI/notebook/tasks/taskCollectBranches.tres" id="10_mpenp"]
+[ext_resource type="Resource" uid="uid://bnoqeyqej1u4j" path="res://UI/notebook/tasks/taskKeepAnimals.tres" id="11_5ejqj"]
 
 [node name="notebookGUI" type="Control"]
 layout_mode = 3
@@ -167,7 +168,7 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 script = ExtResource("7_si3nh")
-tasks = Array[Resource("res://GameSystem/tasks/Tasks.gd")]([ExtResource("8_6tl37"), ExtResource("9_la5qc"), ExtResource("10_mpenp")])
+tasks = Array[Resource("res://GameSystem/tasks/Tasks.gd")]([ExtResource("8_6tl37"), ExtResource("9_la5qc"), ExtResource("10_mpenp"), ExtResource("11_5ejqj")])
 
 [node name="Label" type="Label" parent="Tasks"]
 layout_mode = 0

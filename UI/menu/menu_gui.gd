@@ -1,10 +1,14 @@
 extends Control
 
+@onready var settings:Node = $settingsGUI
+
 var menuOpened: bool = false
 
 signal opened
 signal closed
 
+func _ready():
+	settings.closeMenu()
 func openMenu():
 	visible = true
 	menuOpened = true
@@ -27,3 +31,8 @@ func _on_main_menu_button_pressed():
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+
+func _on_settings_button_pressed():
+	settings.openMenu()
+
