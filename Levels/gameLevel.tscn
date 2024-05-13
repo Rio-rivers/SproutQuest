@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://d131v8xynbt2l"]
+[gd_scene load_steps=62 format=3 uid="uid://d131v8xynbt2l"]
 
 [ext_resource type="Script" path="res://Levels/gameLevel.gd" id="1_ri8ge"]
 [ext_resource type="Texture2D" uid="uid://8i601qo61b40" path="res://resources/Sprout Lands - Sprites - premium pack/Tilesets/ground tiles/Old tiles/Grass.png" id="2_tsb1t"]
@@ -39,7 +39,6 @@
 [ext_resource type="PackedScene" uid="uid://wj57jdwk7sfh" path="res://objects/harvestable/resources/rock2.tscn" id="32_nj1jl"]
 [ext_resource type="PackedScene" uid="uid://d0ionv6dqrs1" path="res://GameSystem/animals/waterTrough.tscn" id="33_o02iq"]
 [ext_resource type="PackedScene" uid="uid://cs6ma83u36qap" path="res://GameSystem/animals/foodTrough.tscn" id="34_vai3g"]
-[ext_resource type="Texture2D" uid="uid://bfb18ukgkguo7" path="res://resources/Sprout Lands - UI Pack - Premium pack/UI Sprites/Mouse sprites/Arrow Mouse icon 4.png" id="42_02m34"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_joduh"]
 texture = ExtResource("3_v6ibr")
@@ -2619,15 +2618,6 @@ offset_right = 69.0
 offset_bottom = 81.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Mouse" type="Sprite2D" parent="CanvasLayer"]
-process_mode = 3
-top_level = true
-z_index = 4
-position = Vector2(-5.5, -6.875)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("42_02m34")
-centered = false
 
 [node name="worldObjects" type="Node2D" parent="."]
 y_sort_enabled = true

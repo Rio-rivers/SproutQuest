@@ -7,12 +7,11 @@ extends CanvasLayer
 @onready var summaryGui = $summaryGUI
 @onready var hotbar = $Hotbar
 @onready var dialogBox = $DialogBox
-@onready var cursor = $Mouse
+
 signal open
 signal close
 
-func _process(delta):
-	cursor.position = get_viewport().get_mouse_position()
+
 
 func _ready():
 	inventoryGui.closeInventory()
