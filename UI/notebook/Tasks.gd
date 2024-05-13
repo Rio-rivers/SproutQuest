@@ -3,7 +3,8 @@ extends NinePatchRect
 @onready var grid: GridContainer = $GridContainer
 @onready var taskSlot = preload("res://UI/notebook/tasks/taskSlot.tscn")
 @onready var playerInventory: InventoryTwo = preload("res://Characters/Player/Inventory/playerInventory.tres")
-
+@onready var player: Player = get_tree().get_first_node_in_group("players")
+@onready var market: NinePatchRect = $"../market"
 @export var tasks: Array[Task]
 
 # Called when the node enters the scene tree for the first time.
@@ -12,6 +13,7 @@ func _ready():
 	TimeManager.connect("newSeason",updateTasks)
 	playerInventory.connect("itemCountUpdate",progressTasks)
 	playerInventory.connect("addNewItem",progressTasks)
+	market.connect("animalAdded",progressTasks)
 	displayTasks()
 	
 func displayTasks():
@@ -25,6 +27,7 @@ func displayTasks():
 			grid.add_child(newTaskSlot)
 			newTaskSlot.createSlot(task)
 			newTaskSlot.connect("buttonPressed",giveRewards)
+			progressTasks(0,0)
 
 func clearChildren():
 	for child in grid.get_children():
@@ -46,7 +49,7 @@ func updateTasks(_season=null):
 			progressTasks()
 	displayTasks()
 
-func progressTasks(item:Item = null, countOfItem = null):
+func progressTasks(item = null, countOfItem = null):
 	for task in tasks:
 		if !task.isCompleted:
 			if task.type == "collection":
@@ -56,8 +59,16 @@ func progressTasks(item:Item = null, countOfItem = null):
 						for slot in grid.get_children():
 							if slot.currentTask == task:
 								slot.updateSlot(task.taskProgress)
+			elif task.type == "animalCare":
+				task.updateProgress(SeasonSummary.getAnimals())
+				for slot in grid.get_children():
+					if slot.currentTask == task:
+						slot.updateSlot(task.taskProgress)
 
 func giveRewards(task):
 	var rewardItem = task.reward as Item
-	playerInventory.addItemsToInventory(rewardItem, 1)
+	if rewardItem.itemName == "Money":
+		player.increaseMoney(task.amountOfReward)
+	else:
+		playerInventory.addItemsToInventory(rewardItem, task.amountOfReward)
 

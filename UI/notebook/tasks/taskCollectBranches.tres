@@ -20,3 +20,4 @@ completionCriteria = 6
 taskProgress = 0
 taskItem = ExtResource("5_t07sg")
 reward = ExtResource("2_hpm0q")
+amountOfReward = 1

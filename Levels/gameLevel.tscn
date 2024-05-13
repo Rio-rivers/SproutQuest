@@ -2521,7 +2521,7 @@ script = ExtResource("7_p2fs3")
 position = Vector2(447.75, 249.5)
 shape = SubResource("RectangleShape2D_vo1v8")
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="LevelTileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 position = Vector2(368, 207)
 tile_set = SubResource("TileSet_mmb01")
@@ -2774,6 +2774,8 @@ position = Vector2(510, 155)
 
 [node name="foodTrough" parent="worldObjects" groups=["saveable"] instance=ExtResource("34_vai3g")]
 position = Vector2(463, 310)
+
+[node name="Loot" type="Node2D" parent="worldObjects"]
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

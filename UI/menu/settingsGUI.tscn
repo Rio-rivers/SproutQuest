@@ -1,0 +1,145 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7q4065g88cp2"]
+
+[ext_resource type="Script" path="res://UI/menu/settingsGUI.gd" id="1_5i1x0"]
+[ext_resource type="Texture2D" uid="uid://3ys7le0hp47a" path="res://resources/UI/InventoryRect.png" id="2_ncv6y"]
+[ext_resource type="Texture2D" uid="uid://vbomq4g75183" path="res://resources/UI/quitButtonUnclickedLong.png" id="5_drrbj"]
+[ext_resource type="Texture2D" uid="uid://bdw1raarnuq4r" path="res://resources/UI/switchOff.png" id="5_giu4h"]
+[ext_resource type="Texture2D" uid="uid://cny7mn8gy65g6" path="res://resources/UI/quitButtonClickedLong.png" id="6_urg0w"]
+[ext_resource type="Texture2D" uid="uid://bfa1mnsxtdwru" path="res://resources/UI/switchOn.png" id="6_x1pmy"]
+
+[node name="settingsGUI" type="Control"]
+custom_minimum_size = Vector2(139, 161)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 139.0
+offset_bottom = 161.0
+script = ExtResource("1_5i1x0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 138.0
+offset_bottom = 161.0
+texture = ExtResource("2_ncv6y")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -80.5
+offset_right = 64.0
+offset_bottom = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Control" type="HBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/Control"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Notebook"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/Control"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "E"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Control2" type="HBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 84
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/Control2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Inventory"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/Control2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "I"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Control3" type="HBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/Control3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Use tool"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/Control3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Left mouse button"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="musicToggle" type="HBoxContainer" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/musicToggle"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 8
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="musicToogleButton" type="TextureButton" parent="NinePatchRect/MarginContainer/VBoxContainer/musicToggle"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+texture_normal = ExtResource("5_giu4h")
+texture_pressed = ExtResource("6_x1pmy")
+stretch_mode = 5
+
+[node name="closeButton" type="TextureButton" parent="NinePatchRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_drrbj")
+texture_pressed = ExtResource("6_urg0w")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="NinePatchRect/MarginContainer/VBoxContainer/closeButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.057
+anchor_top = 0.158
+anchor_right = 0.057
+anchor_bottom = 0.158
+offset_left = 0.0459995
+offset_top = -1.002
+offset_right = 109.046
+offset_bottom = 10.998
+theme_override_font_sizes/font_size = 8
+text = "Close"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="toggled" from="NinePatchRect/MarginContainer/VBoxContainer/musicToggle/musicToogleButton" to="." method="_on_music_toogle_button_toggled"]
+[connection signal="pressed" from="NinePatchRect/MarginContainer/VBoxContainer/closeButton" to="." method="_on_close_button_pressed"]

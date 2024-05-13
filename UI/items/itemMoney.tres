@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://1yywjp7skbqe"]
+
+[ext_resource type="Texture2D" uid="uid://duy7tcqqp6s45" path="res://resources/UI/coin.PNG" id="1_de5c4"]
+[ext_resource type="Script" path="res://objects/pickupItems/item.gd" id="2_xu8e3"]
+
+[resource]
+script = ExtResource("2_xu8e3")
+itemImage = ExtResource("1_de5c4")
+itemName = "Money"

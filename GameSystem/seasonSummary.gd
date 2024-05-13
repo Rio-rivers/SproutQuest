@@ -12,12 +12,9 @@ var profit:int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	TimeManager.connect("newSeason",showSummaryGUI)
-	
-func calcAnimals():
-	animals = get_tree().get_nodes_in_group("animals").size()
 
 func showSummaryGUI(_season):
-	calcAnimals()
+	getAnimals()
 	profit = totalMoneyMade - totalMoneySpent
 	emit_signal("seasonSummary",animals,animalsLeft,cropsPlanted,cropsDied,profit)
 	
@@ -28,3 +25,7 @@ func showSummaryGUI(_season):
 	totalMoneyMade= 0 
 	totalMoneySpent = 0 
 	profit = 0
+
+func getAnimals():
+	animals = get_tree().get_nodes_in_group("animals").size()
+	return animals

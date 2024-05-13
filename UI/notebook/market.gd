@@ -13,7 +13,7 @@ extends NinePatchRect
 @onready var player: Player = get_tree().get_first_node_in_group("players")
 @onready var gameLevel = $"/root/GameLevel"
 
-
+signal animalAdded(item,num)
 
 var itemsForSale = []
 var itemsForPurchase = []
@@ -92,14 +92,11 @@ func purchaseItem(item:Item,cost:int):
 		playerInventory.addItemsToInventory(item, 1)
 		player.decreaseMoney(cost)
 	elif item is AnimalItem:
-		if item.animalType == "cow":
-			var cow = item.animalInstance.instantiate()
-			cow.position = player.position
-			gameLevel.add_child(cow)
-		if item.animalType == "chicken":
-			var chicken = item.animalInstance.instantiate()
-			chicken.position = player.position
-			gameLevel.add_child(chicken)
+		if item.animalType == "cow" or item.animalType == "chicken":
+			var animal = item.animalInstance.instantiate()
+			animal.position = player.position
+			gameLevel.add_child(animal)
+			call_deferred("emit_signal","animalAdded",0,0)
 		player.decreaseMoney(cost)
 		
 

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Task" load_steps=5 format=3 uid="uid://bnoqeyqej1u4j"]
+
+[ext_resource type="Texture2D" uid="uid://hrjboneu02ql" path="res://resources/Sprout Lands - Sprites - premium pack/Objects/chicken.png" id="1_yqgff"]
+[ext_resource type="Resource" uid="uid://1yywjp7skbqe" path="res://UI/items/itemMoney.tres" id="2_q0len"]
+[ext_resource type="Texture2D" uid="uid://duy7tcqqp6s45" path="res://resources/UI/coin.PNG" id="3_fvav3"]
+[ext_resource type="Script" path="res://GameSystem/tasks/Tasks.gd" id="4_1c5co"]
+
+[resource]
+script = ExtResource("4_1c5co")
+description = "Care for 4 animals at once"
+image = ExtResource("1_yqgff")
+taskItemName = "Animals"
+rewardImage = ExtResource("3_fvav3")
+type = "animalCare"
+isCompleted = false
+rewardCollected = false
+seasonal = false
+completionCriteria = 4
+taskProgress = 0
+reward = ExtResource("2_q0len")
+amountOfReward = 100
