@@ -50,9 +50,10 @@ func displayTextbox():
 func endDialog():
 	nextLine = true
 	
-func resetDialog():
-	farmingTutorial = false
-	animalTutorial = false
+func resetDialog(fullReset):
+	if fullReset:
+		farmingTutorial = false
+		animalTutorial = false
 	dialogs = []
 	currentTextbox = null
 	lineIndex= 0

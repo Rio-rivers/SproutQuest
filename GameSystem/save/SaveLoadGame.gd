@@ -19,7 +19,8 @@ func controlPanel():
 	loadOldWorld = false
 
 func createNewSave():
-	TextManager.resetDialog()
+	TimeManager.resetDateTime()
+	TextManager.resetDialog(true)
 	_save = InventorySave.new()
 	_save.inventory = InventoryTwo.new()
 	playerInventory.loadInventory(_save.inventory.items)
@@ -30,6 +31,7 @@ func loadInventorySave():
 	if _save.saveFileExists():
 		_save = _save.loadSaveFile() as InventorySave
 		playerInventory.loadInventory(_save.inventory.items)
+		TextManager.resetDialog(false)
 	else:
 		createNewSave()
 

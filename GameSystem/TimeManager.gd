@@ -55,6 +55,12 @@ func loadDaySeason():
 	emit_signal("loadedcurrentDay")
 	emit_signal("loadedcurrentSeason",currentSeason)
 	
+func resetDateTime():
+	currentTime = 0
+	currentDay = 1
+	currentTimeOfDay = timeOfDay.DAY
+	currentSeason = seasons.SPRING
+	
 func getSeason()->int:
 	return currentSeason
 	
